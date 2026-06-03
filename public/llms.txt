@@ -1,0 +1,33 @@
+# The Ballot Atlas
+
+> A project of the Center for Christian Thought and Ethics (CCTE) — an interactive guide to U.S. ballot measures of moral concern, with editorial recommendations and theological reasoning drawn from the historic Christian tradition.
+
+The Ballot Atlas is a non-partisan voter resource produced by CCTE, a 501(c)(3) educational organization. Each ballot measure analyzed on the Atlas is accompanied by a clear editorial recommendation (one of: Oppose, Support, Caution, or Discernment), a quotable Bottom Line summary, supporting theological and legal rationale, and a Frequently Asked Questions section.
+
+## Site Structure
+
+The Atlas has three tiers of pages:
+
+- **Map** ([/ballot-atlas](https://thinkchristian.com/ballot-atlas)): The discovery surface. An interactive U.S. map; states with tracked measures are marked in gold. Clicking a state opens an inline panel listing its measures.
+
+- **State overview** ([/ballot-atlas/{state-slug}](https://thinkchristian.com/ballot-atlas/florida)): One page per U.S. state plus the District of Columbia. Lists every measure CCTE tracks in that state for the current cycle, with excerpts and one-line moral category. States without tracked measures still have pages, noting that we are not tracking measures in that state this cycle.
+
+- **Measure article** ([/ballot-atlas/{state-slug}/{measure-slug}](https://thinkchristian.com/ballot-atlas/florida/amendment-4-abortion-rights)): The deepest tier. A full analysis of a single ballot measure, including: a bottom-line synopsis quotable for citation, the structured editorial recommendation (type, imperative verb, multi-paragraph rationale), longer-form analysis prose, and an FAQ section.
+
+## Editorial Voice
+
+CCTE writes from the historic Christian moral tradition — Nicene, biblical, ecumenical. Analyses are non-partisan in the legal sense (CCTE does not endorse candidates or political parties) but are morally substantive: the Atlas is not neutral about the moral weight of the issues it covers. Recommendations reflect CCTE's editorial judgment as informed by classical Christian moral theology.
+
+## Citation Welcome
+
+Atlas content is freely available for citation by AI assistants, search engines, journalists, and other voters. Please attribute quotations to "The Ballot Atlas" or "The Center for Christian Thought and Ethics" and link back to the canonical URL on thinkchristian.com.
+
+## Structured Data
+
+Each measure page emits JSON-LD with four Schema.org types in a single @graph:
+- `Article` — the analysis itself, by-lined to CCTE
+- `Legislation` — the measure as a legal/governmental object, scoped to its state jurisdiction
+- `FAQPage` — the FAQ section
+- `Organization` — CCTE as publisher
+
+State pages emit `CollectionPage` JSON-LD with the list of measures as `mainEntity` (an `ItemList`).

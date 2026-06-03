@@ -1,0 +1,38 @@
+---
+// 404 — served by static hosts (Netlify in our case) for any
+// request that doesn't match a built page. Designed in the same
+// system as the rest of the Atlas so a wrong URL feels like an
+// honest dead end inside the site, not a blank generic error.
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Masthead from '../components/Masthead.astro';
+import Colophon from '../components/Colophon.astro';
+---
+
+<BaseLayout
+  title="Page Not Found · The Ballot Atlas"
+  description="The page you were looking for could not be found."
+>
+  <div class="page-wrap">
+    <article class="feature">
+
+      <Masthead />
+
+      <div class="panel-eyebrow">Error 404</div>
+      <h1 class="headline">This page could not be found.</h1>
+      <div class="gold-rule"></div>
+      <p class="deck">
+        The URL you followed may be outdated, mistyped, or no longer
+        part of the Atlas. If you arrived here from a link elsewhere
+        on this site, please <a href="mailto:contact@thinkchristian.com" style="color: var(--gold-soft); text-decoration: none; border-bottom: 1px solid var(--gold-ghost);">let us know</a> and we will fix it.
+      </p>
+
+      <p style="margin-top: 40px;">
+        <a href="/ballot-atlas" class="cta-btn">Return to the Atlas</a>
+      </p>
+
+      <Colophon />
+
+    </article>
+  </div>
+</BaseLayout>

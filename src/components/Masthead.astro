@@ -1,0 +1,20 @@
+---
+// Masthead — the top-of-page brand block shared by every page in
+// the Atlas (map, state pages, measure pages). The mark itself is
+// always clickable back to /ballot-atlas; the right-side text
+// defaults to "2024 Cycle" but can be overridden per page if the
+// editorial team wants page-specific context there (e.g., the
+// state name on a state page).
+
+interface Props {
+  context?: string;
+}
+
+const { context = '2024 Cycle' } = Astro.props;
+---
+
+<div class="masthead">
+  <span class="masthead-mark"><a href="/ballot-atlas">The Ballot Atlas</a></span>
+  <span class="masthead-divider"></span>
+  <span>{context}</span>
+</div>

@@ -1,0 +1,53 @@
+# The Ballot Atlas — robots.txt
+#
+# CCTE's editorial policy is to welcome both search-engine and AI/LLM
+# crawlers. The Atlas exists to inform voters and to be cited freely;
+# the more discoverable and quotable the content, the better it does
+# its job. We explicitly allow each major AI crawler below by name so
+# that future changes to default robots.txt conventions don't silently
+# remove the Atlas from training and grounding sets.
+#
+# NOTE: This file is served at /ballot-atlas/robots.txt because the
+# Atlas lives at a subpath under thinkchristian.com. The root
+# robots.txt at thinkchristian.com/robots.txt is controlled by
+# Squarespace and may need separate review.
+
+User-agent: *
+Allow: /
+
+# Standard search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# AI/LLM crawlers — explicit allow
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+Sitemap: https://thinkchristian.com/ballot-atlas/sitemap-index.xml

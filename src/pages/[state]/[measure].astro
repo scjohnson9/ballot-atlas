@@ -1,0 +1,238 @@
+---
+// MEASURE ARTICLE PAGE — served at /ballot-atlas/<state-slug>/<measure-slug>
+//
+// The deepest tier of the URL architecture. Each measure is authored
+// as a Markdown file in src/content/measures/<state>/<measure>.md with
+// the structured frontmatter defined by the schema in
+// src/content.config.ts. This file renders that frontmatter into a
+// real article — masthead, breadcrumb, context line, title, bottom
+// line, recommendation block, body prose, FAQ, byline — all in the
+// same design system as the rest of the Atlas.
+//
+// The JSON-LD spine combines four Schema.org types in a single @graph:
+//   - Article: the analysis itself, by-lined to CCTE
+//   - Legislation: the measure as a legal/governmental object,
+//     scoped to its state
+//   - FAQPage: the FAQ section (eligible for Google's "People Also
+//     Ask" snippets and reliable for LLM citation)
+//   - Organization: CCTE as publisher, referenced from the Article
+//
+// This is what tells search engines and LLMs not just "here is a
+// page" but "here is a piece of moral analysis by CCTE, about
+// Florida Amendment 4, which is a piece of state legislation, and
+// here are the most common questions it answers."
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Masthead from '../../components/Masthead.astro';
+import CtaBlock from '../../components/CtaBlock.astro';
+import Colophon from '../../components/Colophon.astro';
+import {
+  getCollection,
+  getEntry,
+  render,
+  type CollectionEntry,
+} from 'astro:content';
+
+export async function getStaticPaths() {
+  const measures = await getCollection('measures');
+  return measures.map((m) => {
+    const [state, measure] = m.id.split('/');
+    return {
+      params: { state, measure },
+      props: { entry: m },
+    };
+  });
+}
+
+interface Props {
+  entry: CollectionEntry<'measures'>;
+}
+
+const { entry } = Astro.props as Props;
+const [stateSlug] = entry.id.split('/');
+
+// Look up the state metadata so we can render the breadcrumb,
+// jurisdiction in the JSON-LD, and the title context.
+const stateEntry = await getEntry('states', stateSlug);
+if (!stateEntry) {
+  throw new Error(
+    `Measure "${entry.id}" references state slug "${stateSlug}" but no matching state entry was found in src/content/states/.`
+  );
+}
+
+const { Content } = await render(entry);
+const data = entry.data;
+
+// Page metadata
+const pageTitle = `${data.title} — ${stateEntry.data.name} ${data.ref} · The Ballot Atlas`;
+const pageDescription = data.bottom_line;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
+
+function formatLongDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+function isoDate(date: Date): string {
+  return date.toISOString().split('T')[0];
+}
+
+// The rationale is authored as a single block of prose with blank-line
+// paragraph breaks (YAML pipe-block). Split it into paragraphs so we
+// can render with proper <p> semantics rather than dumping it as a
+// blob.
+const rationaleParagraphs = data.recommendation.rationale
+  .split(/\n\s*\n/)
+  .map((p) => p.trim())
+  .filter(Boolean);
+
+// JSON-LD: four Schema.org types in one @graph.
+const articleId = canonicalUrl + '#article';
+const legislationId = canonicalUrl + '#legislation';
+const organizationId = 'https://thinkchristian.com/#org';
+
+const graph: Record<string, unknown>[] = [
+  {
+    '@type': 'Article',
+    '@id': articleId,
+    headline: data.title,
+    description: data.bottom_line,
+    url: canonicalUrl,
+    inLanguage: 'en-US',
+    datePublished: isoDate(data.last_reviewed),
+    dateModified: isoDate(data.last_reviewed),
+    author: { '@id': organizationId },
+    publisher: { '@id': organizationId },
+    about: { '@id': legislationId },
+    mainEntityOfPage: canonicalUrl,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'The Ballot Atlas',
+      url: 'https://thinkchristian.com/ballot-atlas',
+    },
+  },
+  {
+    '@type': 'Legislation',
+    '@id': legislationId,
+    name: `${stateEntry.data.name} ${data.ref}: ${data.title}`,
+    legislationIdentifier: data.ref,
+    datePublished: isoDate(data.date_on_ballot),
+    jurisdiction: {
+      '@type': 'AdministrativeArea',
+      name: stateEntry.data.name,
+    },
+    about: data.stance,
+  },
+  {
+    '@type': 'Organization',
+    '@id': organizationId,
+    name: 'The Center for Christian Thought and Ethics',
+    alternateName: 'CCTE',
+    url: 'https://thinkchristian.com',
+  },
+];
+
+if (data.faq.length > 0) {
+  graph.push({
+    '@type': 'FAQPage',
+    mainEntity: data.faq.map((q) => ({
+      '@type': 'Question',
+      name: q.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: q.answer,
+      },
+    })),
+  });
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': graph,
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonical={canonicalUrl}
+  ogType="article"
+>
+  <script
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify(jsonLd)}
+  />
+
+  <div class="page-wrap">
+    <article class="feature">
+
+      <Masthead />
+
+
+      <nav class="meas-breadcrumb" aria-label="Breadcrumb">
+        <a href="/ballot-atlas">The Ballot Atlas</a>
+        <span class="sep" aria-hidden="true">›</span>
+        <a href={`/ballot-atlas/${stateSlug}`}>
+          Ballot Issues in {stateEntry.data.name}
+        </a>
+      </nav>
+
+      <div class="meas-context">
+        <span class="ref-label">{data.ref}</span>
+        <time datetime={isoDate(data.date_on_ballot)}>
+          {formatLongDate(data.date_on_ballot)}
+        </time>
+        {data.stance && (
+          <span> · {data.stance}</span>
+        )}
+      </div>
+
+      <h1 class="headline">{data.title}</h1>
+      <div class="gold-rule"></div>
+      <p class="bottom-line">{data.bottom_line}</p>
+
+      <aside class="recommendation" aria-label="CCTE Recommendation">
+        <p class="recommendation-eyebrow">
+          <span class="rec-mark">◆</span>{data.recommendation.type}
+        </p>
+        <h2 class="recommendation-verb">{data.recommendation.verb}</h2>
+        <div class="gold-rule"></div>
+        <div class="recommendation-rationale">
+          {rationaleParagraphs.map((p) => <p>{p}</p>)}
+        </div>
+      </aside>
+
+      <div class="prose">
+        <Content />
+      </div>
+
+      {data.faq.length > 0 && (
+        <section class="faq" aria-labelledby="faq-heading">
+          <h2 id="faq-heading" class="faq-heading">Frequently Asked Questions</h2>
+          <div class="faq-list">
+            {data.faq.map((q) => (
+              <div class="faq-entry">
+                <h3 class="faq-question">{q.question}</h3>
+                <p class="faq-answer">{q.answer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <aside class="byline">
+        By <strong>{data.author}</strong>.
+        Last reviewed <time datetime={isoDate(data.last_reviewed)}>
+          {formatLongDate(data.last_reviewed)}
+        </time>.
+      </aside>
+
+      <CtaBlock />
+      <Colophon />
+
+    </article>
+  </div>
+</BaseLayout>

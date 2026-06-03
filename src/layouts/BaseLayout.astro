@@ -1,0 +1,104 @@
+---
+// BaseLayout — the shared HTML scaffold for every page in the Atlas.
+// Owns the <html>/<head>/<body> frame, font loading, global CSS, and
+// the full per-page SEO/GEO meta surface: title, description,
+// canonical URL, Open Graph, and Twitter Card tags.
+//
+// JSON-LD structured data is page-specific and is contributed by the
+// page itself via <... slot="head">. BaseLayout doesn't try to know
+// every Schema.org type; it owns the universal tags and gets out of
+// the way.
+//
+// Props:
+//   title         — full <title> string
+//   description   — meta description; appears in search snippets and
+//                   in the OG/Twitter card. Should be 50–160 chars.
+//   canonical     — absolute canonical URL. Defaults to current URL
+//                   computed from Astro.site + the request pathname,
+//                   which is what you want unless you have a reason
+//                   to override (consolidating duplicate content,
+//                   redirect chains, etc.).
+//   ogType        — Open Graph type. 'article' for measure pages,
+//                   'website' for everything else (default).
+//   ogImage       — Absolute URL of the OG/Twitter card image. Optional
+//                   in v1 (we ship without per-page images and rely on
+//                   the social previewer falling back to the favicon).
+
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogType?: 'website' | 'article';
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogType = 'website',
+  ogImage,
+} = Astro.props;
+
+// Always resolve the canonical against Astro.site (the production
+// hostname configured in astro.config.mjs), regardless of where the
+// build runs. In dev this still produces a thinkchristian.com URL —
+// correct behavior, since canonical is about the public location of
+// the content, not the local serving address.
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).toString();
+
+// Twitter requires a specific card type when an image is present.
+// Without an image the 'summary' card renders cleanly with just text.
+const twitterCard = ogImage ? 'summary_large_image' : 'summary';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    {/* Open Graph */}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="The Ballot Atlas" />
+    <meta property="og:locale" content="en_US" />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+
+    {/* Twitter Card */}
+    <meta name="twitter:card" content={twitterCard} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    {/* Same families used in the CCTE newsletter, preserved here for
+        visual continuity. Playfair Display (display serif), EB Garamond
+        (reading), Inter (small-caps metadata). */}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta name="generator" content={Astro.generator} />
+
+    {/* Per-page injection point — JSON-LD and any other page-specific
+        head content goes here via <... slot="head"> in the page. */}
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

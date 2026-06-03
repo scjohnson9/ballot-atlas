@@ -1,17 +1,576 @@
 ---
+// THE MAP PAGE — served at /ballot-atlas
+//
+// This page is the discovery surface: the interactive map plus the
+// in-place panel that opens when a state is clicked. Every visual
+// detail (palette, typography, animations, label positions, the
+// touch interaction model) is ported from the original map.html.
+//
+// Two things this version adds beyond the prototype:
+//
+//   1. CONTENT FROM THE COLLECTION. The list of states with content,
+//      the per-state measure lists, and all URL slugs come from the
+//      `states` and `measures` content collections at build time.
+//      No JS ARTICLES literal to keep in sync.
+//
+//   2. URL UPDATES VIA pushState. Clicking a state silently rewrites
+//      the URL to /ballot-atlas/<state-slug>, so the panel state is
+//      shareable and bookmarkable. Browser back/forward animate
+//      correctly. A cold load on /ballot-atlas/<state-slug> is handled
+//      by a completely different page (src/pages/ballot-atlas/[state].astro,
+//      Phase 3) which renders the same content as a standalone document.
 
+import BaseLayout from '../layouts/BaseLayout.astro';
+import IssueList from '../components/IssueList.astro';
+import Masthead from '../components/Masthead.astro';
+import CtaBlock from '../components/CtaBlock.astro';
+import Colophon from '../components/Colophon.astro';
+import { getCollection } from 'astro:content';
+
+const allStates = await getCollection('states');
+const allMeasures = await getCollection('measures');
+
+// Group measures by state slug (the first path segment of m.id).
+// Sort each group by date_on_ballot (earliest first) for stable
+// presentation across builds.
+const measuresByStateSlug = new Map<string, typeof allMeasures>();
+for (const m of allMeasures) {
+  const stateSlug = m.id.split('/')[0];
+  if (!measuresByStateSlug.has(stateSlug)) measuresByStateSlug.set(stateSlug, []);
+  measuresByStateSlug.get(stateSlug)!.push(m);
+}
+for (const list of measuresByStateSlug.values()) {
+  list.sort((a, b) => a.data.date_on_ballot.getTime() - b.data.date_on_ballot.getTime());
+}
+
+// Build the per-USPS bundle we'll both render templates from
+// (server side) and inject as JS data (client side, for click
+// handlers and URL construction).
+type StateBundle = {
+  usps: string;
+  name: string;
+  slug: string;
+  measures: typeof allMeasures;
+};
+
+// All states — including those without tracked measures. Every state
+// in the collection gets an entry in STATE_CONTENT so the map JS can
+// push a real URL on click regardless of whether we've authored content.
+const allBundles: StateBundle[] = allStates
+  .map((s) => ({
+    usps: s.data.usps,
+    name: s.data.name,
+    slug: s.id,
+    measures: measuresByStateSlug.get(s.id) ?? [],
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+// Subset used for the inline <template> blocks and for the headline
+// counts. States with zero measures get the empty-msg fallback in the
+// panel, so they don't need a template element.
+const contentBundles = allBundles.filter((b) => b.measures.length > 0);
+
+// Data passed to the inline map script. Includes every state so URL
+// pushing is uniform; the `count` field is what distinguishes has-
+// content states (gold fill, has-content marker, panel listing) from
+// empty ones (default land color, empty-msg fallback).
+const STATE_CONTENT: Record<string, { name: string; slug: string; count: number }> = {};
+for (const b of allBundles) {
+  STATE_CONTENT[b.usps] = { name: b.name, slug: b.slug, count: b.measures.length };
+}
+
+const totalIssues = contentBundles.reduce((sum, b) => sum + b.measures.length, 0);
+const totalStates = contentBundles.length;
+
+// Site-level JSON-LD. The WebSite type identifies the Atlas as a
+// discrete site within CCTE's domain; the Organization establishes
+// the publisher relationship. Linked by @id so search engines and
+// LLMs see the same Organization referenced across every page.
+const siteJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': 'https://thinkchristian.com/ballot-atlas#site',
+      name: 'The Ballot Atlas',
+      description:
+        'An interactive guide to U.S. ballot measures of moral concern, with recommendations and theological reasoning from the Center for Christian Thought and Ethics.',
+      url: 'https://thinkchristian.com/ballot-atlas',
+      inLanguage: 'en-US',
+      publisher: { '@id': 'https://thinkchristian.com/#org' },
+    },
+    {
+      '@type': 'Organization',
+      '@id': 'https://thinkchristian.com/#org',
+      name: 'The Center for Christian Thought and Ethics',
+      alternateName: 'CCTE',
+      url: 'https://thinkchristian.com',
+    },
+  ],
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="The Ballot Atlas — A Project of CCTE"
+  description="An interactive guide to U.S. ballot measures of moral concern, with recommendations and theological reasoning from the Center for Christian Thought and Ethics."
+>
+  <script
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify(siteJsonLd)}
+  />
+
+  <div class="page-wrap">
+    <article class="feature">
+
+      <Masthead />
+
+
+      <div class="kicker">A Voter Resource</div>
+      <h1 class="headline">
+        Vote with <em>clarity.</em><br />
+        Vote with <em>confidence.</em>
+      </h1>
+      <div class="gold-rule"></div>
+      <p class="deck">
+        Every election cycle, Americans face ballot measures that touch
+        the deepest moral questions of our common life — the protection of
+        the vulnerable, the meaning of marriage and family, the dignity of
+        every human person.
+        <strong>This atlas is a guide to the issues on your ballot
+        that warrant careful Christian reflection.</strong>
+        Select your state to read what CCTE is tracking, why it matters,
+        and how the historic Christian tradition speaks to it.
+      </p>
+
+      <div class="info-bar">
+        <div class="by">A project of <strong>The Center for Christian Thought and Ethics</strong></div>
+        <div class="meta">
+          <span><span class="dot"></span>Updated for 2024</span>
+          <span>{totalIssues} {totalIssues === 1 ? 'Issue' : 'Issues'} Tracked</span>
+          <span>{totalStates} {totalStates === 1 ? 'State' : 'States'}</span>
+        </div>
+      </div>
+
+      <div class="map-stage">
+        <div class="map-caption">
+          <span class="figure"><strong>FIG. 01</strong>Ballot Measures of Moral Concern, by State</span>
+          <span class="figure-title">Hover to preview · click to read</span>
+        </div>
+        <div id="map-container">
+          <div class="loading">Loading the atlas…</div>
+        </div>
+        <div id="status-line" class="status-line">
+          <span class="hint">Move your cursor across the map to begin</span>
+        </div>
+      </div>
+
+      <section id="article-panel" class="panel">
+        <header class="panel-header">
+          <div>
+            <div class="panel-eyebrow">Ballot Issues In</div>
+            <h2 id="panel-title" class="panel-title"></h2>
+            <div id="panel-meta" class="panel-meta"></div>
+          </div>
+          <button id="close-btn" class="close-btn" type="button">Close</button>
+        </header>
+        <div id="panel-body"></div>
+      </section>
+
+      {/* INLINE TEMPLATES — one per state with content. The map JS clones
+          the matching template into the panel body when a state is clicked.
+          States without measures get the empty-msg fallback in JS, so no
+          template is needed for them. No client-side string templating;
+          no fetch round-trip. */}
+      {contentBundles.map((b) => (
+        <template data-state={b.usps} data-state-name={b.name} data-state-slug={b.slug}>
+          <IssueList measures={b.measures} />
+        </template>
+      ))}
+
+      <CtaBlock />
+      <Colophon />
+
+    </article>
+  </div>
+
+  <script is:inline src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script is:inline src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+
+  <script is:inline define:vars={{ STATE_CONTENT }}>
+    // =================================================================
+    //  MAP RENDERING + INTERACTION
+    //  Ported from map.html with two additions:
+    //    (a) ARTICLES literal replaced by STATE_CONTENT (server-injected).
+    //    (b) showPanel/closePanel now update history via pushState; a
+    //        popstate listener mirrors back/forward to panel state.
+    // =================================================================
+
+    const FIPS_TO_USPS = {
+      "01":"AL","02":"AK","04":"AZ","05":"AR","06":"CA","08":"CO","09":"CT",
+      "10":"DE","11":"DC","12":"FL","13":"GA","15":"HI","16":"ID","17":"IL",
+      "18":"IN","19":"IA","20":"KS","21":"KY","22":"LA","23":"ME","24":"MD",
+      "25":"MA","26":"MI","27":"MN","28":"MS","29":"MO","30":"MT","31":"NE",
+      "32":"NV","33":"NH","34":"NJ","35":"NM","36":"NY","37":"NC","38":"ND",
+      "39":"OH","40":"OK","41":"OR","42":"PA","44":"RI","45":"SC","46":"SD",
+      "47":"TN","48":"TX","49":"UT","50":"VT","51":"VA","53":"WA","54":"WV",
+      "55":"WI","56":"WY"
+    };
+
+    const STATE_NAMES = {
+      AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",
+      CO:"Colorado",CT:"Connecticut",DE:"Delaware",FL:"Florida",GA:"Georgia",
+      HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",
+      KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",
+      MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",
+      NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",
+      NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",
+      OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",
+      SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",
+      VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming",
+      DC:"District of Columbia"
+    };
+
+    // Label positions: NYT election-map transforms, rescaled to us-atlas
+    // viewBox via affine fit on 13 boxy interior states. VT/NH/HI hand-
+    // corrected; small NE states use external callouts. Mean fit error
+    // 2.5px on references.
+    const LABEL_POS = {
+      AK: [115, 515], AL: [672, 432], AR: [564, 392], AZ: [207, 381],
+      CA: [ 74, 299], CO: [330, 289], FL: [782, 515], GA: [740, 431],
+      HI: [317, 588], IA: [539, 228], ID: [193, 162], IL: [612, 266],
+      IN: [667, 269], KS: [457, 307], KY: [700, 319], LA: [565, 473],
+      MD: [830, 257], ME: [920,  91], MI: [685, 195], MN: [520, 125],
+      MO: [559, 313], MS: [617, 436], MT: [286, 102], NC: [815, 350],
+      ND: [431, 106], NE: [433, 239], NH: [893, 140], NM: [310, 391],
+      NV: [140, 242], NY: [839, 168], OH: [723, 254], OK: [479, 377],
+      OR: [100, 136], PA: [809, 225], SC: [782, 394], SD: [428, 171],
+      TN: [672, 361], TX: [436, 468], UT: [226, 272], VA: [806, 304],
+      VT: [873, 136], WA: [129,  63], WI: [597, 167], WV: [764, 286],
+      WY: [307, 194]
+    };
+
+    const CALLOUT_LABELS = {
+      MA: { anchor: [898, 173], to: [1015, 145] },
+      RI: { anchor: [905, 184], to: [1015, 175] },
+      CT: { anchor: [886, 191], to: [1015, 205] },
+      NJ: { anchor: [862, 230], to: [1015, 235] },
+      DE: { anchor: [853, 260], to: [1015, 265] },
+      DC: { anchor: [828, 267], to: [1015, 295] }
+    };
+
+    // Reverse lookup: slug → USPS. Built from the server-injected data
+    // so we can map URLs back to states in the popstate handler.
+    const SLUG_TO_USPS = {};
+    for (const usps in STATE_CONTENT) {
+      SLUG_TO_USPS[STATE_CONTENT[usps].slug] = usps;
+    }
+
+    function hasArticles(code) {
+      return !!(code && STATE_CONTENT[code] && STATE_CONTENT[code].count > 0);
+    }
+
+    const IS_TOUCH = window.matchMedia('(hover: none)').matches;
+    let previewedCode = null;
+    let selected = null;
+
+    async function render() {
+      let us;
+      try {
+        us = await d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/states-albers-10m.json");
+      } catch (err) {
+        document.getElementById("map-container").innerHTML =
+          '<div class="loading">Could not load the atlas. Please check your connection.</div>';
+        console.error(err);
+        return;
+      }
+
+      const states = topojson.feature(us, us.objects.states).features;
+      const fullW = 1060, H = 610;
+      const path = d3.geoPath();
+
+      const container = document.getElementById("map-container");
+      container.innerHTML = "";
+
+      const svg = d3.select(container)
+        .append("svg")
+        .attr("viewBox", `0 0 ${fullW} ${H}`)
+        .attr("preserveAspectRatio", "xMidYMid meet");
+
+      svg.append("rect")
+        .attr("class", "ocean-bg")
+        .attr("x", 0).attr("y", 0)
+        .attr("width", fullW).attr("height", H);
+
+      const mainGroup = svg.append("g").attr("class", "main-states");
+
+      // West-to-east stagger: ~18ms × 50 states ≈ 900ms total.
+      const ordered = states.slice().sort((a, b) =>
+        path.centroid(a)[0] - path.centroid(b)[0]
+      );
+      const delayByCode = {};
+      ordered.forEach((f, i) => {
+        delayByCode[FIPS_TO_USPS[f.id]] = 18 * i;
+      });
+
+      mainGroup.selectAll("path")
+        .data(states)
+        .join("path")
+        .attr("d", path)
+        .attr("class", d => {
+          const usps = FIPS_TO_USPS[d.id];
+          return "state intro" + (hasArticles(usps) ? " has-content" : "");
+        })
+        .attr("data-code", d => FIPS_TO_USPS[d.id])
+        .style("animation-delay", d => delayByCode[FIPS_TO_USPS[d.id]] + "ms")
+        .on("animationend", function() { this.classList.remove("intro"); })
+        .on("mouseenter", function(e, d) {
+          this.parentNode.appendChild(this);  // raise z-order for shadow
+          mainGroup.node().classList.add("has-hover");
+          setHover(FIPS_TO_USPS[d.id]);
+        })
+        .on("mouseleave", () => {
+          mainGroup.node().classList.remove("has-hover");
+          setHover(null);
+        })
+        .on("click", (e, d) => handleStateTap(FIPS_TO_USPS[d.id]));
+
+      // ── INLINE LABELS ──────────────────────────────────────────────
+      const labelGroup = svg.append("g").attr("class", "labels");
+      const interiorLabels = states.filter(d => {
+        const c = FIPS_TO_USPS[d.id];
+        return c && LABEL_POS[c] && !CALLOUT_LABELS[c];
+      });
+
+      labelGroup.selectAll("text.state-label")
+        .data(interiorLabels)
+        .join("text")
+        .attr("class", d => "state-label" +
+          (hasArticles(FIPS_TO_USPS[d.id]) ? " has-content" : ""))
+        .attr("x", d => LABEL_POS[FIPS_TO_USPS[d.id]][0])
+        .attr("y", d => LABEL_POS[FIPS_TO_USPS[d.id]][1])
+        .attr("text-anchor", "middle")
+        .attr("dy", "0.35em")
+        .attr("font-size", d => {
+          const bounds = path.bounds(d);
+          const dim = Math.min(bounds[1][0] - bounds[0][0], bounds[1][1] - bounds[0][1]);
+          return Math.max(8, Math.min(13, dim / 4.5));
+        })
+        .text(d => FIPS_TO_USPS[d.id]);
+
+      // ── CALLOUTS ───────────────────────────────────────────────────
+      const callouts = Object.entries(CALLOUT_LABELS).map(([code, cfg]) => ({
+        code,
+        hasContent: hasArticles(code),
+        anchorX: cfg.anchor[0], anchorY: cfg.anchor[1],
+        labelX: cfg.to[0], labelY: cfg.to[1]
+      }));
+
+      const calloutGroup = svg.append("g").attr("class", "callouts");
+
+      calloutGroup.selectAll("line.leader")
+        .data(callouts)
+        .join("line")
+        .attr("x1", d => d.anchorX).attr("y1", d => d.anchorY)
+        .attr("x2", d => d.labelX - 12).attr("y2", d => d.labelY)
+        .attr("stroke", d => d.hasContent ? "rgba(201,168,76,0.6)" : "rgba(168,157,133,0.28)")
+        .attr("stroke-width", 0.6);
+
+      calloutGroup.selectAll("circle.anchor")
+        .data(callouts)
+        .join("circle")
+        .attr("cx", d => d.anchorX).attr("cy", d => d.anchorY)
+        .attr("r", 1.3)
+        .attr("fill", d => d.hasContent ? "var(--gold)" : "rgba(168,157,133,0.6)");
+
+      calloutGroup.selectAll("text.callout-label")
+        .data(callouts)
+        .join("text")
+        .attr("class", d => "callout-label" + (d.hasContent ? " has-content" : ""))
+        .attr("x", d => d.labelX).attr("y", d => d.labelY)
+        .attr("text-anchor", "start").attr("dy", "0.35em")
+        .text(d => d.code)
+        .on("mouseenter", (e, d) => setHover(d.code))
+        .on("mouseleave", () => setHover(null))
+        .on("click", (e, d) => handleStateTap(d.code));
+
+      // ── HAS-CONTENT MARKERS ────────────────────────────────────────
+      const markerGroup = svg.append("g").attr("class", "markers");
+      const markersData = states.filter(d => {
+        const c = FIPS_TO_USPS[d.id];
+        return c && hasArticles(c) && LABEL_POS[c];
+      });
+      markerGroup.selectAll("path.has-content-marker")
+        .data(markersData)
+        .join("path")
+        .attr("class", "has-content-marker")
+        .attr("transform", d => {
+          const [x, y] = LABEL_POS[FIPS_TO_USPS[d.id]];
+          return `translate(${x}, ${y - 13}) rotate(45)`;
+        })
+        .attr("d", "M-1.7,-1.7 L1.7,-1.7 L1.7,1.7 L-1.7,1.7 Z");
+
+      // Initial status hint, calibrated for the device
+      setHover(null);
+
+      // If the page loaded with a URL like /ballot-atlas/florida via
+      // a forward/back navigation that arrived back to the index page
+      // (browser history quirk), open the right panel without pushing
+      // history. Cold loads to /ballot-atlas/<slug> hit a different
+      // page entirely (Phase 3) and never reach this code.
+      handleInitialUrl();
+    }
+
+    function setHover(code) {
+      const line = document.getElementById("status-line");
+      if (!code || !STATE_NAMES[code]) {
+        line.className = "status-line";
+        const hint = IS_TOUCH
+          ? 'Tap a state to begin'
+          : 'Move your cursor across the map to begin';
+        line.innerHTML = `<span class="hint">${hint}</span>`;
+        return;
+      }
+      const has = hasArticles(code);
+      const n = has ? STATE_CONTENT[code].count : 0;
+      const actionText = IS_TOUCH ? 'Tap again to read' : 'Click to read';
+      line.className = "status-line " + (has ? "has" : "");
+      line.innerHTML = has
+        ? `<span class="status-name">${STATE_NAMES[code]}</span>` +
+          `${n} ${n === 1 ? 'Issue' : 'Issues'} on the Ballot · ${actionText}`
+        : `<span class="status-name">${STATE_NAMES[code]}</span>` +
+          `No Tracked Measures This Cycle`;
+    }
+
+    // Routes taps differently for touch vs pointer (Apple-Maps-style):
+    //   Pointer: one click opens the panel.
+    //   Touch: first tap previews (highlight + status line); second tap
+    //     on same state opens the panel. Different state resets preview.
+    function handleStateTap(code) {
+      if (!code || !STATE_NAMES[code]) return;
+
+      if (!IS_TOUCH) {
+        toggleSelected(code);
+        return;
+      }
+
+      if (selected === code) { closePanel(); return; }
+      if (previewedCode === code) {
+        toggleSelected(code);
+        previewedCode = null;
+        return;
+      }
+      previewedCode = code;
+      document.querySelectorAll("path.state").forEach(el => {
+        el.classList.toggle("selected", el.getAttribute("data-code") === code);
+      });
+      setHover(code);
+    }
+
+    function toggleSelected(code) {
+      if (!code || !STATE_NAMES[code]) return;
+      if (selected === code) { closePanel(); return; }
+      selected = code;
+      document.querySelectorAll("path.state").forEach(el => {
+        el.classList.toggle("selected", el.getAttribute("data-code") === code);
+      });
+      showPanel(code);
+    }
+
+    function showPanel(code, opts = {}) {
+      const { pushHistory = true, scroll = true } = opts;
+      const stateName = STATE_NAMES[code];
+      const entry = STATE_CONTENT[code];
+      const count = entry ? entry.count : 0;
+
+      document.getElementById("panel-title").textContent = stateName;
+      document.getElementById("panel-meta").textContent =
+        count > 0
+          ? `${count} ${count === 1 ? 'measure' : 'measures'} on the 2024 ballot warranting Christian reflection`
+          : "No Tracked Measures This Cycle";
+
+      const body = document.getElementById("panel-body");
+      body.innerHTML = "";
+
+      const template = document.querySelector(`template[data-state="${code}"]`);
+      if (template && template.content && template.content.children.length > 0) {
+        body.appendChild(template.content.cloneNode(true));
+      } else {
+        // No measures tracked. Render the empty state directly.
+        const p = document.createElement("p");
+        p.className = "empty-msg";
+        p.innerHTML =
+          "We are not currently tracking ballot measures of moral concern in " +
+          stateName + " for this cycle. " +
+          '<a href="mailto:contact@thinkchristian.com">Notify us of an issue we should cover →</a>';
+        body.appendChild(p);
+      }
+
+      document.getElementById("article-panel").classList.add("active");
+
+      if (pushHistory && entry) {
+        const newUrl = `/ballot-atlas/${entry.slug}`;
+        if (window.location.pathname !== newUrl) {
+          history.pushState({ panel: code }, "", newUrl);
+        }
+      }
+
+      if (scroll) {
+        setTimeout(() => {
+          document.getElementById("article-panel")
+            .scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 80);
+      }
+    }
+
+    function closePanel(opts = {}) {
+      const { pushHistory = true } = opts;
+      selected = null;
+      previewedCode = null;
+      document.querySelectorAll("path.state.selected").forEach(el =>
+        el.classList.remove("selected"));
+      document.getElementById("article-panel").classList.remove("active");
+
+      if (pushHistory && window.location.pathname !== "/ballot-atlas") {
+        history.pushState({}, "", "/ballot-atlas");
+      }
+    }
+
+    // Read the current URL and, if it points at a state, open that
+    // state's panel (without pushing history — we're reacting to the
+    // browser, not initiating navigation).
+    function openFromSlug(slug, opts = {}) {
+      const usps = SLUG_TO_USPS[slug];
+      if (!usps) return false;
+      selected = usps;
+      document.querySelectorAll("path.state").forEach(el => {
+        el.classList.toggle("selected", el.getAttribute("data-code") === usps);
+      });
+      showPanel(usps, { pushHistory: false, scroll: opts.scroll ?? false });
+      return true;
+    }
+
+    function handleInitialUrl() {
+      const m = window.location.pathname.match(/^\/ballot-atlas\/([^\/]+)$/);
+      if (m) openFromSlug(m[1], { scroll: false });
+    }
+
+    window.addEventListener("popstate", () => {
+      const m = window.location.pathname.match(/^\/ballot-atlas\/([^\/]+)$/);
+      if (m) {
+        openFromSlug(m[1]);
+      } else {
+        closePanel({ pushHistory: false });
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && selected) closePanel();
+    });
+
+    document.getElementById("close-btn")
+      .addEventListener("click", () => closePanel());
+
+    render();
+  </script>
+</BaseLayout>

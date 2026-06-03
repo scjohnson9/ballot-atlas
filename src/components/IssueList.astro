@@ -1,0 +1,71 @@
+---
+// IssueList — the table-of-contents-style list of ballot measures
+// for a given state. The visual treatment (Roman numerals, large
+// Playfair title, gold ref, italic arrow) mirrors the panel-body
+// rendering in the original map.html prototype.
+//
+// Used in two places:
+//   1. src/pages/index.astro — once per state with content, wrapped
+//      in a <template> element so the map JS can clone it on click.
+//   2. src/pages/ballot-atlas/[state].astro — the standalone state
+//      page (Phase 3). Rendered directly into the page body.
+//
+// One source of truth for the markup means no drift between the
+// silky in-place experience and the cold-load standalone page.
+
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  measures: CollectionEntry<'measures'>[];
+}
+
+const { measures } = Astro.props;
+
+// Roman numeral pagination — small typographic flourish, matches the
+// section labels (One, Two, Three) in the CCTE newsletter.
+const ROMAN = ['I.', 'II.', 'III.', 'IV.', 'V.', 'VI.', 'VII.', 'VIII.', 'IX.', 'X.', 'XI.', 'XII.'];
+function romanize(n: number): string {
+  return ROMAN[n - 1] ?? `${n}.`;
+}
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+}
+---
+
+<div class="issue-list">
+  {measures.map((m, i) => {
+    // Recommendation type → CSS class. Differentiation by visual
+    // intensity (gold → deep gold → quiet gray), not color hue:
+    // Oppose and Support both read as assertive editorial calls,
+    // Caution as present but more reserved, Discernment as
+    // intentionally neutral.
+    const recClass = `issue-rec issue-rec--${m.data.recommendation.type.toLowerCase()}`;
+    return (
+      <a href={`/ballot-atlas/${m.id}`} class="issue-entry">
+        <span class="issue-num">{romanize(i + 1)}</span>
+        <div class="issue-body">
+          <div class="issue-meta">
+            {m.data.ref && <span class="ref">{m.data.ref}</span>}
+            {formatDate(m.data.date_on_ballot)}
+          </div>
+          <p class={recClass}>
+            <span class="rec-mark">◆</span>{m.data.recommendation.type}
+          </p>
+          <h3 class="issue-title">{m.data.title}</h3>
+          <p class="issue-excerpt">{m.data.excerpt}</p>
+          {m.data.stance && (
+            <span class="issue-stance">
+              <span class="stance-mark">◆</span>{m.data.stance}
+            </span>
+          )}
+        </div>
+        <span class="issue-arrow">→</span>
+      </a>
+    );
+  })}
+</div>

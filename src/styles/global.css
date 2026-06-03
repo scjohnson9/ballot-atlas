@@ -1,0 +1,955 @@
+/* ════════════════════════════════════════════════════════════════
+   THE BALLOT ATLAS — DESIGN SYSTEM
+   ────────────────────────────────────────────────────────────────
+   Ported verbatim from the original single-file map.html prototype.
+   Palette and typography are drawn from the CCTE newsletter template.
+   Dark mode built from layered near-blacks (not pure #000), with
+   antique gold as the single accent. Cream text and parchment italic
+   give the feel of a vellum letter under low light.
+
+   This stylesheet is loaded globally on every page (map, state, and
+   measure pages) via the BaseLayout component. Do not duplicate or
+   override these tokens at the page level.
+   ──────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Surface layers, lightest to darkest */
+  --bg-outer:    #1a1a1a;
+  --bg-stage:    #111111;
+  --bg-deep:     #0d0d0d;
+  --bg-deepest:  #0a0a0a;
+
+  /* Rules and borders */
+  --rule:        rgba(201, 168, 76, 0.18);
+  --rule-strong: rgba(201, 168, 76, 0.55);
+  --border-soft: #252220;
+  --border-card: #2e2e2e;
+
+  /* Typography — warm whites against the near-black */
+  --display:     #f0e6cc;
+  --display-2:   #d4c4a0;
+  --body:        #c8bfa8;
+  --quiet:       #a89d85;
+  --quieter:     #8a8070;
+  --quietest:    #555148;
+
+  /* Antique gold — the only accent */
+  --gold:        #c9a84c;
+  --gold-soft:   #d6b969;
+  --gold-deep:   #8c7330;
+  --gold-ghost:  rgba(201, 168, 76, 0.12);
+
+  /* Map land — dark, like printed engraving */
+  --land:        #1d1d1d;
+  --land-hover:  #2a2a2a;
+  --land-stroke: #050505;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg-outer);
+  color: var(--body);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.78;
+}
+
+.page-wrap { padding: 32px 16px; }
+
+.feature {
+  max-width: 1180px;
+  margin: 0 auto;
+  background: var(--bg-stage);
+  border: 1px solid var(--border-card);
+  padding: 72px 64px 0;
+}
+
+/* ── MASTHEAD ────────────────────────────────────────────────── */
+.masthead {
+  display: flex; align-items: center; gap: 16px;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 22px; margin-bottom: 56px;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 11px; letter-spacing: 0.32em;
+  text-transform: uppercase; color: var(--gold);
+}
+.masthead-mark {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: 18px; letter-spacing: 0.04em;
+  text-transform: none; color: var(--display);
+}
+.masthead-mark a {
+  color: inherit;
+  text-decoration: none;
+}
+.masthead-divider { flex: 1; height: 1px; background: var(--rule); }
+
+/* ── HEADLINE ────────────────────────────────────────────────── */
+.kicker {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.38em; text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+.kicker::before {
+  content: "\25C6"; /* ◆ */
+  color: var(--gold);
+  margin-right: 14px;
+  font-size: 9px;
+  vertical-align: 2px;
+}
+
+.headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(40px, 6.2vw, 74px);
+  line-height: 1.05;
+  letter-spacing: -0.005em;
+  color: var(--display);
+  margin: 0 0 20px;
+  max-width: 16ch;
+}
+.headline em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold-soft);
+}
+
+.gold-rule {
+  width: 48px; height: 2px;
+  background: var(--gold);
+  margin: 8px 0 32px;
+}
+
+.deck {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: clamp(18px, 1.6vw, 21px);
+  line-height: 1.7;
+  color: var(--body);
+  max-width: 62ch;
+  margin: 0 0 40px;
+}
+.deck strong {
+  font-weight: 500;
+  color: var(--display);
+}
+
+/* ── INFO BAR ────────────────────────────────────────────────── */
+.info-bar {
+  display: flex; align-items: center; gap: 24px;
+  padding: 20px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 56px;
+  font-family: 'EB Garamond', Georgia, serif;
+  color: var(--quiet);
+}
+.info-bar .by {
+  font-style: italic; font-size: 15px;
+  color: var(--body); letter-spacing: 0;
+}
+.info-bar .by strong {
+  font-style: normal; font-weight: 600;
+  color: var(--display); font-family: 'Playfair Display', Georgia, serif;
+}
+.info-bar .meta {
+  display: flex; gap: 28px; margin-left: auto;
+  text-transform: uppercase;
+  font-size: 10.5px; letter-spacing: 0.24em;
+  color: var(--quiet);
+}
+.info-bar .meta span { display: flex; align-items: center; gap: 8px; }
+.info-bar .meta .dot {
+  width: 5px; height: 5px; background: var(--gold);
+  transform: rotate(45deg);
+}
+
+/* ── MAP STAGE ───────────────────────────────────────────────── */
+.map-stage {
+  position: relative;
+  background: var(--bg-deep);
+  border: 1px solid var(--border-soft);
+  padding: 32px 32px 24px;
+}
+
+.map-caption {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 14px;
+  gap: 20px; flex-wrap: wrap;
+}
+.map-caption .figure {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--quiet);
+}
+.map-caption .figure strong {
+  color: var(--gold); font-weight: 600; margin-right: 12px;
+}
+.map-caption .figure-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic; font-size: 15px;
+  color: var(--display-2); font-weight: 400;
+}
+
+.map-stage svg { width: 100%; height: auto; display: block; overflow: visible; }
+.ocean-bg { fill: transparent; }
+
+/* ── STATES ──────────────────────────────────────────────────── */
+path.state {
+  cursor: pointer;
+  stroke: var(--land-stroke);
+  stroke-width: 0.6;
+  stroke-linejoin: round;
+  fill: var(--land);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    fill 220ms cubic-bezier(0.2, 0, 0.2, 1),
+    transform 280ms cubic-bezier(0.2, 0, 0.2, 1),
+    opacity 220ms ease,
+    filter 280ms ease;
+}
+path.state.has-content { fill: var(--gold); }
+
+.main-states.has-hover path.state { opacity: 0.32; }
+.main-states.has-hover path.state:hover { opacity: 1; }
+
+path.state:hover {
+  fill: var(--land-hover);
+  transform: scale(1.025);
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.7));
+}
+path.state.has-content:hover {
+  fill: var(--gold-soft);
+  filter: drop-shadow(0 8px 18px rgba(201, 168, 76, 0.32));
+}
+path.state.selected {
+  fill: var(--gold-deep) !important;
+  filter: drop-shadow(0 4px 12px rgba(140, 115, 48, 0.55));
+}
+
+/* West-to-east entrance. Opacity only — never collides with hover transform. */
+path.state.intro {
+  opacity: 0;
+  animation: settleIn 600ms cubic-bezier(0.2, 0, 0.2, 1) forwards;
+}
+@keyframes settleIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── LABELS ──────────────────────────────────────────────────── */
+text.state-label {
+  fill: rgba(240, 230, 204, 0.72);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  pointer-events: none;
+  text-rendering: optimizeLegibility;
+}
+text.state-label.has-content { fill: rgba(15, 12, 4, 0.88); }
+
+text.callout-label {
+  fill: var(--quiet);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600; font-size: 10.5px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  transition: fill 0.18s;
+  cursor: pointer;
+}
+text.callout-label.has-content { fill: var(--gold); }
+text.callout-label:hover { fill: var(--display); }
+
+@media (hover: none) {
+  text.callout-label {
+    font-size: 12px;
+    stroke: transparent;
+    stroke-width: 12px;
+    paint-order: stroke fill;
+  }
+}
+
+path.has-content-marker {
+  fill: var(--display);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+/* ── STATUS LINE ─────────────────────────────────────────────── */
+.status-line {
+  display: flex; align-items: center;
+  min-height: 26px; margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--quieter);
+  transition: color 180ms;
+}
+.status-line .status-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic; font-size: 16px;
+  letter-spacing: 0; text-transform: none;
+  color: var(--body); margin-right: 14px;
+}
+.status-line.has .status-name { color: var(--gold-soft); }
+.status-line .hint { margin-left: auto; opacity: 0.7; }
+
+/* ── ARTICLE PANEL ───────────────────────────────────────────── */
+.panel {
+  margin-top: 56px;
+  padding: 56px 0 0;
+  border-top: 1px solid var(--rule-strong);
+  display: none;
+  animation: panelIn 420ms cubic-bezier(0.2, 0, 0.2, 1);
+}
+.panel.active { display: block; }
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.panel-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 48px; gap: 32px;
+}
+.panel-eyebrow {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.38em; text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.panel-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(34px, 4.4vw, 54px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.005em;
+  color: var(--display);
+  margin: 0;
+}
+.panel-meta {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 15px; color: var(--quiet);
+  margin-top: 14px;
+}
+.close-btn {
+  background: none;
+  border: 1px solid var(--rule-strong);
+  color: var(--gold);
+  padding: 12px 22px;
+  cursor: pointer;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  transition: all 220ms;
+  flex-shrink: 0;
+}
+.close-btn:hover {
+  color: var(--bg-deepest);
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+/* Issue list — a quiet table of contents, not a grid of cards. */
+.issue-list { display: flex; flex-direction: column; }
+.issue-entry {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 40px;
+  align-items: baseline;
+  padding: 32px 0;
+  border-top: 1px solid var(--rule);
+  text-decoration: none; color: inherit;
+  transition: padding 320ms cubic-bezier(0.2, 0, 0.2, 1);
+}
+.issue-entry:first-child { border-top: none; padding-top: 12px; }
+.issue-entry:last-child { border-bottom: 1px solid var(--rule); }
+.issue-entry:hover { padding-left: 16px; }
+.issue-entry:hover .issue-title { color: var(--gold-soft); }
+.issue-entry:hover .issue-arrow {
+  transform: translateX(6px); color: var(--gold);
+}
+
+.issue-num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--quietest);
+  letter-spacing: 0.04em;
+}
+.issue-body { min-width: 0; }
+.issue-meta {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 11px; letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--quiet);
+  margin-bottom: 10px;
+}
+.issue-meta .ref {
+  color: var(--gold);
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+/* Recommendation label — the at-a-glance shorthand of CCTE's stance,
+   shown above each issue title in the panel and on state pages.
+   Differentiated by intensity rather than hue so the visual system
+   stays all-gold: bright gold for Oppose/Support (assertive calls),
+   deeper gold for Caution (present but reserved), neutral cream-gray
+   for Discernment (intentionally non-directive). The word does the
+   directional work; the chrome stays consistent across all four. */
+.issue-rec {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  margin: 4px 0 14px;
+  color: var(--gold);
+}
+.issue-rec .rec-mark {
+  font-size: 9px;
+  margin-right: 12px;
+  vertical-align: 2px;
+}
+.issue-rec--oppose,
+.issue-rec--support {
+  color: var(--gold);
+}
+.issue-rec--caution {
+  color: var(--gold-deep);
+}
+.issue-rec--discernment {
+  color: var(--quiet);
+}
+
+.issue-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(22px, 2.1vw, 28px);
+  line-height: 1.2;
+  color: var(--display);
+  margin: 0 0 12px;
+  letter-spacing: -0.003em;
+  transition: color 220ms;
+}
+.issue-excerpt {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 16.5px; line-height: 1.7;
+  color: var(--body);
+  margin: 0 0 14px;
+  max-width: 64ch;
+}
+.issue-stance {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 11px; letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--quiet);
+}
+.issue-stance .stance-mark {
+  color: var(--gold); font-size: 9px;
+  transform: translateY(-1px);
+}
+.issue-arrow {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--quietest);
+  transition: transform 280ms cubic-bezier(0.2, 0, 0.2, 1), color 220ms;
+  align-self: center;
+}
+
+.empty-msg {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  color: var(--quiet);
+  font-size: 19px;
+  margin: 0;
+  padding: 24px 0;
+  line-height: 1.5;
+}
+.empty-msg a {
+  color: var(--gold-soft);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 1px;
+}
+
+/* ── CALL-TO-ACTION BLOCK ────────────────────────────────────── */
+.cta-block {
+  margin-top: 80px;
+  padding: 56px 32px;
+  background: var(--bg-deepest);
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--border-card);
+  text-align: center;
+}
+.cta-block .cta-eyebrow {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 11px; letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 16px;
+}
+.cta-block .cta-headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(24px, 2.5vw, 30px);
+  color: var(--display);
+  margin: 0 0 14px;
+  line-height: 1.3;
+}
+.cta-block .cta-sub {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--quiet);
+  margin: 0 auto 32px;
+  max-width: 52ch;
+  line-height: 1.65;
+}
+.cta-block .cta-btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--bg-deepest);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 16px 40px;
+  transition: background 220ms;
+}
+.cta-block .cta-btn:hover {
+  background: var(--gold-soft);
+}
+
+/* ── COLOPHON ────────────────────────────────────────────────── */
+.colophon {
+  background: var(--bg-deepest);
+  padding: 44px 32px 48px;
+  border-top: 1px solid var(--border-card);
+  text-align: center;
+}
+.colophon-mark {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 15px; letter-spacing: 0.06em;
+  color: var(--gold);
+  margin: 0 0 6px;
+}
+.colophon-url {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 14px;
+  color: var(--quiet);
+  margin: 0 0 24px;
+}
+.colophon-url a {
+  color: var(--gold) !important;
+  text-decoration: none;
+}
+.colophon-rule {
+  width: 32px; height: 1px;
+  background: var(--quietest);
+  margin: 0 auto 24px;
+}
+.colophon-fine {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 12px; color: var(--quietest);
+  line-height: 1.7;
+  max-width: 56ch;
+  margin: 0 auto;
+}
+
+.loading {
+  color: var(--quiet); padding: 80px 20px;
+  text-align: center;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 18px;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE — tablet (≤900px) and phone (≤600px)
+   ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .feature { padding: 56px 40px 0; }
+  .headline { font-size: clamp(36px, 7vw, 60px); }
+  .info-bar { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .info-bar .meta { margin-left: 0; flex-wrap: wrap; gap: 18px; }
+  .issue-entry { gap: 28px; }
+}
+
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .page-wrap { padding: 12px 0; }
+  .feature {
+    padding: 40px 20px 0;
+    border-left: 0; border-right: 0;
+  }
+  .masthead {
+    padding-bottom: 16px; margin-bottom: 36px;
+    font-size: 10px; letter-spacing: 0.24em; gap: 10px;
+  }
+  .masthead-mark { font-size: 15px; }
+  .kicker { font-size: 10px; letter-spacing: 0.32em; margin-bottom: 20px; }
+  .headline {
+    font-size: clamp(32px, 9vw, 44px);
+    max-width: 100%;
+    line-height: 1.08;
+    margin-bottom: 16px;
+  }
+  .deck {
+    font-size: 17px; line-height: 1.65;
+    max-width: 100%;
+  }
+  .info-bar {
+    flex-direction: column; align-items: flex-start; gap: 10px;
+    padding: 16px 0; margin-bottom: 40px;
+  }
+  .info-bar .by { font-size: 14px; }
+  .info-bar .meta {
+    margin-left: 0; flex-wrap: wrap; gap: 12px 18px;
+    font-size: 10px; letter-spacing: 0.2em;
+  }
+
+  .map-stage { padding: 18px 14px 14px; }
+  .map-caption {
+    flex-direction: column; align-items: flex-start; gap: 6px;
+    padding-bottom: 12px;
+  }
+  .map-caption .figure { font-size: 9px; letter-spacing: 0.26em; }
+  .map-caption .figure-title { font-size: 13px; }
+
+  text.state-label { display: none; }
+  path.has-content-marker { opacity: 1; }
+  text.callout-label { font-size: 10px; letter-spacing: 0.14em; }
+
+  .status-line {
+    flex-direction: column; align-items: flex-start; gap: 6px;
+    padding-top: 12px; min-height: 32px;
+  }
+  .status-line .status-name { font-size: 15px; margin-right: 0; }
+  .status-line .hint { margin-left: 0; font-size: 10px; }
+
+  path.state:hover {
+    transform: none;
+    filter: none;
+  }
+  path.state.has-content:hover {
+    filter: none;
+  }
+  path.state.selected {
+    transform: scale(1.04);
+    filter: drop-shadow(0 6px 14px rgba(140, 115, 48, 0.7));
+  }
+
+  .panel { padding-top: 40px; margin-top: 40px; }
+  .panel-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+  .panel-title { font-size: clamp(28px, 7vw, 40px); }
+  .panel-meta { font-size: 14px; margin-top: 10px; }
+  .close-btn {
+    align-self: flex-start;
+    padding: 10px 18px; font-size: 10px;
+  }
+
+  .issue-entry {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 24px 0;
+  }
+  .issue-entry:hover { padding-left: 0; }
+  .issue-num, .issue-arrow { display: none; }
+  .issue-meta {
+    font-size: 10px; letter-spacing: 0.2em;
+    flex-wrap: wrap;
+  }
+  .issue-rec {
+    font-size: 10px;
+    letter-spacing: 0.26em;
+    margin: 2px 0 10px;
+  }
+  .issue-title { font-size: clamp(20px, 5vw, 24px); margin-bottom: 10px; }
+  .issue-excerpt { font-size: 15.5px; line-height: 1.6; }
+  .issue-stance { font-size: 10px; letter-spacing: 0.18em; }
+
+  .cta-block { margin-top: 56px; padding: 40px 20px; }
+  .cta-block .cta-headline { font-size: 22px; }
+  .cta-block .cta-sub { font-size: 15px; }
+  .cta-block .cta-btn {
+    padding: 14px 32px; font-size: 11px;
+    letter-spacing: 0.26em;
+  }
+
+  .colophon { padding: 32px 20px 36px; }
+  .colophon-mark { font-size: 13px; }
+  .colophon-url { font-size: 13px; }
+  .colophon-fine { font-size: 11px; }
+}
+
+/* Coarse-pointer detection — phones, tablets, anything without
+   a fine hover-capable pointer. Disables hover transforms and
+   dimming since they create flicker on touch interactions. */
+@media (hover: none) {
+  path.state:hover { transform: none; filter: none; }
+  path.state.has-content:hover { filter: none; }
+  .main-states.has-hover path.state { opacity: 1; }
+  .issue-entry:hover { padding-left: 0; }
+  .issue-entry:hover .issue-title { color: var(--display); }
+  .issue-entry:hover .issue-arrow { transform: none; color: var(--quietest); }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   MEASURE ARTICLE — the third tier of the URL architecture.
+   Deep analysis of an individual ballot measure. The visual system
+   matches the rest of the Atlas (same palette, typography stack,
+   gold rules) but introduces a few new components: the bottom-line
+   italic paragraph (quotable for AI citation), the recommendation
+   block (the editorial spine — type label, imperative verb, gold-rule
+   divider, rationale prose), the body-prose section for the deeper
+   analysis, and the FAQ.
+   ──────────────────────────────────────────────────────────────── */
+
+/* Breadcrumb nav — used on state pages (one link back to the map)
+   and on measure pages (two-segment trail: map › state). Always at
+   the top of the article, just below the masthead. */
+.meas-breadcrumb {
+  display: block;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+}
+.meas-breadcrumb a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 220ms;
+}
+.meas-breadcrumb a:hover { color: var(--gold-soft); }
+.meas-breadcrumb .sep {
+  margin: 0 12px;
+  color: var(--quietest);
+}
+
+.meas-context {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--quiet);
+  margin-bottom: 22px;
+}
+.meas-context .ref-label {
+  color: var(--gold);
+  font-weight: 600;
+  margin-right: 14px;
+}
+
+.bottom-line {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.5;
+  color: var(--display-2);
+  margin: 0 0 56px;
+  max-width: 58ch;
+}
+
+.recommendation {
+  margin: 48px 0 64px;
+  padding: 48px 0 56px;
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--rule);
+}
+.recommendation-eyebrow {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.38em; text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 20px;
+}
+.recommendation-eyebrow .rec-mark {
+  font-size: 9px;
+  margin-right: 14px;
+  vertical-align: 2px;
+}
+.recommendation-verb {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(28px, 3.4vw, 42px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.005em;
+  color: var(--display);
+  margin: 0 0 0;
+  max-width: 22ch;
+}
+.recommendation .gold-rule { margin: 18px 0 28px; }
+.recommendation-rationale {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.78;
+  color: var(--body);
+  max-width: 64ch;
+}
+.recommendation-rationale p { margin: 0 0 1.1em; }
+.recommendation-rationale p:last-child { margin-bottom: 0; }
+
+/* Body markdown — the deeper analysis below the recommendation. */
+.prose {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 17.5px;
+  line-height: 1.78;
+  color: var(--body);
+  max-width: 64ch;
+}
+.prose h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(24px, 2.4vw, 30px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--display);
+  letter-spacing: -0.003em;
+  margin: 2.2em 0 0.7em;
+}
+.prose h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--display);
+  margin: 1.8em 0 0.5em;
+}
+.prose p { margin: 0 0 1.1em; }
+.prose strong { color: var(--display); font-weight: 600; }
+.prose em { color: var(--display-2); }
+.prose a {
+  color: var(--gold-soft);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold-ghost);
+  transition: border-color 220ms;
+}
+.prose a:hover { border-bottom-color: var(--gold); }
+.prose blockquote {
+  border-left: 2px solid var(--gold);
+  margin: 1.8em 0;
+  padding: 0.1em 0 0.1em 28px;
+  font-style: italic;
+  color: var(--display-2);
+}
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose ul, .prose ol {
+  margin: 0 0 1.1em;
+  padding-left: 1.5em;
+}
+.prose li { margin-bottom: 0.4em; }
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 2em 0;
+}
+
+/* FAQ — backed by FAQPage JSON-LD for AI citation and "People Also
+   Ask" eligibility. Visual treatment matches the issue-list. */
+.faq { margin: 64px 0 0; }
+.faq-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(26px, 2.8vw, 34px);
+  font-weight: 700;
+  color: var(--display);
+  letter-spacing: -0.003em;
+  margin: 0 0 32px;
+}
+.faq-list { margin: 0; padding: 0; }
+.faq-entry {
+  border-top: 1px solid var(--rule);
+  padding: 28px 0;
+}
+.faq-entry:last-child { border-bottom: 1px solid var(--rule); }
+.faq-question {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--display);
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+.faq-answer {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: var(--body);
+  margin: 0;
+  max-width: 64ch;
+}
+
+.byline {
+  margin: 64px 0 0;
+  padding: 28px 0 0;
+  border-top: 1px solid var(--rule);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--quiet);
+  line-height: 1.6;
+}
+.byline strong {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--display);
+  font-family: 'Playfair Display', Georgia, serif;
+}
+.byline time { color: var(--quiet); }
+
+/* Phone-tier overrides for measure pages */
+@media (max-width: 600px) {
+  .meas-breadcrumb {
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    margin-bottom: 24px;
+  }
+  .meas-context {
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    margin-bottom: 16px;
+  }
+  .bottom-line {
+    font-size: 18px;
+    margin-bottom: 36px;
+  }
+  .recommendation {
+    margin: 32px 0 40px;
+    padding: 32px 0 40px;
+  }
+  .recommendation-verb {
+    font-size: clamp(24px, 7vw, 32px);
+  }
+  .recommendation-rationale { font-size: 16.5px; }
+  .prose { font-size: 16.5px; }
+  .prose h2 { font-size: 22px; }
+  .prose h3 { font-size: 18px; }
+  .faq { margin-top: 40px; }
+  .faq-question { font-size: 18px; }
+  .faq-answer { font-size: 15.5px; }
+  .byline { margin-top: 40px; }
+}

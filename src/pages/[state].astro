@@ -1,0 +1,159 @@
+---
+// STATE OVERVIEW PAGE — served at /ballot-atlas/<state-slug>
+//
+// Generated statically at build time, one page per entry in the
+// `states` content collection. Every state has a page — including
+// those without tracked measures, which render the empty message.
+//
+// This is the cold-load destination for /ballot-atlas/<state-slug>.
+// A user landing here from Google, an LLM citation, or a shared link
+// gets a fully-rendered HTML article with the same content (state
+// name, summary, issue list, recommendations) that the map's panel
+// would show. Same source of truth (the IssueList component), two
+// presentations.
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import IssueList from '../components/IssueList.astro';
+import Masthead from '../components/Masthead.astro';
+import CtaBlock from '../components/CtaBlock.astro';
+import Colophon from '../components/Colophon.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const states = await getCollection('states');
+  const allMeasures = await getCollection('measures');
+
+  return states.map((state) => {
+    const measures = allMeasures
+      .filter((m) => m.id.startsWith(state.id + '/'))
+      .sort((a, b) =>
+        a.data.date_on_ballot.getTime() - b.data.date_on_ballot.getTime()
+      );
+    return {
+      params: { state: state.id },
+      props: { state, measures },
+    };
+  });
+}
+
+interface Props {
+  state: CollectionEntry<'states'>;
+  measures: CollectionEntry<'measures'>[];
+}
+
+const { state, measures } = Astro.props as Props;
+const hasMeasures = measures.length > 0;
+
+// Page metadata
+const pageTitle = `Ballot Issues in ${state.data.name} · The Ballot Atlas`;
+const pageDescription = state.data.summary;
+
+// Canonical URL — always points to the production hostname (set by
+// `site` in astro.config.mjs), regardless of where this build runs
+// (local dev, Netlify staging, or Cloudflare-proxied production).
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
+
+function formatLongDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
+// CollectionPage JSON-LD. For has-content states, the mainEntity is an
+// ItemList of the measures, which gives search engines and LLMs a
+// structured link from the state page to each measure article.
+const jsonLd: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: `Ballot Issues in ${state.data.name}`,
+  description: state.data.summary,
+  url: canonicalUrl,
+  dateModified: state.data.last_updated.toISOString().split('T')[0],
+  inLanguage: 'en-US',
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'The Ballot Atlas',
+    url: 'https://thinkchristian.com/ballot-atlas',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'The Center for Christian Thought and Ethics',
+    url: 'https://thinkchristian.com',
+  },
+};
+
+if (hasMeasures) {
+  jsonLd.mainEntity = {
+    '@type': 'ItemList',
+    itemListElement: measures.map((m, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: new URL(`/ballot-atlas/${m.id}`, Astro.site).toString(),
+      name: m.data.title,
+    })),
+  };
+}
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonical={canonicalUrl}
+>
+  <script
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify(jsonLd)}
+  />
+
+  <div class="page-wrap">
+    <article class="feature">
+
+      <Masthead />
+
+
+      <nav class="meas-breadcrumb" aria-label="Breadcrumb">
+        <a href="/ballot-atlas">← The Ballot Atlas</a>
+      </nav>
+
+      <div class="panel-eyebrow">Ballot Issues In</div>
+      <h1 class="headline">{state.data.name}</h1>
+      <div class="gold-rule"></div>
+      <p class="deck">{state.data.summary}</p>
+
+      <div class="info-bar">
+        <div class="by">
+          A project of <strong>The Center for Christian Thought and Ethics</strong>
+        </div>
+        <div class="meta">
+          <span>
+            <span class="dot"></span>
+            Updated <time datetime={state.data.last_updated.toISOString().split('T')[0]}>
+              {formatLongDate(state.data.last_updated)}
+            </time>
+          </span>
+          {hasMeasures && (
+            <span>{measures.length} {measures.length === 1 ? 'Measure' : 'Measures'} Tracked</span>
+          )}
+        </div>
+      </div>
+
+      {hasMeasures ? (
+        <IssueList measures={measures} />
+      ) : (
+        <p class="empty-msg">
+          We are not currently tracking ballot measures of moral concern in
+          {' '}{state.data.name} for this cycle.
+          {' '}
+          <a href="mailto:contact@thinkchristian.com">Notify us of an issue we should cover →</a>
+        </p>
+      )}
+
+      <CtaBlock />
+      <Colophon />
+
+    </article>
+  </div>
+</BaseLayout>
