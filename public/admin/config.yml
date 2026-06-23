@@ -1,0 +1,278 @@
+# ════════════════════════════════════════════════════════════════
+# Sveltia CMS — schema configuration for The Ballot Atlas
+# ════════════════════════════════════════════════════════════════
+#
+# This file describes the two content collections (states and measures)
+# in a CMS-friendly format. When an editor logs in at /admin, Sveltia
+# reads this file and generates form-based editing UIs from these
+# definitions: dropdowns for enums, date pickers for dates, repeating
+# fieldsets for the FAQ list, a rich-text editor for the body, etc.
+#
+# Every save in the CMS produces a real git commit in
+# scjohnson9/ballot-atlas, which Netlify then auto-deploys.
+#
+# The schema mirrors src/content.config.ts as closely as possible.
+# If you change one, change the other.
+
+# ── BACKEND ──────────────────────────────────────────────────────
+# Sveltia uses Netlify's built-in OAuth proxy by default when no
+# explicit auth backend is configured. That's what we want here:
+# the site is hosted on Netlify, so no separate auth infrastructure
+# is needed beyond a GitHub OAuth App registered with Netlify.
+backend:
+  name: github
+  repo: scjohnson9/ballot-atlas
+  branch: main
+
+# Where media uploads (future images) go. Currently unused; reserved
+# for future when measures include OG/social images.
+media_folder: public/uploads
+public_folder: /uploads
+
+# Site URL — used by the CMS to generate "Preview" links to a live
+# version of an entry. Points at the Netlify staging URL since the
+# production proxy is currently disabled.
+site_url: https://loquacious-capybara-efedad.netlify.app
+
+# Direct-publish workflow. Editor saves → commit goes straight to main.
+# Switch to `editorial_workflow` later if you want a review step.
+publish_mode: simple
+
+# ── COLLECTIONS ──────────────────────────────────────────────────
+collections:
+
+  # ── STATES ────────────────────────────────────────────────────
+  - name: states
+    label: States
+    label_singular: State
+    description: >
+      One entry per U.S. state plus DC. Every state has a page on the
+      Atlas; the summary is what readers see at the top of that page
+      and (for states without measures) explains the empty status.
+    folder: src/content/states
+    extension: md
+    format: yaml-frontmatter
+    create: false  # All 51 states already exist; editors only update.
+    delete: false  # Hard rule: never delete a state file.
+    slug: '{{fields.usps | downcase}}'
+    summary: '{{name}} ({{usps}})'
+    sortable_fields: [name, last_updated]
+    fields:
+      - label: Name
+        name: name
+        widget: string
+        hint: "Full state name, e.g. 'Florida'."
+      - label: USPS Code
+        name: usps
+        widget: string
+        hint: "Two-letter USPS abbreviation, e.g. 'FL'. Must be uppercase."
+        pattern: ['^[A-Z]{2}$', 'Must be exactly 2 uppercase letters']
+      - label: Summary
+        name: summary
+        widget: text
+        hint: >
+          The intro paragraph shown on the state page. For states without
+          tracked measures, this is what visitors read instead of an
+          issue list. 1–3 sentences. Minimum 40 characters.
+      - label: Last Updated
+        name: last_updated
+        widget: datetime
+        date_format: 'YYYY-MM-DD'
+        time_format: false
+        picker_utc: true
+
+  # ── MEASURES ──────────────────────────────────────────────────
+  - name: measures
+    label: Measures
+    label_singular: Measure
+    description: >
+      One entry per ballot measure CCTE tracks. Lives at
+      /ballot-atlas/<state>/<measure-slug>. The "State" field at the
+      top of the form determines which state folder the file gets saved
+      into — pick the state first, then fill in the rest.
+    folder: src/content/measures
+    extension: md
+    format: yaml-frontmatter
+    create: true
+    delete: false  # Don't allow deletion from CMS; retire by editing instead.
+    # Dynamic path: a measure for Florida saves to florida/<slug>.md
+    # under src/content/measures/. The {{state}} placeholder resolves
+    # to the value of the State field below.
+    path: '{{state}}/{{slug}}'
+    slug: '{{ref | slug}}-{{title | slug}}'
+    summary: '{{title}} ({{ref}}) · {{recommendation.type}}'
+    sortable_fields: [date_on_ballot, last_reviewed, title]
+    preview_path: 'ballot-atlas/{{state}}/{{slug}}'
+    fields:
+
+      - label: State
+        name: state
+        widget: select
+        hint: "Which state's ballot this measure appears on. Determines the folder the file is saved to."
+        options:
+          - { value: alabama, label: Alabama }
+          - { value: alaska, label: Alaska }
+          - { value: arizona, label: Arizona }
+          - { value: arkansas, label: Arkansas }
+          - { value: california, label: California }
+          - { value: colorado, label: Colorado }
+          - { value: connecticut, label: Connecticut }
+          - { value: delaware, label: Delaware }
+          - { value: district-of-columbia, label: District of Columbia }
+          - { value: florida, label: Florida }
+          - { value: georgia, label: Georgia }
+          - { value: hawaii, label: Hawaii }
+          - { value: idaho, label: Idaho }
+          - { value: illinois, label: Illinois }
+          - { value: indiana, label: Indiana }
+          - { value: iowa, label: Iowa }
+          - { value: kansas, label: Kansas }
+          - { value: kentucky, label: Kentucky }
+          - { value: louisiana, label: Louisiana }
+          - { value: maine, label: Maine }
+          - { value: maryland, label: Maryland }
+          - { value: massachusetts, label: Massachusetts }
+          - { value: michigan, label: Michigan }
+          - { value: minnesota, label: Minnesota }
+          - { value: mississippi, label: Mississippi }
+          - { value: missouri, label: Missouri }
+          - { value: montana, label: Montana }
+          - { value: nebraska, label: Nebraska }
+          - { value: nevada, label: Nevada }
+          - { value: new-hampshire, label: New Hampshire }
+          - { value: new-jersey, label: New Jersey }
+          - { value: new-mexico, label: New Mexico }
+          - { value: new-york, label: New York }
+          - { value: north-carolina, label: North Carolina }
+          - { value: north-dakota, label: North Dakota }
+          - { value: ohio, label: Ohio }
+          - { value: oklahoma, label: Oklahoma }
+          - { value: oregon, label: Oregon }
+          - { value: pennsylvania, label: Pennsylvania }
+          - { value: rhode-island, label: Rhode Island }
+          - { value: south-carolina, label: South Carolina }
+          - { value: south-dakota, label: South Dakota }
+          - { value: tennessee, label: Tennessee }
+          - { value: texas, label: Texas }
+          - { value: utah, label: Utah }
+          - { value: vermont, label: Vermont }
+          - { value: virginia, label: Virginia }
+          - { value: washington, label: Washington }
+          - { value: west-virginia, label: West Virginia }
+          - { value: wisconsin, label: Wisconsin }
+          - { value: wyoming, label: Wyoming }
+
+      - label: Title
+        name: title
+        widget: string
+        hint: "Full editorial title, e.g. 'The Abortion Rights Amendment'."
+
+      - label: Reference
+        name: ref
+        widget: string
+        hint: "Short legislative ref, e.g. 'Amendment 4', 'Prop 139', 'I-2117'."
+
+      - label: Date on Ballot
+        name: date_on_ballot
+        widget: datetime
+        date_format: 'YYYY-MM-DD'
+        time_format: false
+        picker_utc: true
+        hint: "The election day this measure is decided. Format: YYYY-MM-DD."
+
+      - label: Excerpt
+        name: excerpt
+        widget: text
+        hint: >
+          One-sentence summary shown on the map panel and state-page
+          issue lists. 40–280 characters. This is what catches the
+          reader's eye before they click in.
+        pattern: ['^[\s\S]{40,280}$', 'Must be 40–280 characters']
+
+      - label: Stance
+        name: stance
+        widget: string
+        hint: >
+          Short moral category shown under the excerpt with a diamond
+          marker. Examples: 'Life · The Unborn', 'Civic Order · Prudence',
+          'Stewardship · Civic Order'.
+
+      - label: Bottom Line
+        name: bottom_line
+        widget: text
+        hint: >
+          The quotable, AI-citation-friendly synopsis. Shown in italic
+          Playfair right under the headline. Should stand on its own
+          if pulled out as a quote. 50–400 characters. Lead with
+          'CCTE opposes/supports/counsels...' so attribution travels
+          with the quote.
+        pattern: ['^[\s\S]{50,400}$', 'Must be 50–400 characters']
+
+      - label: Recommendation
+        name: recommendation
+        widget: object
+        hint: "The editorial spine. Type drives the at-a-glance label across the site; Verb is the prominent display imperative; Rationale is the supporting argument."
+        fields:
+          - label: Type
+            name: type
+            widget: select
+            default: Discernment
+            options:
+              - { value: Oppose, label: "Oppose — clear editorial No" }
+              - { value: Support, label: "Support — clear editorial Yes" }
+              - { value: Caution, label: "Caution — flag concerns, no flat call" }
+              - { value: Discernment, label: "Discernment — explicitly non-directive" }
+          - label: Verb
+            name: verb
+            widget: string
+            hint: >
+              Short imperative phrase rendered in display type, e.g.
+              'Vote No on Amendment 4', 'Approach with Caution',
+              'A Question for Discernment'.
+          - label: Rationale
+            name: rationale
+            widget: text
+            hint: >
+              1–3 paragraphs of moral-theological reasoning. Separate
+              paragraphs with a blank line. Appears in the recommendation
+              block under the gold rule.
+
+      - label: FAQ
+        name: faq
+        widget: list
+        label_singular: FAQ Entry
+        hint: >
+          Frequently asked questions about this measure. Each entry
+          becomes a Q&A block on the page AND a Question/Answer pair
+          in the FAQPage JSON-LD that search engines and LLMs read.
+          Aim for 3–5 entries.
+        summary: '{{fields.question}}'
+        fields:
+          - { label: Question, name: question, widget: string }
+          - label: Answer
+            name: answer
+            widget: text
+            hint: "One paragraph. Direct, factual, citation-quotable."
+
+      - label: Author
+        name: author
+        widget: string
+        default: "CCTE Editorial Team"
+        hint: "Byline. Defaults to CCTE Editorial Team."
+
+      - label: Last Reviewed
+        name: last_reviewed
+        widget: datetime
+        date_format: 'YYYY-MM-DD'
+        time_format: false
+        picker_utc: true
+        hint: "Date this analysis was last reviewed. Format: YYYY-MM-DD."
+
+      - label: Body
+        name: body
+        widget: markdown
+        hint: >
+          The deeper editorial analysis. Below the recommendation block.
+          Use section headings (##) to break it up — typical structure
+          is 'The Legal Question', 'The Moral Question', 'What the Vote
+          Means'. Supports rich text, links, bold, italic, blockquotes.

@@ -1,4 +1,5 @@
 ---
+state: florida
 title: Recreational Use of Marijuana
 ref: Amendment 3
 date_on_ballot: 2024-11-05

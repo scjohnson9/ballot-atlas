@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Don't let search engines index the admin UI. -->
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Ballot Atlas — Editor</title>
+  </head>
+  <body>
+    <!--
+      Sveltia CMS — a modern, lightweight, Git-based content management
+      system. Drops in as this single script tag. Loads the config from
+      ./config.yml (same folder) at runtime.
+
+      Editors visit /admin to land here, authenticate via GitHub, then
+      get a form-based UI for editing states and measures. Every save
+      becomes a real git commit in scjohnson9/ballot-atlas.
+    -->
+    <script type="module" src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+  </body>
+</html>

@@ -1,4 +1,5 @@
 ---
+state: florida
 title: The Abortion Rights Amendment
 ref: Amendment 4
 date_on_ballot: 2024-11-05

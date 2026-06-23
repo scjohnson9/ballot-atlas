@@ -49,6 +49,12 @@ const states = defineCollection({
 const measures = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/measures' }),
   schema: z.object({
+    // The state field is duplicated from the file's folder path so the
+    // CMS can drive folder placement from a dropdown rather than asking
+    // editors to navigate the folder tree. The folder path remains the
+    // routing source of truth (see src/pages/[state]/[measure].astro),
+    // but Zod validates that the frontmatter field is present.
+    state: z.string(),
     title: z.string(),                       // "The Abortion Rights Amendment"
     ref: z.string(),                         // "Amendment 4"
     date_on_ballot: z.coerce.date(),
