@@ -23,9 +23,17 @@ export async function getStaticPaths() {
   const states = await getCollection('states');
   const allMeasures = await getCollection('measures');
 
+  // Date-based current-cycle filter. Measures with an election date
+  // in the past are hidden from this state's issue list, but their
+  // individual articles (src/pages/[state]/[measure].astro) still
+  // generate, so deep-link URLs continue to resolve.
+  const todayStart = new Date();
+  todayStart.setHours(0, 0, 0, 0);
+
   return states.map((state) => {
     const measures = allMeasures
       .filter((m) => m.id.startsWith(state.id + '/'))
+      .filter((m) => m.data.date_on_ballot >= todayStart)
       .sort((a, b) =>
         a.data.date_on_ballot.getTime() - b.data.date_on_ballot.getTime()
       );
