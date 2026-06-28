@@ -100,7 +100,7 @@ collections:
     # to the value of the State field below.
     path: '{{state}}/{{slug}}'
     slug: '{{ref | slug}}-{{title | slug}}'
-    summary: '{{title}} ({{ref}}) · {{recommendation.type}}'
+    summary: '{{title}} ({{ref}}) · {{recommendation_type}}'
     sortable_fields: [date_on_ballot, last_reviewed, title]
     preview_path: 'ballot-atlas/{{state}}/{{slug}}'
     # Group-by options for the collection list view in the CMS sidebar.
@@ -219,6 +219,20 @@ collections:
           marker. Examples: 'Life · The Unborn', 'Civic Order · Prudence',
           'Stewardship · Civic Order'.
 
+      - label: Recommendation Type
+        name: recommendation_type
+        widget: select
+        default: Discernment
+        hint: >
+          The at-a-glance ◆ chip shown above the title in the issue list.
+          Differentiated visually by intensity: Oppose/Support in bright
+          gold, Caution in deeper gold, Discernment in quiet cream-gray.
+        options:
+          - { value: Oppose, label: "Oppose — clear editorial No" }
+          - { value: Support, label: "Support — clear editorial Yes" }
+          - { value: Caution, label: "Caution — flag concerns, no flat call" }
+          - { value: Discernment, label: "Discernment — explicitly non-directive" }
+
       # ──── 2. STANDALONE ARTICLE FIELDS (gated by the toggle below) ────
 
       - label: "━━━  Article Ready? — toggle ON to publish the standalone article below  ━━━"
@@ -247,39 +261,23 @@ collections:
           with the quote.
         pattern: ['^[\s\S]{50,400}$', 'Must be 50–400 characters']
 
-      - label: Recommendation
-        name: recommendation
-        widget: object
+      - label: Recommendation Verb
+        name: recommendation_verb
+        widget: string
         hint: >
-          The editorial spine. NOTE: Type ALSO appears on the issue
-          list as the at-a-glance ◆ chip, so it should be set even
-          for a stub. Verb and Rationale appear only on the standalone
-          detail page. Rationale is required to be 50+ chars when
-          Article Ready is on.
-        fields:
-          - label: Type
-            name: type
-            widget: select
-            default: Discernment
-            options:
-              - { value: Oppose, label: "Oppose — clear editorial No" }
-              - { value: Support, label: "Support — clear editorial Yes" }
-              - { value: Caution, label: "Caution — flag concerns, no flat call" }
-              - { value: Discernment, label: "Discernment — explicitly non-directive" }
-          - label: Verb
-            name: verb
-            widget: string
-            hint: >
-              Short imperative phrase rendered in display type, e.g.
-              'Vote No on Amendment 4', 'Approach with Caution',
-              'A Question for Discernment'.
-          - label: Rationale
-            name: rationale
-            widget: text
-            hint: >
-              1–3 paragraphs of moral-theological reasoning. Separate
-              paragraphs with a blank line. Appears in the recommendation
-              block under the gold rule.
+          Short imperative phrase rendered in display type at the top
+          of the standalone article's recommendation block, e.g.
+          'Vote No on Amendment 4', 'Approach with Caution',
+          'A Question for Discernment'. 3–80 characters.
+
+      - label: Recommendation Rationale
+        name: recommendation_rationale
+        widget: text
+        hint: >
+          1–3 paragraphs of moral-theological reasoning that justify
+          the Type and Verb above. Separate paragraphs with a blank
+          line. Appears under the gold rule on the standalone page.
+          Required to be 50+ characters when Article Ready is ON.
 
       - label: FAQ
         name: faq

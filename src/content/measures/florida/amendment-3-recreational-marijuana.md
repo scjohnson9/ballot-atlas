@@ -7,15 +7,14 @@ date_on_ballot: 2024-11-05
 excerpt: A constitutional amendment that would legalize recreational marijuana for adults over 21. A prudential question on which Christians may differ in good faith.
 stance: Civic Order · Prudence
 bottom_line: CCTE counsels discernment on Florida Amendment 3. The measure raises genuine prudential questions about public health, addiction, and the proper scope of state regulation that the historic Christian tradition does not settle in either direction.
-recommendation:
-  type: Discernment
-  verb: A Question for Discernment
-  rationale: |
-    Unlike measures touching the protection of nascent human life or the institution of marriage, the legalization of recreational marijuana sits in a domain the historic Christian moral tradition addresses through the broader category of prudence. Scripture cautions against drunkenness and self-indulgence but does not legislate the specific civil regime by which intoxicants are regulated.
+recommendation_type: Discernment
+recommendation_verb: A Question for Discernment
+recommendation_rationale: |
+  Unlike measures touching the protection of nascent human life or the institution of marriage, the legalization of recreational marijuana sits in a domain the historic Christian moral tradition addresses through the broader category of prudence. Scripture cautions against drunkenness and self-indulgence but does not legislate the specific civil regime by which intoxicants are regulated.
 
-    Christians of good faith disagree on whether legalization, prohibition, or measured decriminalization best serves the common good. Some emphasize the harms of black-market enforcement, the racial disparities in current criminal codes, and the importance of subsidiarity in matters of personal conduct. Others emphasize the documented public-health consequences of broad access, the difficulty of regulating high-potency products, and the risk to vulnerable populations including the young and the addicted.
+  Christians of good faith disagree on whether legalization, prohibition, or measured decriminalization best serves the common good. Some emphasize the harms of black-market enforcement, the racial disparities in current criminal codes, and the importance of subsidiarity in matters of personal conduct. Others emphasize the documented public-health consequences of broad access, the difficulty of regulating high-potency products, and the risk to vulnerable populations including the young and the addicted.
 
-    CCTE does not issue a recommendation on Amendment 3. We commend the question to careful, sober reflection — and we offer this analysis as an aid to that reflection, not a substitute for it.
+  CCTE does not issue a recommendation on Amendment 3. We commend the question to careful, sober reflection — and we offer this analysis as an aid to that reflection, not a substitute for it.
 faq:
   - question: What does Amendment 3 do?
     answer: Amendment 3 would legalize the recreational use of marijuana for adults over 21 in Florida, allowing possession and use of up to three ounces. It does not legalize home cultivation by individuals.

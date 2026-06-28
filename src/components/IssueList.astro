@@ -16,7 +16,7 @@
 // STUB BEHAVIOR: When a measure has article_ready: false, this
 // component renders it as a non-clickable <div> instead of a link,
 // with a small "Analysis in progress" eyebrow below the title.
-// All six discovery fields (ref, date_on_ballot, recommendation.type,
+// All six discovery fields (ref, date_on_ballot, recommendation_type,
 // title, excerpt, stance) still render — the measure is visible in
 // the list — but the user can't navigate to a detail page that hasn't
 // been written yet.
@@ -52,7 +52,7 @@ function formatDate(date: Date): string {
     // Oppose and Support both read as assertive editorial calls,
     // Caution as present but more reserved, Discernment as
     // intentionally neutral.
-    const recClass = `issue-rec issue-rec--${m.data.recommendation.type.toLowerCase()}`;
+    const recClass = `issue-rec issue-rec--${m.data.recommendation_type.toLowerCase()}`;
     const isReady = m.data.article_ready;
 
     // The inner content of an entry — identical for ready and stub
@@ -67,7 +67,7 @@ function formatDate(date: Date): string {
             {formatDate(m.data.date_on_ballot)}
           </div>
           <p class={recClass}>
-            <span class="rec-mark">◆</span>{m.data.recommendation.type}
+            <span class="rec-mark">◆</span>{m.data.recommendation_type}
           </p>
           <h3 class="issue-title">{m.data.title}</h3>
           {!isReady && (

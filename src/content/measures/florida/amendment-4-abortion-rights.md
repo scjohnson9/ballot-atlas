@@ -7,15 +7,14 @@ date_on_ballot: 2024-11-05
 excerpt: A proposed constitutional amendment that would establish a broad right to abortion. The most consequential life-issue measure on any state ballot this cycle.
 stance: Life · The Unborn
 bottom_line: CCTE opposes Florida Amendment 4. The measure would enshrine a near-unlimited right to abortion in the state constitution, removing existing protections for unborn children after viability and overriding the legislature's authority to regulate this practice.
-recommendation:
-  type: Oppose
-  verb: Vote No on Amendment 4
-  rationale: |
-    The historic Christian moral tradition affirms the personhood of the unborn from conception. Florida's current law, which protects most unborn children after six weeks, reflects a long-standing public moral consensus that human life in the womb is owed protection.
+recommendation_type: Oppose
+recommendation_verb: Vote No on Amendment 4
+recommendation_rationale: |
+  The historic Christian moral tradition affirms the personhood of the unborn from conception. Florida's current law, which protects most unborn children after six weeks, reflects a long-standing public moral consensus that human life in the womb is owed protection.
 
-    Amendment 4 would override that consensus by constitutionalizing a right to abortion that extends beyond the framework once set by Roe v. Wade. Its text — "no law shall prohibit, penalize, delay, or restrict abortion before viability" — leaves "viability" undefined and grants exclusive determination to "the patient's healthcare provider."
+  Amendment 4 would override that consensus by constitutionalizing a right to abortion that extends beyond the framework once set by Roe v. Wade. Its text — "no law shall prohibit, penalize, delay, or restrict abortion before viability" — leaves "viability" undefined and grants exclusive determination to "the patient's healthcare provider."
 
-    Christians may disagree about the prudence of specific abortion laws, but the question Amendment 4 puts to voters is more fundamental: whether the state's basic charter should declare a right to end nascent human life. The historic tradition answers that question with one voice.
+  Christians may disagree about the prudence of specific abortion laws, but the question Amendment 4 puts to voters is more fundamental: whether the state's basic charter should declare a right to end nascent human life. The historic tradition answers that question with one voice.
 faq:
   - question: What does Amendment 4 actually do?
     answer: Amendment 4 would add a section to the Florida Constitution declaring that no law shall prohibit, penalize, delay, or restrict abortion before viability or when necessary to protect the patient's health, as determined by the patient's healthcare provider.

@@ -90,7 +90,7 @@ function isoDate(date: Date): string {
 // paragraph breaks (YAML pipe-block). Split it into paragraphs so we
 // can render with proper <p> semantics rather than dumping it as a
 // blob.
-const rationaleParagraphs = data.recommendation.rationale
+const rationaleParagraphs = data.recommendation_rationale
   .split(/\n\s*\n/)
   .map((p) => p.trim())
   .filter(Boolean);
@@ -203,9 +203,9 @@ const jsonLd = {
 
       <aside class="recommendation" aria-label="CCTE Recommendation">
         <p class="recommendation-eyebrow">
-          <span class="rec-mark">◆</span>{data.recommendation.type}
+          <span class="rec-mark">◆</span>{data.recommendation_type}
         </p>
-        <h2 class="recommendation-verb">{data.recommendation.verb}</h2>
+        <h2 class="recommendation-verb">{data.recommendation_verb}</h2>
         <div class="gold-rule"></div>
         <div class="recommendation-rationale">
           {rationaleParagraphs.map((p) => <p>{p}</p>)}
