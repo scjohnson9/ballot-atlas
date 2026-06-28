@@ -112,20 +112,20 @@ collections:
         pattern: '\d{4}'
       - label: State
         field: state
+    # ═══════════════════════════════════════════════════════════════
+    # FIELD ORDER: form is structured as two sections.
+    #   1. ISSUE-LIST FIELDS — what appears on the map panel and on
+    #      each state's issue list. Required for a measure to show up
+    #      anywhere at all. These come first in the form.
+    #   2. STANDALONE ARTICLE FIELDS — what fills out the deep-link
+    #      detail page at /ballot-atlas/<state>/<slug>. The
+    #      article_ready toggle sits at the top of this section,
+    #      visually marking the boundary; toggling it on requires
+    #      that rationale and FAQ be filled out at full quality.
+    # ═══════════════════════════════════════════════════════════════
     fields:
 
-      - label: Article Ready?
-        name: article_ready
-        widget: boolean
-        default: false
-        hint: >
-          OFF (default) — the measure appears in the map and state-page
-          issue lists as a non-clickable "Analysis in progress" stub.
-          No standalone detail page is built. Use this while you're
-          still working on the rationale and FAQ.
-          ON — the standalone detail page is built and the entry
-          becomes clickable. Flip this on when the rationale (50+
-          characters) and at least one FAQ entry are written.
+      # ──── 1. ISSUE-LIST FIELDS (always required) ────
 
       - label: State
         name: state
@@ -219,6 +219,23 @@ collections:
           marker. Examples: 'Life · The Unborn', 'Civic Order · Prudence',
           'Stewardship · Civic Order'.
 
+      # ──── 2. STANDALONE ARTICLE FIELDS (gated by the toggle below) ────
+
+      - label: "━━━  Article Ready? — toggle ON to publish the standalone article below  ━━━"
+        name: article_ready
+        widget: boolean
+        default: false
+        hint: >
+          OFF (default) — the measure shows as a non-clickable
+          "Analysis in progress" stub in the issue list. No standalone
+          page is built. Use this while you're still drafting the
+          fields below.
+          ON — the standalone detail page at /ballot-atlas/<state>/<slug>
+          is built and the entry becomes clickable. Flipping this on
+          requires recommendation Rationale (50+ characters) and at
+          least one FAQ entry. The build will fail loudly if those
+          aren't met, so it's safe to toggle freely.
+
       - label: Bottom Line
         name: bottom_line
         widget: text
@@ -233,7 +250,12 @@ collections:
       - label: Recommendation
         name: recommendation
         widget: object
-        hint: "The editorial spine. Type drives the at-a-glance label across the site; Verb is the prominent display imperative; Rationale is the supporting argument."
+        hint: >
+          The editorial spine. NOTE: Type ALSO appears on the issue
+          list as the at-a-glance ◆ chip, so it should be set even
+          for a stub. Verb and Rationale appear only on the standalone
+          detail page. Rationale is required to be 50+ chars when
+          Article Ready is on.
         fields:
           - label: Type
             name: type
