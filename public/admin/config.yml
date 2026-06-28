@@ -103,6 +103,15 @@ collections:
     summary: '{{title}} ({{ref}}) · {{recommendation.type}}'
     sortable_fields: [date_on_ballot, last_reviewed, title]
     preview_path: 'ballot-atlas/{{state}}/{{slug}}'
+    # Group-by options for the collection list view in the CMS sidebar.
+    # Editor can toggle between viewing measures flat, by cycle year
+    # (extracted from date_on_ballot as a 4-digit year), or by state.
+    view_groups:
+      - label: Cycle Year
+        field: date_on_ballot
+        pattern: '\d{4}'
+      - label: State
+        field: state
     fields:
 
       - label: State
