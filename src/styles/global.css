@@ -474,6 +474,38 @@ path.has-content-marker {
   align-self: center;
 }
 
+/* Stub modifier — applied to measures whose article isn't yet ready.
+   The entry still displays the six discovery fields so readers can
+   see the measure exists and CCTE's position on it, but the entry
+   doesn't link anywhere (it's rendered as a <div>, not an <a>) and
+   the visual affordances of interactivity are suppressed: no hover
+   slide, no title color change, no arrow translation. A small italic
+   "Analysis in progress" line below the title carries the meaning. */
+.issue-entry--stub {
+  cursor: default;
+}
+.issue-entry--stub:hover {
+  padding-left: 0;
+}
+.issue-entry--stub:hover .issue-title {
+  color: var(--display);
+}
+.issue-entry--stub:hover .issue-arrow {
+  transform: none;
+  color: var(--quietest);
+}
+.issue-entry--stub .issue-arrow {
+  opacity: 0.3;
+}
+.issue-stub-label {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--quieter);
+  margin: 4px 0 14px;
+  letter-spacing: 0.02em;
+}
+
 .empty-msg {
   font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;

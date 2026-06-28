@@ -114,6 +114,19 @@ collections:
         field: state
     fields:
 
+      - label: Article Ready?
+        name: article_ready
+        widget: boolean
+        default: false
+        hint: >
+          OFF (default) — the measure appears in the map and state-page
+          issue lists as a non-clickable "Analysis in progress" stub.
+          No standalone detail page is built. Use this while you're
+          still working on the rationale and FAQ.
+          ON — the standalone detail page is built and the entry
+          becomes clickable. Flip this on when the rationale (50+
+          characters) and at least one FAQ entry are written.
+
       - label: State
         name: state
         widget: select

@@ -35,13 +35,20 @@ import {
 
 export async function getStaticPaths() {
   const measures = await getCollection('measures');
-  return measures.map((m) => {
-    const [state, measure] = m.id.split('/');
-    return {
-      params: { state, measure },
-      props: { entry: m },
-    };
-  });
+  // Only generate standalone pages for measures whose article is ready.
+  // Stubs (article_ready: false) still appear in discovery lists via
+  // IssueList, but have no detail page to navigate to — IssueList
+  // renders them as non-clickable. A direct visit to a stub URL
+  // returns the 404 page in the design system.
+  return measures
+    .filter((m) => m.data.article_ready)
+    .map((m) => {
+      const [state, measure] = m.id.split('/');
+      return {
+        params: { state, measure },
+        props: { entry: m },
+      };
+    });
 }
 
 interface Props {

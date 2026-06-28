@@ -1,5 +1,6 @@
 ---
 state: washington
+article_ready: true
 title: Repealing the Climate Commitment Act
 ref: I-2117
 date_on_ballot: 2024-11-05

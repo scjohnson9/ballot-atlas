@@ -17,14 +17,18 @@ import { glob } from 'astro/loaders';
 
 // The recommendation block is the editorial spine of every measure
 // page. Type is a closed enum so the design system can theme each
-// kind consistently (Oppose in gold-red, Support in gold-green, etc.,
-// to be settled when we style the block). Verb is the imperative
-// phrase rendered in display type at the top of the article; rationale
-// is the supporting argument in 1–3 paragraphs.
+// kind consistently. Verb is the imperative phrase rendered in
+// display type at the top of the article; rationale is the supporting
+// argument in 1–3 paragraphs.
+//
+// Note: rationale's minimum-length requirement is enforced conditionally
+// at the measures collection level — only when article_ready is true.
+// This lets editors save stubs (article_ready: false) with the
+// rationale field still empty or in-progress.
 const recommendation = z.object({
   type: z.enum(['Oppose', 'Support', 'Caution', 'Discernment']),
   verb: z.string().min(3).max(80),
-  rationale: z.string().min(50),
+  rationale: z.string().default(''),
 });
 
 // FAQ entries feed both an on-page FAQ section and the JSON-LD FAQPage
@@ -65,9 +69,31 @@ const measures = defineCollection({
     bottom_line: z.string().min(50).max(400),
     recommendation,
     faq: z.array(faqEntry).default([]),
+    // article_ready gates whether this measure has a standalone detail
+    // page. When false (the default for new entries), the measure
+    // appears in the map's issue list and the state-page issue list
+    // — as a non-clickable "Analysis in progress" stub — but no HTML
+    // file is generated at /ballot-atlas/<state>/<slug>. Toggle to
+    // true via the CMS when the rationale and FAQ are ready.
+    article_ready: z.boolean().default(false),
     author: z.string().default('CCTE Editorial Team'),
     last_reviewed: z.coerce.date(),
-  }),
+  }).refine(
+    // Conditional editorial quality gate. A measure being shown in
+    // discovery lists is fine with the loose rationale/FAQ defaults,
+    // but the moment you flip article_ready to true the build enforces
+    // the full editorial bar on the two slow fields. Catches accidental
+    // "publish before writing" before it ships.
+    (m) => {
+      if (!m.article_ready) return true;
+      return m.recommendation.rationale.length >= 50 && m.faq.length >= 1;
+    },
+    {
+      message:
+        "When article_ready is true, recommendation.rationale must be at least 50 characters and faq must have at least one entry. Either complete those fields or set article_ready to false.",
+      path: ['article_ready'],
+    }
+  ),
 });
 
 export const collections = { states, measures };

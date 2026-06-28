@@ -1,5 +1,6 @@
 ---
 state: colorado
+article_ready: true
 title: Constitutional Right to Abortion
 ref: Amendment 79
 date_on_ballot: 2024-11-05
