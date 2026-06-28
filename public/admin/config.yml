@@ -101,7 +101,14 @@ collections:
     path: '{{state}}/{{slug}}'
     slug: '{{ref | slug}}-{{title | slug}}'
     summary: '{{title}} ({{ref}}) · {{recommendation_type}}'
-    sortable_fields: [date_on_ballot, last_reviewed, title]
+    # Default sort: most recent first. This also drives the order of
+    # the "Cycle Year" view_groups, so 2028 will appear above 2026
+    # above 2024 — newest cycle on top as new cycles roll in.
+    sortable_fields:
+      fields: [date_on_ballot, last_reviewed, title]
+      default:
+        field: date_on_ballot
+        direction: descending
     preview_path: 'ballot-atlas/{{state}}/{{slug}}'
     # Group-by options for the collection list view in the CMS sidebar.
     # Editor can toggle between viewing measures flat, by cycle year
