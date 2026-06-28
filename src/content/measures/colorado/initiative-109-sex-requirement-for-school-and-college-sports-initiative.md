@@ -1,4 +1,5 @@
 ---
+article_ready: true
 state: colorado
 title: Sex Requirement for School and College Sports Initiative
 ref: Initiative 109
