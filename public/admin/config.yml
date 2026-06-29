@@ -15,14 +15,18 @@
 # If you change one, change the other.
 
 # ── BACKEND ──────────────────────────────────────────────────────
-# Sveltia uses Netlify's built-in OAuth proxy by default when no
-# explicit auth backend is configured. That's what we want here:
-# the site is hosted on Netlify, so no separate auth infrastructure
-# is needed beyond a GitHub OAuth App registered with Netlify.
+# Auth flows through a Cloudflare Worker (sveltia-cms-auth) that
+# proxies the GitHub OAuth handshake. Sveltia constructs the OAuth
+# start URL by appending /auth to the base_url, and the worker
+# handles both /auth (initial redirect to GitHub) and /callback
+# (token exchange after GitHub approval). The GITHUB_CLIENT_ID and
+# GITHUB_CLIENT_SECRET secrets live in the worker's env, not in
+# this config.
 backend:
   name: github
   repo: scjohnson9/ballot-atlas
   branch: main
+  base_url: https://ballot-atlas-cms-auth.stephen-27d.workers.dev
 
 # Where media uploads (future images) go. Currently unused; reserved
 # for future when measures include OG/social images.
