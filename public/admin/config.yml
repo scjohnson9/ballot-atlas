@@ -260,35 +260,41 @@ collections:
       - label: Bottom Line
         name: bottom_line
         widget: text
+        required: false
         hint: >
           The quotable, AI-citation-friendly synopsis. Shown in italic
           Playfair right under the headline. Should stand on its own
-          if pulled out as a quote. 50–400 characters. Lead with
+          if pulled out as a quote. 50–400 characters when Article
+          Ready is ON; can be left empty for a stub. Lead with
           'CCTE opposes/supports/counsels...' so attribution travels
           with the quote.
-        pattern: ['^[\s\S]{50,400}$', 'Must be 50–400 characters']
 
       - label: Recommendation Verb
         name: recommendation_verb
         widget: string
+        required: false
         hint: >
           Short imperative phrase rendered in display type at the top
           of the standalone article's recommendation block, e.g.
           'Vote No on Amendment 4', 'Approach with Caution',
-          'A Question for Discernment'. 3–80 characters.
+          'A Question for Discernment'. 3–80 characters when Article
+          Ready is ON; can be left empty for a stub.
 
       - label: Recommendation Rationale
         name: recommendation_rationale
         widget: text
+        required: false
         hint: >
           1–3 paragraphs of moral-theological reasoning that justify
           the Type and Verb above. Separate paragraphs with a blank
           line. Appears under the gold rule on the standalone page.
-          Required to be 50+ characters when Article Ready is ON.
+          Required to be 50+ characters when Article Ready is ON;
+          can be left empty for a stub.
 
       - label: FAQ
         name: faq
         widget: list
+        required: false
         label_singular: FAQ Entry
         hint: >
           Frequently asked questions about this measure. Each entry
@@ -320,6 +326,7 @@ collections:
       - label: Body
         name: body
         widget: markdown
+        required: false
         hint: >
           The deeper editorial analysis. Below the recommendation block.
           Use section headings (##) to break it up — typical structure

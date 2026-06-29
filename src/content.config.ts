@@ -74,27 +74,35 @@ const measures = defineCollection({
     // "Analysis in progress" stub. True → standalone page is built.
     article_ready: z.boolean().default(false),
 
-    bottom_line: z.string().min(50).max(400),
-    recommendation_verb: z.string().min(3).max(80),
-    // Loose by default so stubs can be saved with rationale empty or
-    // in-progress. The 50-char minimum is enforced conditionally below
-    // when article_ready is true.
+    // All four standalone-article fields are loose by default so stubs
+    // can be saved with them empty or in-progress. The full editorial
+    // bar is enforced conditionally below when article_ready is true.
+    bottom_line: z.string().default(''),
+    recommendation_verb: z.string().default(''),
     recommendation_rationale: z.string().default(''),
     faq: z.array(faqEntry).default([]),
     author: z.string().default('CCTE Editorial Team'),
     last_reviewed: z.coerce.date(),
   }).refine(
-    // Conditional editorial quality gate. Stubs are fine with the loose
-    // rationale/FAQ defaults; once article_ready flips on, the build
-    // enforces the full editorial bar on the two slow fields. Catches
-    // accidental "publish before writing" before it ships.
+    // Conditional editorial quality gate. Stubs are fine with the
+    // standalone fields empty or short; once article_ready flips on,
+    // the build enforces the full editorial bar on every field that
+    // appears on the standalone page. Catches accidental "publish
+    // before writing" before it ships.
     (m) => {
       if (!m.article_ready) return true;
-      return m.recommendation_rationale.length >= 50 && m.faq.length >= 1;
+      return (
+        m.bottom_line.length >= 50 &&
+        m.bottom_line.length <= 400 &&
+        m.recommendation_verb.length >= 3 &&
+        m.recommendation_verb.length <= 80 &&
+        m.recommendation_rationale.length >= 50 &&
+        m.faq.length >= 1
+      );
     },
     {
       message:
-        "When article_ready is true, recommendation_rationale must be at least 50 characters and faq must have at least one entry. Either complete those fields or set article_ready to false.",
+        "When article_ready is true, the standalone-article fields must meet their full requirements: bottom_line 50–400 chars, recommendation_verb 3–80 chars, recommendation_rationale 50+ chars, and at least one faq entry. Either complete those fields or set article_ready to false.",
       path: ['article_ready'],
     }
   ),
