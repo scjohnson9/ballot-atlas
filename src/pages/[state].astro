@@ -58,7 +58,7 @@ const pageDescription = state.data.summary;
 
 // Canonical URL — always points to the production hostname (set by
 // `site` in astro.config.mjs), regardless of where this build runs
-// (local dev, Netlify staging, or Cloudflare-proxied production).
+// (local dev, Cloudflare Pages staging, or Cloudflare-proxied production).
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
 
 function formatLongDate(date: Date): string {

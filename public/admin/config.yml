@@ -9,7 +9,7 @@
 # fieldsets for the FAQ list, a rich-text editor for the body, etc.
 #
 # Every save in the CMS produces a real git commit in
-# scjohnson9/ballot-atlas, which Netlify then auto-deploys.
+# scjohnson9/ballot-atlas, which Cloudflare Pages then auto-deploys.
 #
 # The schema mirrors src/content.config.ts as closely as possible.
 # If you change one, change the other.
@@ -34,9 +34,11 @@ media_folder: public/uploads
 public_folder: /uploads
 
 # Site URL — used by the CMS to generate "Preview" links to a live
-# version of an entry. Points at the Netlify staging URL since the
-# production proxy is currently disabled.
-site_url: https://loquacious-capybara-efedad.netlify.app
+# version of an entry. Points at the Cloudflare Pages staging URL
+# while the Cloudflare reverse-proxy routes (for the production
+# hostname) are disabled. Once routes are re-enabled, this can be
+# updated to https://thinkchristian.com for richer preview links.
+site_url: https://ballot-atlas.pages.dev
 
 # Direct-publish workflow. Editor saves → commit goes straight to main.
 # Switch to `editorial_workflow` later if you want a review step.
