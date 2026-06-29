@@ -1,0 +1,17 @@
+# Cloudflare Pages redirects/rewrites for The Ballot Atlas.
+#
+# Mirrors the rewrite rule we had in netlify.toml. With Astro's
+# base: '/ballot-atlas' config, internal links are prefixed with
+# /ballot-atlas but the build output puts static files at dist/ root.
+# This rewrite strips the /ballot-atlas prefix on incoming requests
+# so the static file is served correctly.
+#
+# Format: <from-path>  <to-path>  <status-code>
+# Status 200 = silent rewrite (URL stays the same in the browser).
+# Status 301 = permanent redirect (URL changes).
+#
+# Path matters for Cloudflare Pages: this file lives in public/ so
+# Astro copies it to dist/_redirects at build time, which is where
+# Cloudflare Pages looks for it.
+
+/ballot-atlas/*  /:splat  200
