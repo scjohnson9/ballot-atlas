@@ -1,6 +1,6 @@
 ---
 name: Colorado
 usps: CO
-summary: Colorado's 2024 ballot includes a constitutional amendment that would enshrine a right to abortion and remove existing public-funding restrictions, alongside a structural change to the state's primary-election system.
+summary: CCTE continues to monitor Colorado's ballot activity for measures of moral concern. Colorado's robust initiative process places significant questions before voters every cycle; if you know of an issue that warrants careful Christian reflection, please be in touch.
 last_updated: 2026-06-28
 ---

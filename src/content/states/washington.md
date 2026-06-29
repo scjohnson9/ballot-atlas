@@ -1,6 +1,6 @@
 ---
 name: Washington
 usps: WA
-summary: Washington's 2024 ballot includes I-2117, a measure to repeal the state's Climate Commitment Act. The question raises real considerations of stewardship, economic justice, and the proper role of regulation in environmental policy.
+summary: CCTE continues to monitor Washington's ballot activity for measures of moral concern. The state's active initiative process raises substantial questions of stewardship, civic order, and economic justice; if you know of an issue that warrants careful Christian reflection, please be in touch.
 last_updated: 2026-06-28
 ---

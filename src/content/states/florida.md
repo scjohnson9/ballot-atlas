@@ -1,6 +1,6 @@
 ---
 name: Florida
 usps: FL
-summary: Florida's 2024 ballot includes the most consequential life-issue measure of any state this cycle, alongside questions on recreational marijuana and election reform.
+summary: CCTE continues to monitor Florida's ballot activity for measures of moral concern. The state has been a focal point for substantial constitutional questions in recent cycles; if you know of an issue that warrants careful Christian reflection, please be in touch.
 last_updated: 2026-06-28
 ---
