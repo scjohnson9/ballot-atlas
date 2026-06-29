@@ -20,9 +20,14 @@ import { glob } from 'astro/loaders';
 // schema embedded in the page head — the latter is what makes the
 // questions eligible to appear in Google's "People Also Ask" boxes
 // and to be cited by LLM assistants when answering related questions.
+//
+// Loose by default so stubs can have partially-drafted FAQ entries
+// without failing the build. The minimum-length requirements (Q 8+,
+// A 20+) are enforced in the measures collection's refine when
+// article_ready is true.
 const faqEntry = z.object({
-  question: z.string().min(8),
-  answer: z.string().min(20),
+  question: z.string().default(''),
+  answer: z.string().default(''),
 });
 
 const states = defineCollection({
@@ -91,18 +96,24 @@ const measures = defineCollection({
     // before writing" before it ships.
     (m) => {
       if (!m.article_ready) return true;
+      const faqOk =
+        m.faq.length >= 1 &&
+        m.faq.every(
+          (entry) =>
+            entry.question.length >= 8 && entry.answer.length >= 20
+        );
       return (
         m.bottom_line.length >= 50 &&
         m.bottom_line.length <= 400 &&
         m.recommendation_verb.length >= 3 &&
         m.recommendation_verb.length <= 80 &&
         m.recommendation_rationale.length >= 50 &&
-        m.faq.length >= 1
+        faqOk
       );
     },
     {
       message:
-        "When article_ready is true, the standalone-article fields must meet their full requirements: bottom_line 50–400 chars, recommendation_verb 3–80 chars, recommendation_rationale 50+ chars, and at least one faq entry. Either complete those fields or set article_ready to false.",
+        "When article_ready is true, the standalone-article fields must meet their full requirements: bottom_line 50–400 chars, recommendation_verb 3–80 chars, recommendation_rationale 50+ chars, and at least one faq entry where each question is 8+ chars and each answer is 20+ chars. Either complete those fields or set article_ready to false.",
       path: ['article_ready'],
     }
   ),

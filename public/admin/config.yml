@@ -94,7 +94,7 @@ collections:
     extension: md
     format: yaml-frontmatter
     create: true
-    delete: false  # Don't allow deletion from CMS; retire by editing instead.
+    delete: true   # Editor can delete measures from the CMS. Git history still preserves prior versions if recovery is ever needed.
     # Dynamic path: a measure for Florida saves to florida/<slug>.md
     # under src/content/measures/. The {{state}} placeholder resolves
     # to the value of the State field below.
@@ -303,11 +303,12 @@ collections:
           Aim for 3–5 entries.
         summary: '{{fields.question}}'
         fields:
-          - { label: Question, name: question, widget: string }
+          - { label: Question, name: question, widget: string, required: false }
           - label: Answer
             name: answer
             widget: text
-            hint: "One paragraph. Direct, factual, citation-quotable."
+            required: false
+            hint: "One paragraph. Direct, factual, citation-quotable. 20+ chars required when Article Ready is ON."
 
       - label: Author
         name: author
