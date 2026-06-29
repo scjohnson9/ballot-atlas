@@ -15,6 +15,12 @@ export default defineConfig({
   site: 'https://thinkchristian.com',
   base: '/ballot-atlas',
   trailingSlash: 'never',
+  // build.format: 'file' outputs flat .html files (florida.html) instead of
+  // directories with index.html (florida/index.html). Required for clean
+  // serving on Cloudflare Pages — otherwise CF Pages auto-redirects bare
+  // paths to trailing-slash URLs, which collides with our base-prefix
+  // rewrite and produces a visible URL change on every navigation.
+  build: { format: 'file' },
   integrations: [
     sitemap(),
     mdx(),
