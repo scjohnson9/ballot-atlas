@@ -2,5 +2,5 @@
 name: Maine
 usps: ME
 summary: CCTE has not yet identified ballot measures of moral concern in Maine for the current cycle. We continue to monitor state legislation and ballot initiatives nationwide; if you know of an issue that warrants careful Christian reflection, please be in touch.
-last_updated: 2024-10-15
+last_updated: 2026-06-28
 ---

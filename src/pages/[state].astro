@@ -31,15 +31,21 @@ export async function getStaticPaths() {
   todayStart.setHours(0, 0, 0, 0);
 
   return states.map((state) => {
-    const measures = allMeasures
-      .filter((m) => m.id.startsWith(state.id + '/'))
+    // All measures for this state (including past-dated and stubs) —
+    // used to compute the "Updated" timestamp, which reflects any
+    // editorial activity regardless of cycle filter.
+    const allMeasuresForState = allMeasures.filter((m) =>
+      m.id.startsWith(state.id + '/')
+    );
+    // The subset shown in the on-page issue list — current cycle only.
+    const measures = allMeasuresForState
       .filter((m) => m.data.date_on_ballot >= todayStart)
       .sort((a, b) =>
         a.data.date_on_ballot.getTime() - b.data.date_on_ballot.getTime()
       );
     return {
       params: { state: state.id },
-      props: { state, measures },
+      props: { state, measures, allMeasuresForState },
     };
   });
 }
@@ -47,10 +53,22 @@ export async function getStaticPaths() {
 interface Props {
   state: CollectionEntry<'states'>;
   measures: CollectionEntry<'measures'>[];
+  allMeasuresForState: CollectionEntry<'measures'>[];
 }
 
-const { state, measures } = Astro.props as Props;
+const { state, measures, allMeasuresForState } = Astro.props as Props;
 const hasMeasures = measures.length > 0;
+
+// Auto-derive the displayed "Updated" timestamp from whichever is most
+// recent: the editor's explicit last_updated on the state file, or any
+// measure's last_reviewed timestamp. So a newly authored measure in
+// Colorado lifts Colorado's "Updated" line to today's date with no
+// manual intervention on the state file itself.
+const displayUpdated = allMeasuresForState.reduce(
+  (latest, m) =>
+    m.data.last_reviewed.getTime() > latest.getTime() ? m.data.last_reviewed : latest,
+  state.data.last_updated
+);
 
 // Page metadata
 const pageTitle = `Ballot Issues in ${state.data.name} · The Ballot Atlas`;
@@ -78,7 +96,7 @@ const jsonLd: Record<string, unknown> = {
   name: `Ballot Issues in ${state.data.name}`,
   description: state.data.summary,
   url: canonicalUrl,
-  dateModified: state.data.last_updated.toISOString().split('T')[0],
+  dateModified: displayUpdated.toISOString().split('T')[0],
   inLanguage: 'en-US',
   isPartOf: {
     '@type': 'WebSite',
@@ -138,8 +156,8 @@ if (hasMeasures) {
         <div class="meta">
           <span>
             <span class="dot"></span>
-            Updated <time datetime={state.data.last_updated.toISOString().split('T')[0]}>
-              {formatLongDate(state.data.last_updated)}
+            Updated <time datetime={displayUpdated.toISOString().split('T')[0]}>
+              {formatLongDate(displayUpdated)}
             </time>
           </span>
           {hasMeasures && (
