@@ -199,7 +199,18 @@ body {
   color: var(--display-2); font-weight: 400;
 }
 
-.map-stage svg { width: 100%; height: auto; display: block; overflow: visible; }
+.map-stage svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+  /* Prevent the browser from interpreting mouse-down on a path as the
+     start of a text-selection drag. Without this, Chrome (which is
+     stricter than Safari about SVG selection) hijacks click events
+     and suppresses the :hover state while the cursor is "selecting." */
+  user-select: none;
+  -webkit-user-select: none;
+}
 .ocean-bg { fill: transparent; }
 
 /* ── STATES ──────────────────────────────────────────────────── */
