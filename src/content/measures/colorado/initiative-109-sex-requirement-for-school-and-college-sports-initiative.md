@@ -3,7 +3,7 @@ state: colorado
 title: Sex Requirement for School and College Sports Initiative
 ref: Initiative 109
 date_on_ballot: 2026-11-03
-excerpt: A law that restricts participation in all K-12 and collegiate school sports teams to those that accord with the participant’s sex as determined by certain aspects of their biological reproductive system.
+excerpt: A law that would require students on all K-12 and collegiate school sports teams to participate on the team that accords with their biological sex. At stake is the legal definition of sex in athletics and preserving the integrity of girls’ sports.
 stance: Gender • LGBTQ
 recommendation_type: Support
 article_ready: false
