@@ -1,15 +1,15 @@
 ---
 state: colorado
-article_ready: true
 title: Constitutional Right to Abortion
 ref: Amendment 79
 date_on_ballot: 2024-11-05
 excerpt: A constitutional amendment that would enshrine a right to abortion in the Colorado Constitution and repeal the existing prohibition on public funding for abortion procedures.
 stance: Life · The Unborn
-bottom_line: CCTE opposes Colorado Amendment 79. The measure would write a right to abortion into the state's basic charter and force taxpayer funding of abortion procedures, removing the longstanding bipartisan compromise that has prevented public dollars from underwriting elective abortion.
 recommendation_type: Oppose
+article_ready: false
+bottom_line: CCTE opposes Colorado Amendment 79. The measure would write a right to abortion into the state's basic charter and force taxpayer funding of abortion procedures, removing the longstanding bipartisan compromise that has prevented public dollars from underwriting elective abortion.
 recommendation_verb: Vote No on Amendment 79
-recommendation_rationale: |
+recommendation_rationale: |-
   Colorado already has among the most permissive abortion laws in the nation, with no statutory limits on the procedure at any gestational age. Amendment 79 does not expand abortion access in any meaningful new way — its purpose is to constitutionalize what is already legal, and to repeal one specific protection: the constitutional prohibition on public funding of abortion.
 
   The funding prohibition has been Colorado's law since 1984 and reflects a settled bipartisan view that taxpayers should not be required to underwrite procedures to which a significant share of them have conscientious objection. Amendment 79 would remove that protection.
