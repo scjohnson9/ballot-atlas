@@ -206,8 +206,8 @@ const siteJsonLd = {
     </article>
   </div>
 
-  <script is:inline src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-  <script is:inline src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <script is:inline src="/ballot-atlas/lib/d3.min.js"></script>
+  <script is:inline src="/ballot-atlas/lib/topojson-client.min.js"></script>
 
   <script is:inline define:vars={{ STATE_CONTENT }}>
     // =================================================================
@@ -289,7 +289,7 @@ const siteJsonLd = {
     async function render() {
       let us;
       try {
-        us = await d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/states-albers-10m.json");
+        us = await d3.json("/ballot-atlas/lib/states-albers-10m.json");
       } catch (err) {
         document.getElementById("map-container").innerHTML =
           '<div class="loading">Could not load the atlas. Please check your connection.</div>';
