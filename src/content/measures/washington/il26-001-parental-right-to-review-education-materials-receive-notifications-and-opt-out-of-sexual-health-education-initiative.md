@@ -3,7 +3,7 @@ state: washington
 title: Parental Right to Review Education Materials, Receive Notifications, and Opt Out of Sexual-Health Education Initiative
 ref: IL26-001
 date_on_ballot: 2026-11-03
-excerpt: Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+excerpt: An initiative to reinstate several parental rights previously approved by the citizens in the Washington Declaration of Parental and Legal Guardian Rights. These include the right to review classroom materials beforehand and opt-out of certain classes.
 stance: Parental Rights • Education
 recommendation_type: Support
 article_ready: false
@@ -12,5 +12,5 @@ recommendation_verb: ''
 recommendation_rationale: ''
 faq: []
 author: CCTE Editorial Team
-last_reviewed: 2026-06-29
+last_reviewed: 2026-06-30
 ---
