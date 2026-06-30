@@ -3,7 +3,7 @@ state: washington
 title: Sex Verification Requirements for Female School Sports Initiative
 ref: IL26-638
 date_on_ballot: 2026-11-03
-excerpt: Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+excerpt: A proposed law that would limit participation in girls’ sports only to biological females, as verified by documentation of the student’s biological sex at birth. Washington joins with several states seeking to preserve the integrity of girls’ sports.
 stance: Sex & Gender • LGBTQ • Education
 recommendation_type: Support
 article_ready: false
