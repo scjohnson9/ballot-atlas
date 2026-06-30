@@ -1,15 +1,15 @@
 ---
 state: florida
-article_ready: true
 title: Recreational Use of Marijuana
 ref: Amendment 3
 date_on_ballot: 2024-11-05
 excerpt: A constitutional amendment that would legalize recreational marijuana for adults over 21. A prudential question on which Christians may differ in good faith.
 stance: Civic Order · Prudence
-bottom_line: CCTE counsels discernment on Florida Amendment 3. The measure raises genuine prudential questions about public health, addiction, and the proper scope of state regulation that the historic Christian tradition does not settle in either direction.
 recommendation_type: Discernment
+article_ready: false
+bottom_line: CCTE counsels discernment on Florida Amendment 3. The measure raises genuine prudential questions about public health, addiction, and the proper scope of state regulation that the historic Christian tradition does not settle in either direction.
 recommendation_verb: A Question for Discernment
-recommendation_rationale: |
+recommendation_rationale: |-
   Unlike measures touching the protection of nascent human life or the institution of marriage, the legalization of recreational marijuana sits in a domain the historic Christian moral tradition addresses through the broader category of prudence. Scripture cautions against drunkenness and self-indulgence but does not legislate the specific civil regime by which intoxicants are regulated.
 
   Christians of good faith disagree on whether legalization, prohibition, or measured decriminalization best serves the common good. Some emphasize the harms of black-market enforcement, the racial disparities in current criminal codes, and the importance of subsidiarity in matters of personal conduct. Others emphasize the documented public-health consequences of broad access, the difficulty of regulating high-potency products, and the risk to vulnerable populations including the young and the addicted.
