@@ -3,7 +3,7 @@ state: colorado
 title: Prohibit Surgeries for Treatment in Response to Minors' Perception of Sex or Gender Measure
 ref: Initiative 110
 date_on_ballot: 2026-11-03
-excerpt: Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+excerpt: A proposed law that would prohibit healthcare professionals from prescribing or performing any sex-change surgeries on minors. The Christian tradition speaks both to the nature of human embodiment and the protection of children.
 stance: Sex & Gender • LGBTQ • Healthcare
 recommendation_type: Support
 article_ready: false
@@ -12,5 +12,5 @@ recommendation_verb: ''
 recommendation_rationale: ''
 faq: []
 author: CCTE Editorial Team
-last_reviewed: 2026-06-29
+last_reviewed: 2026-06-30
 ---
