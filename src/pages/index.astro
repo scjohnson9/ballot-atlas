@@ -337,7 +337,13 @@ const siteJsonLd = {
         .style("animation-delay", d => delayByCode[FIPS_TO_USPS[d.id]] + "ms")
         .on("animationend", function() { this.classList.remove("intro"); })
         .on("mouseenter", function(e, d) {
-          this.parentNode.appendChild(this);  // raise z-order for shadow
+          // Previously raised z-order via this.parentNode.appendChild(this)
+          // so the hovered state's drop-shadow wouldn't be clipped by
+          // neighboring states. Removed because re-appending the element
+          // mid-event invalidates Chrome's hover/click hit-testing —
+          // Safari was forgiving, Chrome was not. Minor visual cost
+          // (shadow may be clipped where it overlaps adjacent states);
+          // restores interactive functionality across browsers.
           mainGroup.node().classList.add("has-hover");
           setHover(FIPS_TO_USPS[d.id]);
         })
