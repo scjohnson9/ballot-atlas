@@ -1,15 +1,15 @@
 ---
 state: florida
-article_ready: true
 title: The Abortion Rights Amendment
 ref: Amendment 4
 date_on_ballot: 2024-11-05
 excerpt: A proposed constitutional amendment that would establish a broad right to abortion. The most consequential life-issue measure on any state ballot this cycle.
 stance: Life · The Unborn
-bottom_line: CCTE opposes Florida Amendment 4. The measure would enshrine a near-unlimited right to abortion in the state constitution, removing existing protections for unborn children after viability and overriding the legislature's authority to regulate this practice.
 recommendation_type: Oppose
+article_ready: false
+bottom_line: CCTE opposes Florida Amendment 4. The measure would enshrine a near-unlimited right to abortion in the state constitution, removing existing protections for unborn children after viability and overriding the legislature's authority to regulate this practice.
 recommendation_verb: Vote No on Amendment 4
-recommendation_rationale: |
+recommendation_rationale: |-
   The historic Christian moral tradition affirms the personhood of the unborn from conception. Florida's current law, which protects most unborn children after six weeks, reflects a long-standing public moral consensus that human life in the womb is owed protection.
 
   Amendment 4 would override that consensus by constitutionalizing a right to abortion that extends beyond the framework once set by Roe v. Wade. Its text — "no law shall prohibit, penalize, delay, or restrict abortion before viability" — leaves "viability" undefined and grants exclusive determination to "the patient's healthcare provider."
