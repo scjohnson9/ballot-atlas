@@ -3,7 +3,7 @@ state: washington
 title: Washington Parents' Bill of Rights
 ref: IL26-001
 date_on_ballot: 2026-11-03
-excerpt: An initiative to reinstate several parental rights previously approved by the citizens in the Washington Declaration of Parental and Legal Guardian Rights. These include the right to review classroom materials beforehand and opt-out of certain classes.
+excerpt: An initiative to reinstate several parental rights previously approved by the citizens during the 2024 cycle in Initiative 2081. These include the right to review classroom materials beforehand and opt-out of certain classes.
 stance: Parental Rights • Education
 recommendation_type: Support
 article_ready: false
