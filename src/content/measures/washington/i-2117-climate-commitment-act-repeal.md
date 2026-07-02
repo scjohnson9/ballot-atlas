@@ -1,15 +1,15 @@
 ---
 state: washington
-article_ready: true
 title: Repealing the Climate Commitment Act
 ref: I-2117
 date_on_ballot: 2024-11-05
 excerpt: An initiative to repeal Washington's Climate Commitment Act, a cap-and-invest program that prices carbon emissions and funds climate-related state spending. A question of stewardship, economic justice, and prudence.
 stance: Stewardship · Civic Order
-bottom_line: CCTE counsels caution on Washington I-2117. The historic Christian tradition affirms both the stewardship of creation and the duty of charity toward the economically vulnerable, who bear the costs of carbon pricing most directly. The measure deserves more careful weighing than its simple yes-or-no framing suggests.
 recommendation_type: Caution
+article_ready: false
+bottom_line: CCTE counsels caution on Washington I-2117. The historic Christian tradition affirms both the stewardship of creation and the duty of charity toward the economically vulnerable, who bear the costs of carbon pricing most directly. The measure deserves more careful weighing than its simple yes-or-no framing suggests.
 recommendation_verb: Weigh I-2117 Carefully
-recommendation_rationale: |
+recommendation_rationale: |-
   The Christian doctrine of creation grounds a positive obligation of stewardship — a recognition that the natural order is given to humanity not as raw material but as a trust to be cultivated and handed on. This is a real and ancient theological commitment, not a recent borrowing from secular environmentalism.
 
   But stewardship is not the only Christian moral concern in play here. The Climate Commitment Act prices carbon emissions, and those prices are passed through to consumers in fuel, heating, and electricity costs. The economically vulnerable — single mothers, the elderly poor, rural workers who commute long distances — bear those costs most directly. Charity is also a Christian moral commitment.
