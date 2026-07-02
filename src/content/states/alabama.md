@@ -1,6 +1,6 @@
 ---
 name: Alabama
 usps: AL
-summary: CCTE has not yet identified ballot measures of moral concern in Alabama for the current cycle. We continue to monitor state legislation and ballot initiatives nationwide; if you know of an issue that warrants careful Christian reflection, please be in touch.
-last_updated: 2026-06-28
+summary: Alabama's 2026 ballot includes a proposed constitutional amendment that would require K–12 public schools to conduct the Pledge of Allegiance and permit student-led, student-initiated prayer, with student participation voluntary in both cases. The questions raised include the free exercise of religion, the scope of student expression in public education, and the boundaries of state involvement in religious practice.
+last_updated: 2026-07-01
 ---
