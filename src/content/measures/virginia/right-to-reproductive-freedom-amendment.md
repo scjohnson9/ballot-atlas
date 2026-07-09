@@ -3,7 +3,7 @@ state: virginia
 title: Right to Reproductive Freedom Amendment
 ref: Constitutional Amendment
 date_on_ballot: 2026-11-03
-excerpt: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+excerpt: A proposed constitutional amendment that would codify abortion as a right in the state, and restrict the state legislature from adding any protections for the unborn in the first two trimesters. If passed, this would erase protections owed to unborn children.
 stance: Life • The Unborn
 recommendation_type: Oppose
 article_ready: false

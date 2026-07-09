@@ -3,7 +3,7 @@ state: missouri
 title: Prohibit Abortion and Gender Transition Procedures for Minors Amendment
 ref: Amendment 3
 date_on_ballot: 2026-11-03
-excerpt: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+excerpt: A proposed constitutional amendment that would prohibit abortion in Missouri with limited exceptions and prohibit gender-transition surgeries and hormone treatments for minors. This act would repeal a 2024 amendment that enshrined the right to abortion in the state constitution.
 stance: Life • The Unborn • Sex & Gender
 recommendation_type: Support
 article_ready: false

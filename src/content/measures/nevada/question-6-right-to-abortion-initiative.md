@@ -3,7 +3,7 @@ state: nevada
 title: Right to Abortion Initiative
 ref: Question 6
 date_on_ballot: 2026-11-03
-excerpt: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+excerpt: A proposed constitutional amendment that would codify abortion as a right in the state through "fetal viability." Nevada requires initiated amendments to pass in two consecutive general elections, and this is voters' second decision on the measure following its 2024 approval.
 stance: Life • The Unborn
 recommendation_type: Oppose
 article_ready: false
