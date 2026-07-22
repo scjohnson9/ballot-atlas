@@ -15,19 +15,29 @@ faq:
     answer: |-
       Colorado currently has no sex-based team-eligibility restrictions in state law. Schools follow the policy of the Colorado High School Activities Association (CHSAA), whose [Transgender Policy Statement (2019)](https://chsaanow.com/documents/2026/3/25/TRANSGENDER_POLICY_STATEMENT_2019.pdf) states that a student may participate on a sports team "in accordance with their gender identity." This means biological boys may participate in girls' sports.
 
-      If Initiative 109 is adopted, then Colorado will require students to participate on the team that accords with their biological sex.
+      If Initiative 109 is adopted, Colorado state law would require students to participate on the team that accords with their biological sex.
   - question: How does the initiative define "sex"?
-    answer: ''
+    answer: |-
+      Initiative 109 defines a person's sex by aspects of the biological reproductive system. These are the specific definitions according to the [final text](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/109Final.pdf) of the initiative: 
+
+      - “Female” means a person whose biological reproductive system is organized around the production of the ova. Female includes a woman and a girl. 
+      - “Male” means a person whose biological reproductive system is organized around the production of sperm. Male includes a man and a boy.
   - question: Which teams and levels does it apply to?
-    answer: ''
-  - question: How would transgender students be affected?
-    answer: ''
+    answer: This new law applies to all K-12 and collegiate sports teams. This includes both public and private schools at all levels.
+  - question: Are there any exceptions to this initiative?
+    answer: |-
+      Biological males would never be allowed to participate on a sports team specifically designated for females.
+
+      Biological females may participate on a sports team specifically designated for males only when ["there is no female team offered or available for such sport for such female student..."](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/109Final.pdf)
   - question: What about students with intersex conditions or disorders of sexual development?
-    answer: ''
+    answer: While disorders of sexual development are rare, this [initiative](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/109Final.pdf) states that an individual with this condition "must receive all legal protections and accommodations afforded under federal law."
   - question: How would the initiative be enforced, and what are the consequences of a violation?
-    answer: ''
-  - question: Does this address bathrooms, locker rooms, or other facilities — or only teams?
-    answer: ''
+    answer: |-
+      Every school's governing body would be required to implement the provisions of this initiative. If the Colorado Commissioner of Education determines that a school district has ["intentionally refused to comply,"](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/109Final.pdf) the Commissioner must notify the district and allow "a reasonable time to comply." If the district continues to refuse, the Commissioner shall take "appropriate remedial action within the commissioner's authority."
+
+      The initiative does not specify what "remedial action" must look like.
+  - question: Does this address bathrooms, locker rooms, or other facilities—or only teams?
+    answer: This initiative is limited specifically to teams.
 author: CCTE Editorial Team
 last_reviewed: 2026-07-22
 ---
