@@ -97,17 +97,20 @@ const rationaleParagraphs = data.recommendation_rationale
   .filter(Boolean);
 
 // FAQ answers are authored as Markdown so editors can include real
-// hyperlinks for citations. We render them once here and reuse the
-// resulting HTML both on the page and inside the JSON-LD FAQPage
-// answer text — so search engines and LLMs indexing the structured
-// data see the same real <a> tags that human readers see.
-// parseInline is used (not parse) because FAQ answers are single
-// paragraphs; parseInline processes links/bold/italic without
-// wrapping the whole answer in a <p> tag, keeping the existing
-// <p class="faq-answer"> semantics intact.
+// hyperlinks for citations, bulleted lists, blockquotes, etc.
+// We render them once here and reuse the resulting HTML both on the
+// page and inside the JSON-LD FAQPage answer text — so search engines
+// and LLMs indexing the structured data see the same real <a> tags
+// (and lists, and quotes) that human readers see.
+//
+// marked.parse (not parseInline) is used so block-level Markdown —
+// lists, blockquotes, multiple paragraphs — renders as proper HTML
+// blocks rather than being stripped or run together. The visible
+// wrapper is therefore a <div class="faq-answer"> (not <p>) since
+// the rendered HTML may contain its own block elements.
 const faqRendered = data.faq.map((q) => ({
   question: q.question,
-  answerHtml: marked.parseInline(q.answer, { async: false }) as string,
+  answerHtml: marked.parse(q.answer, { async: false }) as string,
 }));
 
 // JSON-LD: four Schema.org types in one @graph.
@@ -241,7 +244,7 @@ const jsonLd = {
             {faqRendered.map((q) => (
               <div class="faq-entry">
                 <h3 class="faq-question">{q.question}</h3>
-                <p class="faq-answer" set:html={q.answerHtml}></p>
+                <div class="faq-answer" set:html={q.answerHtml}></div>
               </div>
             ))}
           </div>

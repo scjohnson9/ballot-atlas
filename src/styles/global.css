@@ -958,6 +958,23 @@ path.has-content-marker {
 .faq-answer a:hover { border-bottom-color: var(--gold); }
 .faq-answer em, .faq-answer i { font-style: italic; }
 .faq-answer strong, .faq-answer b { color: var(--display); font-weight: 700; }
+/* Block-level markdown inside FAQ answers: paragraphs, lists,
+   blockquotes. Rendered by marked.parse, wrapped in a <div>. */
+.faq-answer p { margin: 0 0 12px; }
+.faq-answer p:last-child { margin-bottom: 0; }
+.faq-answer ul, .faq-answer ol {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+.faq-answer li { margin-bottom: 6px; }
+.faq-answer li:last-child { margin-bottom: 0; }
+.faq-answer blockquote {
+  margin: 12px 0 12px 20px;
+  padding-left: 14px;
+  border-left: 1px solid var(--rule);
+  color: var(--quiet);
+  font-style: italic;
+}
 
 .byline {
   margin: 64px 0 0;
