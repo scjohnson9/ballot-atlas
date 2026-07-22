@@ -319,12 +319,6 @@ collections:
               Supports Markdown for citations: [link text](https://url),
               **bold**, *italic*. 20+ chars required when Article Ready
               is ON.
-            # Restrict the toolbar to what makes sense for a citation-style
-            # FAQ answer — no headings, no lists, no images. Just inline
-            # emphasis and links.
-            buttons: [bold, italic, link]
-            editor_components: []
-            modes: [rich, raw]
 
       - label: Author
         name: author
