@@ -945,6 +945,19 @@ path.has-content-marker {
   margin: 0;
   max-width: 64ch;
 }
+/* Inline citation links inside FAQ answers get the same gold-underline
+   treatment as body prose links — same design language, so a citation
+   inside an FAQ answer reads as continuous with the site's other
+   editorial links. */
+.faq-answer a {
+  color: var(--gold-soft);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold-ghost);
+  transition: border-color 220ms;
+}
+.faq-answer a:hover { border-bottom-color: var(--gold); }
+.faq-answer em, .faq-answer i { font-style: italic; }
+.faq-answer strong, .faq-answer b { color: var(--display); font-weight: 700; }
 
 .byline {
   margin: 64px 0 0;

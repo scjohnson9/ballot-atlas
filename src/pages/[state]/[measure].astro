@@ -32,6 +32,7 @@ import {
   render,
   type CollectionEntry,
 } from 'astro:content';
+import { marked } from 'marked';
 
 export async function getStaticPaths() {
   const measures = await getCollection('measures');
@@ -95,6 +96,20 @@ const rationaleParagraphs = data.recommendation_rationale
   .map((p) => p.trim())
   .filter(Boolean);
 
+// FAQ answers are authored as Markdown so editors can include real
+// hyperlinks for citations. We render them once here and reuse the
+// resulting HTML both on the page and inside the JSON-LD FAQPage
+// answer text — so search engines and LLMs indexing the structured
+// data see the same real <a> tags that human readers see.
+// parseInline is used (not parse) because FAQ answers are single
+// paragraphs; parseInline processes links/bold/italic without
+// wrapping the whole answer in a <p> tag, keeping the existing
+// <p class="faq-answer"> semantics intact.
+const faqRendered = data.faq.map((q) => ({
+  question: q.question,
+  answerHtml: marked.parseInline(q.answer, { async: false }) as string,
+}));
+
 // JSON-LD: four Schema.org types in one @graph.
 const articleId = canonicalUrl + '#article';
 const legislationId = canonicalUrl + '#legislation';
@@ -144,12 +159,15 @@ const graph: Record<string, unknown>[] = [
 if (data.faq.length > 0) {
   graph.push({
     '@type': 'FAQPage',
-    mainEntity: data.faq.map((q) => ({
+    mainEntity: faqRendered.map((q) => ({
       '@type': 'Question',
       name: q.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: q.answer,
+        // HTML is permitted (and encouraged) here per Google's FAQPage
+        // schema docs. Emitting the same HTML we render on the page
+        // ensures search engines and LLMs see real <a> citations.
+        text: q.answerHtml,
       },
     })),
   });
@@ -216,14 +234,14 @@ const jsonLd = {
         <Content />
       </div>
 
-      {data.faq.length > 0 && (
+      {faqRendered.length > 0 && (
         <section class="faq" aria-labelledby="faq-heading">
           <h2 id="faq-heading" class="faq-heading">Frequently Asked Questions</h2>
           <div class="faq-list">
-            {data.faq.map((q) => (
+            {faqRendered.map((q) => (
               <div class="faq-entry">
                 <h3 class="faq-question">{q.question}</h3>
-                <p class="faq-answer">{q.answer}</p>
+                <p class="faq-answer" set:html={q.answerHtml}></p>
               </div>
             ))}
           </div>
