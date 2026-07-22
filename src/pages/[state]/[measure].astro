@@ -87,14 +87,17 @@ function isoDate(date: Date): string {
   return date.toISOString().split('T')[0];
 }
 
-// The rationale is authored as a single block of prose with blank-line
-// paragraph breaks (YAML pipe-block). Split it into paragraphs so we
-// can render with proper <p> semantics rather than dumping it as a
-// blob.
-const rationaleParagraphs = data.recommendation_rationale
-  .split(/\n\s*\n/)
-  .map((p) => p.trim())
-  .filter(Boolean);
+// The rationale is authored as Markdown so editors can include real
+// hyperlinks for citations (Scripture references, primary sources).
+// marked.parse handles paragraph breaks, links, italics, block
+// quotes — all valid Markdown constructs — and returns HTML that we
+// inject via set:html. Existing plain-text rationales continue to
+// render correctly because plain text is valid Markdown (blank-line
+// separated paragraphs remain paragraphs).
+const rationaleHtml = marked.parse(
+  data.recommendation_rationale,
+  { async: false }
+) as string;
 
 // FAQ answers are authored as Markdown so editors can include real
 // hyperlinks for citations, bulleted lists, blockquotes, etc.
@@ -228,9 +231,7 @@ const jsonLd = {
         </p>
         <h2 class="recommendation-verb">{data.recommendation_verb}</h2>
         <div class="gold-rule"></div>
-        <div class="recommendation-rationale">
-          {rationaleParagraphs.map((p) => <p>{p}</p>)}
-        </div>
+        <div class="recommendation-rationale" set:html={rationaleHtml}></div>
       </aside>
 
       <div class="prose">

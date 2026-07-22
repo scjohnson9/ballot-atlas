@@ -858,6 +858,25 @@ path.has-content-marker {
 }
 .recommendation-rationale p { margin: 0 0 1.1em; }
 .recommendation-rationale p:last-child { margin-bottom: 0; }
+/* Inline links, emphasis, and blockquotes rendered from Markdown.
+   Same gold-underline citation treatment as the FAQ answers and
+   body prose, so citations feel like a single design system. */
+.recommendation-rationale a {
+  color: var(--gold-soft);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold-ghost);
+  transition: border-color 220ms;
+}
+.recommendation-rationale a:hover { border-bottom-color: var(--gold); }
+.recommendation-rationale em, .recommendation-rationale i { font-style: italic; }
+.recommendation-rationale strong, .recommendation-rationale b { color: var(--display); font-weight: 700; }
+.recommendation-rationale blockquote {
+  margin: 1em 0 1em 20px;
+  padding-left: 14px;
+  border-left: 1px solid var(--rule);
+  color: var(--quiet);
+  font-style: italic;
+}
 
 /* Body markdown — the deeper analysis below the recommendation. */
 .prose {
