@@ -12,7 +12,10 @@ recommendation_verb: Vote Yes on Initiative 109
 recommendation_rationale: ''
 faq:
   - question: What would Initiative 109 change about current Colorado law?
-    answer: Colorado currently has no sex-based team-eligibility restrictions in state law. Schools follow the policy of the Colorado High School Activities Association (CHSAA), whose [Transgender Policy Statement (2019)](https://chsaanow.com/documents/2026/3/25/TRANSGENDER_POLICY_STATEMENT_2019.pdf) states that a student may participate on a sports team "in accordance with their gender identity." This means biological boys may participate in girls' sports.
+    answer: |-
+      Colorado currently has no sex-based team-eligibility restrictions in state law. Schools follow the policy of the Colorado High School Activities Association (CHSAA), whose [Transgender Policy Statement (2019)](https://chsaanow.com/documents/2026/3/25/TRANSGENDER_POLICY_STATEMENT_2019.pdf) states that a student may participate on a sports team "in accordance with their gender identity." This means biological boys may participate in girls' sports.
+
+      If Initiative 109 is adopted, then Colorado will require students to participate on the team that accords with their biological sex.
   - question: How does the initiative define "sex"?
     answer: ''
   - question: Which teams and levels does it apply to?
