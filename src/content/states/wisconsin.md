@@ -1,6 +1,6 @@
 ---
 name: Wisconsin
 usps: WI
-summary: CCTE has not yet identified ballot measures of moral concern in Wisconsin for the current cycle. We continue to monitor state legislation and ballot initiatives nationwide; if you know of an issue that warrants careful Christian reflection, please be in touch.
-last_updated: 2026-06-28
+summary: Wisconsin's 2026 ballot includes a proposed constitutional amendment that would prohibit state and local governments from ordering the closure of places of worship during a declared state of emergency, including public health emergencies. The measure comes in response to worship-gathering restrictions during the COVID-19 pandemic. The questions raised include the free exercise of religion, the scope of state emergency authority, and the boundaries between the state's temporal powers and the church's spiritual autonomy.
+last_updated: 2026-07-22
 ---
