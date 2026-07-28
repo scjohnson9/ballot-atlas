@@ -3,7 +3,7 @@ state: wisconsin
 title: Prohibit Closure of Places of Worship During States of Emergency Amendment
 ref: AJR 10
 date_on_ballot: 2026-11-03
-excerpt: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+excerpt: A proposed amendment to the Wisconsin state constitution that would prohibit state and local governments from ordering the closure of places of worship during a declared states of emergency, including an emergency related to public health.
 stance: Religious Liberty
 recommendation_type: Support
 article_ready: false
