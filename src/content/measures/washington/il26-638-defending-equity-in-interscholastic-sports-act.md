@@ -7,10 +7,24 @@ excerpt: A proposed law that would limit participation in girls’ sports only t
 stance: Sex & Gender • LGBTQ • Education
 recommendation_type: Support
 article_ready: false
-bottom_line: ''
-recommendation_verb: ''
+bottom_line: CCTE supports Washington IL26-638. The measure would preserve the integrity of girls' sports by prohibiting biologically male students from competing on female-only interscholastic teams, with sex verified as part of the routine sports physical.
+recommendation_verb: Vote Yes on IL26-638
 recommendation_rationale: ''
-faq: []
+faq:
+  - question: What would IL26-638 change about current Washington law?
+    answer: ''
+  - question: How does the measure define "sex"?
+    answer: ''
+  - question: Which teams and levels does it apply to?
+    answer: ''
+  - question: According to the measure, how would a student athlete's biological sex be verified?
+    answer: ''
+  - question: Are there any exceptions to the measure?
+    answer: ''
+  - question: How would the initiative be enforced, and what are the consequences of a violation?
+    answer: ''
+  - question: Does this address bathrooms, locker rooms, or other facilities — or only teams?
+    answer: ''
 author: CCTE Editorial Team
-last_reviewed: 2026-06-30
+last_reviewed: 2026-07-22
 ---
