@@ -19,15 +19,15 @@ faq:
   - question: How does the measure define "sex"?
     answer: IL26-638 defines a person's sex by certain biological aspects which correlate to his or her "sex assigned at birth," including the ["student's reproductive anatomy, genetic makeup, or normal endogenously produced testosterone levels."](https://www2.sos.wa.gov/_assets/elections/initiatives/finaltext_3276.pdf?_gl=1*1vwcg3k*_ga*NzU2NzQ3OTY1LjE3NDk4MjUxMzI.*_ga_7B08VE04WV*czE3NTAxMTM0NTIkbzUkZzEkdDE3NTAxMTM0NTUkajU3JGwwJGgw*_ga_X6SDF160YQ*czE3NTAxMTM0NTIkbzUkZzEkdDE3NTAxMTM0NTUkajU3JGwwJGgw)
   - question: Which teams and levels does it apply to?
-    answer: This new law applies to all K-12 sports teams. This includes both public and private schools.
+    answer: This new law applies to all K-12 interscholastic sports, both public schools directly and private schools that participate in WIAA competition.
   - question: According to the measure, how would a student athlete's biological sex be verified?
     answer: |-
       Any student wishing to participate in a sport designated for females must provide ["a health examination and consent form or other statement signed by the student's personal health care provider that verifies the student's biological sex."](https://www2.sos.wa.gov/_assets/elections/initiatives/finaltext_3276.pdf?_gl=1*1vwcg3k*_ga*NzU2NzQ3OTY1LjE3NDk4MjUxMzI.*_ga_7B08VE04WV*czE3NTAxMTM0NTIkbzUkZzEkdDE3NTAxMTM0NTUkajU3JGwwJGgw*_ga_X6SDF160YQ*czE3NTAxMTM0NTIkbzUkZzEkdDE3NTAxMTM0NTUkajU3JGwwJGgw) 
 
-      Importantly, IL26-638 leverages existing "Washington state law and school district policies," which already require students "to undergo a routine physical examination prior to participation in interscholastic sports." These physicals already "include documentation of the students sex assigned at birth."
+      Importantly, IL26-638 leverages existing "Washington state law and school district policies," which already require students "to undergo a routine physical examination prior to participation in interscholastic sports." These physicals already "include documentation of the student's sex assigned at birth."
   - question: Are there any exceptions to the measure?
     answer: |-
-      Biological males would never be allowed to participate on a sports team intended  for females only.
+      Biological males would never be allowed to participate on a sports team intended for females only.
 
       This measure does not address the prospect of a biological female participating on a sports team intended for males.
   - question: How would the initiative be enforced, and what are the consequences of a violation?
