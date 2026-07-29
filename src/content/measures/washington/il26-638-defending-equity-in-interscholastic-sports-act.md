@@ -9,7 +9,12 @@ recommendation_type: Support
 article_ready: false
 bottom_line: CCTE supports Washington IL26-638. The measure would preserve the integrity of girls' sports by prohibiting biologically male students from competing on female-only interscholastic teams, with sex verified as part of the routine sports physical.
 recommendation_verb: Vote Yes on IL26-638
-recommendation_rationale: ''
+recommendation_rationale: |-
+  [Washington IL26-638](https://www2.sos.wa.gov/_assets/elections/initiatives/finaltext_3276.pdf?_gl=1*1vwcg3k*_ga*NzU2NzQ3OTY1LjE3NDk4MjUxMzI.*_ga_7B08VE04WV*czE3NTAxMTM0NTIkbzUkZzEkdDE3NTAxMTM0NTUkajU3JGwwJGgw*_ga_X6SDF160YQ*czE3NTAxMTM0NTIkbzUkZzEkdDE3NTAxMTM0NTUkajU3JGwwJGgw) corresponds nicely with the Christian belief that God created two distinct sexes—male and female—with clear biological differences. According to Genesis 1:27, “God created man in his own image... male and female he created them.” Later in the Scriptures, Jesus upheld the binary distinction, saying that "he who created them from the beginning made them male and female" (Matt. 19:4). And today, Christians affirm this distinction as a “very good” (Gen. 1:31) design by our Creator.  
+
+  Only recently have the two terms—sex and gender—been separated, with gender being understood as internally realized and externally expressed. Historically, gender was understood to be interconnected with one’s biological sex, and the two terms were used synonymously. This is true of the Christian Scriptures, which seems to equate sex and gender, treating them both as biological and fixed realities of one’s existence. Furthermore, while allowing for cultural differences regarding how one’s gender is expressed in different societies, the Scripture explicitly condemns certain forms of expression (Deut.22:5). The Christian view is that males and females are equal in dignity and value, yet differ in meaningful ways that inform how they are to relate to one another in society. And when embraced, these distinctions lead to the flourishing of the world. 
+
+  IL26-638 aligns Washington's law with this historic Christian understanding of sex and gender. The initiative defines biological sex through concrete markers—a student's ["reproductive anatomy, genetic makeup, or normal endogenously produced testosterone levels"](https://www2.sos.wa.gov/_assets/elections/initiatives/finaltext_3276.pdf)—reflecting the same fixed, biological reality Scripture describes. And by prohibiting biological males from competing in female sports, this measure honors the dignity of both sexes while respecting the differences that make them distinct. If passed, IL26-638 is the kind of measure that will bring flourishing to Washington's students.
 faq:
   - question: What would IL26-638 change about current Washington law?
     answer: |-
@@ -40,5 +45,5 @@ faq:
   - question: Does this address bathrooms, locker rooms, or other facilities—or only teams?
     answer: This measure is limited specifically to teams.
 author: CCTE Editorial Team
-last_reviewed: 2026-07-22
+last_reviewed: 2026-07-29
 ---
