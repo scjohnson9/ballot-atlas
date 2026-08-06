@@ -17,9 +17,18 @@ faq:
 
       If [Missouri Amendment 3 (2026)](https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/2454H.05T.pdf) is adopted, it would repeal the 2024 initiative, and replace it with a measure that restricts abortion to "cases of medical emergency, fetal anomaly, rape, or incest." This amendment would also ban gender-transition surgeries, cross-sex hormones, and puberty blockers for minors.
   - question: Under what circumstances would abortion be permitted?
-    answer: ''
+    answer: |-
+      According to the final text of the proposed amendment, abortions would be limited to ["cases of medical emergency, fetal anomaly, rape, or incest."](https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/2454H.05T.pdf) 
+
+      Specifically in cases of rape or incest, the measure stipulates that an abortion must be "performed or induced no later than twelve weeks gestational age of the unborn child."
   - question: Would abortions for minors require parental consent?
-    answer: ''
+    answer: |-
+      Yes, for a minor to receive an abortion, this measure requires ["the written consent of the minor and a parent of legal guardian."](https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/2454H.05T.pdf) 
+
+      There are two exceptions to this rule:
+
+      1. If a minor is emancipated, written consent of a parent or legal guardian is not required. 
+      2. In cases of medical emergency, advance written consent of a parent or legal guardian is not required.
   - question: Does the amendment address public funding for abortions?
     answer: ''
   - question: Would the amendment restrict care for miscarriages or ectopic pregnancies?
