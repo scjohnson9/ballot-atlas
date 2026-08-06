@@ -15,7 +15,7 @@ faq:
     answer: |-
       There is no law in Colorado banning the practice of sex-change surgeries for minors. 
 
-      Instead, current Colorado law—[HB25-1309](https://leg.colorado.gov/bill_files/40692/download)—protects ["access to gender-affirming health care"](https://leg.colorado.gov/bill_files/40692/download) and requires insurance companies and the state medicaid program to provide coverage for it. The current law includes a list of "gender-affirming health care" items, including:
+      Instead, current Colorado law—[HB25-1309](https://leg.colorado.gov/bill_files/40692/download)—protects ["access to gender-affirming health care"](https://leg.colorado.gov/bill_files/40692/download) and requires insurance companies and the state Medicaid program to provide coverage for it. The current law includes a list of "gender-affirming health care" items, including:
 
       - Facial bone remodeling;
       - Cheek, chin, or nose implants;
@@ -23,6 +23,8 @@ faq:
       - Mandibular angle augmentation, creation, or reduction;
       - Breast or chest augmentation, reduction, or construction; and
       - Genital and congenital surgical procedures.
+
+      By contrast, [Initiative 110](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/110Final.pdf) would prohibit healthcare professionals from performing any surgery on a minor for the purpose of altering biological sex characteristics, and would prohibit state or federal funds, Medicaid reimbursements, and insurance coverage from being used to pay for such surgeries.
   - question: What is meant by "altering biological sex characteristics" in this initiative?
     answer: According to the final text of Colorado Initiative 110, this phrase ["means treatment in response to a minor's perception of sex or gender."](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/110Final.pdf) This excludes male circumcision and treatment for "a medically verifiable disorder of sex development" or other abnormalities.
   - question: Does the initiative cover hormone treatments and puberty blockers, or only surgery?
