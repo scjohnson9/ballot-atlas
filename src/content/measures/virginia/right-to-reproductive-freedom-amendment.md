@@ -1,7 +1,7 @@
 ---
 state: virginia
 title: Right to Reproductive Freedom Amendment
-ref: Constitutional Amendment
+ref: HJR 1
 date_on_ballot: 2026-11-03
 excerpt: A proposed constitutional amendment that would codify abortion as a right in the state, and restrict the state legislature from adding any protections for the unborn in the first two trimesters. If passed, this would erase protections owed to unborn children.
 stance: Life • The Unborn

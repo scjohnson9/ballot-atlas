@@ -1,7 +1,7 @@
 ---
 state: alabama
 title: Require Pledge of Allegiance and Allow Student-Led Prayer in Public Schools Amendment
-ref: Constitutional Amendment
+ref: Amendment 3
 date_on_ballot: 2026-11-03
 excerpt: A proposed constitutional amendment that would require K–12 public schools to conduct the Pledge of Allegiance and permit student-led, student-initiated prayer in public schools. Participation is voluntary for both. A question of religious freedom in the public education system.
 stance: Religious Liberty • Education
