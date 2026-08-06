@@ -7,14 +7,26 @@ excerpt: A proposed constitutional amendment that would prohibit abortion in Mis
 stance: Life • The Unborn • Sex & Gender
 recommendation_type: Support
 article_ready: false
-bottom_line: Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.
-recommendation_verb: Vote Yes
-recommendation_rationale: Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+bottom_line: CCTE supports Missouri Amendment 3. The measure would repeal Missouri's 2024 abortion-rights amendment, restrict abortion to cases of medical emergency, fetal anomaly, rape, or incest, and prohibit gender-transition surgeries, cross-sex hormones, and puberty blockers for minors.
+recommendation_verb: Vote Yes on Amendment 3
+recommendation_rationale: ''
 faq:
-  - question: Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.
-    answer: Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+  - question: What would Missouri Amendment 3 change about current Missouri law?
+    answer: ''
+  - question: Under what circumstances would abortion be permitted?
+    answer: ''
+  - question: Would abortions for minors require parental consent?
+    answer: ''
+  - question: Does the amendment address public funding for abortions?
+    answer: ''
+  - question: Would the amendment restrict care for miscarriages or ectopic pregnancies?
+    answer: ''
+  - question: What does the measure prohibit regarding gender transition for minors?
+    answer: ''
+  - question: Does the amendment cover hormones and puberty blockers, or only surgery?
+    answer: ''
+  - question: What about children with disorders of sex development?
+    answer: ''
 author: CCTE Editorial Team
-last_reviewed: 2026-07-01
+last_reviewed: 2026-08-06
 ---
-
-Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.
