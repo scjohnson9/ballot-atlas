@@ -21,6 +21,10 @@ faq:
     answer: ''
   - question: Would the amendment restrict care for miscarriages or ectopic pregnancies?
     answer: ''
+  - question: What about abortions based on prenatal disability diagnoses?
+    answer: ''
+  - question: Does the amendment address fetal organ harvesting?
+    answer: ''
   - question: What does the measure prohibit regarding gender transition for minors?
     answer: ''
   - question: Does the amendment cover hormones and puberty blockers, or only surgery?
