@@ -26,7 +26,7 @@ faq:
 
       By contrast, [Initiative 110](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/110Final.pdf) would prohibit healthcare professionals from performing any surgery on a minor for the purpose of altering biological sex characteristics, and would prohibit state or federal funds, Medicaid reimbursements, and insurance coverage from being used to pay for such surgeries.
   - question: What is meant by "altering biological sex characteristics" in this initiative?
-    answer: According to the final text of Colorado Initiative 110, this phrase ["means treatment in response to a minor's perception of sex or gender."](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/110Final.pdf) This excludes male circumcision and treatment for "a medically verifiable disorder of sex development" or other abnormalities.
+    answer: According to the final text of Colorado Initiative 110, this phrase ["means treatment in response to a minor's perception of sex or gender."](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/110Final.pdf) This excludes male circumcision and treatment for "a medically verifiable disorder of sex development or... acquired physical or chemical abnormalities."
   - question: Does the initiative cover hormone treatments and puberty blockers, or only surgery?
     answer: If approved, this initiative would explicitly prohibit ["any surgery to a minor for the purpose of altering biological sex characteristics,"](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/110Final.pdf) but does not address matters like hormone treatments and puberty blockers.
   - question: What types of "health-care professionals" does this apply to?
@@ -39,7 +39,7 @@ faq:
   - question: What about children with disorders of sex development?
     answer: According to this initiative, care for children ["born with a medically verifiable disorder of sex development"](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/110Final.pdf) may continue.
   - question: Does this initiative affect insurance companies or other funding sources for sex-change surgeries?
-    answer: Yes, if this initiative is approved, Colorado voters would also prohibit the use of any ["state or federal funds, medicaid reimbursements, or insurance coverage"](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/110Final.pdf) to pay for sex-change surgeries on minors.
+    answer: Yes, if this initiative is approved, Colorado voters would also prohibit the use of any ["state or federal funds, Medicaid reimbursements, or insurance coverage"](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/110Final.pdf) to pay for sex-change surgeries on minors.
 author: CCTE Editorial Team
 last_reviewed: 2026-08-06
 ---
