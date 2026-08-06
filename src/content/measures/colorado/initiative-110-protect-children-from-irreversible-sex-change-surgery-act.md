@@ -39,5 +39,5 @@ faq:
   - question: Does this initiative affect insurance companies or other funding sources for sex-change surgeries?
     answer: Yes, if this initiative is approved, Colorado voters would also prohibit the use of any ["state or federal funds, medicaid reimbursements, or insurance coverage"](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/110Final.pdf) to pay for sex-change surgeries on minors.
 author: CCTE Editorial Team
-last_reviewed: 2026-07-22
+last_reviewed: 2026-08-06
 ---
