@@ -15,9 +15,9 @@ faq:
     answer: |-
       Arizona currently has a law on the books—[SB 1165](https://www.azleg.gov/legtext/55leg/2R/laws/0106.pdf)—which prohibits biological males from participating on "athletic teams or sports designated for 'females', 'women' or 'girls'."
 
-      SB 1165 was signed into law in 2022, and was recently affirmed by the U.S. Supreme Court via its ruling in [West Virginia et al. v. B. P. J.](https://www.supremecourt.gov/opinions/25pdf/24-43_2b35.pdf)
+      SB 1165 was signed into law in 2022. Its enforceability was recently supported by the U.S. Supreme Court's ruling in [West Virginia et al. v. B. P. J.](https://www.supremecourt.gov/opinions/25pdf/24-43_2b35.pdf), which upheld similar state laws.
 
-      [Proposition 318](https://www.azleg.gov/legtext/57leg/2R/laws/hcr2003.pdf) (also known as HCR2003) strengthens existing law by requiring schools to designate each sports team as either male, female, or coed, and requiring individuals to use the locker room (or other private space) which accord with their biological sex.
+      [Proposition 318](https://www.azleg.gov/legtext/57leg/2R/laws/hcr2003.pdf) (also known as HCR2003) strengthens existing law by requiring schools to designate each sports team as either male, female, or coed, and requiring individuals to use the locker room (or other private space) that accords with their biological sex.
   - question: How does the measure define "sex"?
     answer: Proposition 318 defines a person's sex by ["an individual's biological status as male or female as recorded at birth on the individual's original birth certificate."](https://www.azleg.gov/legtext/57leg/2R/laws/hcr2003.pdf)
   - question: Does this measure address bathrooms and locker rooms in addition to sports teams?
@@ -26,7 +26,7 @@ faq:
 
       If the voters approve Proposition 318, every individual would be required to use the facility that is specifically "designated for that individual's sex." This means that biological males (according to their original birth certificate) would not be able to use a restroom, locker room, shower room, or private space specifically designated as "female."
   - question: Which teams and levels does it apply to?
-    answer: Every K-12 school and athletic association that ["sponsors an interscholastic or intramural sport"](https://www.azleg.gov/legtext/57leg/2R/laws/hcr2003.pdf) would be required to conform to this law.
+    answer: This measure applies to any K-12 school—public and private—and athletic association that ["sponsors an interscholastic or intramural sport."](https://www.azleg.gov/legtext/57leg/2R/laws/hcr2003.pdf)
   - question: How will it be enforced and what consequences will there be for violating the law?
     answer: |-
       [Proposition 318](https://www.azleg.gov/legtext/57leg/2R/laws/hcr2003.pdf) will follow the same mechanism for enforcement and consequences as [SB 1165](https://www.azleg.gov/legtext/55leg/2R/laws/0106.pdf)—"private cause of action for injunctive relief."
