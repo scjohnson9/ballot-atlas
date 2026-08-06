@@ -7,14 +7,22 @@ excerpt: A referendum that defines sex as biological status recorded at birth, r
 stance: Sex & Gender • Education • LGBTQ
 recommendation_type: Support
 article_ready: false
-bottom_line: Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.
-recommendation_verb: Vote No
-recommendation_rationale: Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+bottom_line: CCTE supports Arizona Proposition 318. The measure would preserve the integrity of girls' sports and the privacy of athletic facilities by requiring interscholastic and intramural sports teams — along with their restrooms, locker rooms, and shower rooms — to be designated by biological sex.
+recommendation_verb: Vote Yes on Proposition 318
+recommendation_rationale: ''
 faq:
-  - question: Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.
-    answer: Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+  - question: What would HCR2003 change in current Arizona law?
+    answer: ''
+  - question: How does the measure define "sex"?
+    answer: ''
+  - question: Which teams and levels does it apply to?
+    answer: ''
+  - question: Are there any exceptions to this rule?
+    answer: ''
+  - question: How will it be enforced and what consequences will there be for violating the law?
+    answer: ''
+  - question: Does this measure address bathrooms and locker rooms in addition to sports teams?
+    answer: ''
 author: CCTE Editorial Team
-last_reviewed: 2026-06-30
+last_reviewed: 2026-08-06
 ---
-
-Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.
