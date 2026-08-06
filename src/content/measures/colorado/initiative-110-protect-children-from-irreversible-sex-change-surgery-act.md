@@ -7,10 +7,24 @@ excerpt: A proposed law that would prohibit healthcare professionals from prescr
 stance: Sex & Gender • LGBTQ • Healthcare
 recommendation_type: Support
 article_ready: false
-bottom_line: ''
-recommendation_verb: ''
+bottom_line: CCTE supports Colorado Initiative 110. The measure would prohibit healthcare professionals from prescribing or performing irreversible sex-change surgeries on minors, protecting Colorado's children from decisions with lifelong consequences.
+recommendation_verb: Vote Yes on Initiative 110
 recommendation_rationale: ''
-faq: []
+faq:
+  - question: What would Initiative 110 change about current Colorado law?
+    answer: ''
+  - question: What is meant by "altering biological sex characteristics" in this initiative?
+    answer: ''
+  - question: Does the initiative cover hormone treatments and puberty blockers, or only surgery?
+    answer: ''
+  - question: What types of healthcare professionals does this apply to?
+    answer: ''
+  - question: Does this initiative apply specifically to care of minors or to everyone?
+    answer: ''
+  - question: What about children with disorders of sex development?
+    answer: ''
+  - question: Does this initiative affect insurance companies or other funding sources for sex-change surgeries?
+    answer: ''
 author: CCTE Editorial Team
-last_reviewed: 2026-06-30
+last_reviewed: 2026-07-22
 ---
