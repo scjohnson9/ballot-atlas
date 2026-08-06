@@ -12,7 +12,10 @@ recommendation_verb: Vote Yes on Amendment 3
 recommendation_rationale: ''
 faq:
   - question: What would Missouri Amendment 3 change about current Missouri law?
-    answer: ''
+    answer: |-
+      Missouri currently operates under the 2024 ["Right to Reproductive Freedom Initiative,"](https://revisor.mo.gov/main/OneSection.aspx?constit=y&section=I%20%2036) which established abortion as "a person's fundamental right" in the state's constitution, and prevented the Government from attempting to "deny, interfere with, delay, or otherwise restrict an abortion." 
+
+      If [Missouri Amendment 3 (2026)](https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/2454H.05T.pdf) is adopted, it would repeal the 2024 initiative, and replace it with a measure that restricts abortion to "cases of medical emergency, fetal anomaly, rape, or incest." This amendment would also ban gender-transition surgeries, cross-sex hormones, and puberty blockers for minors.
   - question: Under what circumstances would abortion be permitted?
     answer: ''
   - question: Would abortions for minors require parental consent?
