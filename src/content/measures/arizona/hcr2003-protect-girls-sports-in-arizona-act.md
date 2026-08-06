@@ -26,12 +26,14 @@ faq:
 
       If the voters approve Proposition 318, every individual would be required to use the facility that is specifically "designated for that individual's sex." This means that biological males (according to their original birth certificate) would not be able to use a restroom, locker room, shower room, or private space specifically designated as "female."
   - question: Which teams and levels does it apply to?
-    answer: This measure applies to any K-12 school—public and private—and athletic association that ["sponsors an interscholastic or intramural sport."](https://www.azleg.gov/legtext/57leg/2R/laws/hcr2003.pdf)
+    answer: This measure applies to public and private K-12 schools, colleges, and athletic associations that "sponsor an interscholastic or intramural sport."
   - question: How will it be enforced and what consequences will there be for violating the law?
     answer: |-
       [Proposition 318](https://www.azleg.gov/legtext/57leg/2R/laws/hcr2003.pdf) will follow the same mechanism for enforcement and consequences as [SB 1165](https://www.azleg.gov/legtext/55leg/2R/laws/0106.pdf)—"private cause of action for injunctive relief."
 
-      This means that if a school or an athletic association "knowingly" violates this law, and an athlete is "deprived of an athletic opportunity,"  "suffers any... harm," or "is subject to retaliation or another adverse action by a school or athletic association as a result of reporting a violation of this section," then that athlete has grounds for "injunctive relief, damages and any other relief available under law."
+      This means that if a school or an athletic association "knowingly" violates this law, and an athlete is "deprived of an athletic opportunity," "suffers any... harm," or "is subject to retaliation or another adverse action by a school or athletic association as a result of reporting a violation of this section," then that athlete has grounds for "injunctive relief, damages and any other relief available under law."
+
+      Any civil action must be brought within two years of the violation.
 author: CCTE Editorial Team
 last_reviewed: 2026-08-06
 ---
