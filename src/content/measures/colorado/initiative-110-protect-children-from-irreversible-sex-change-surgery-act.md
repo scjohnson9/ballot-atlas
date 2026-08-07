@@ -6,10 +6,10 @@ date_on_ballot: 2026-11-03
 excerpt: A proposed law that would prohibit healthcare professionals from prescribing or performing any sex-change surgeries on minors. It is the most consequential issue to appear on the ballot in 2026, as it deals with both the nature of human embodiment and protections for children.
 stance: Sex & Gender • LGBTQ • Healthcare
 recommendation_type: Support
-article_ready: false
+article_ready: true
 bottom_line: CCTE supports Colorado Initiative 110. The measure would prohibit healthcare professionals from prescribing or performing irreversible sex-change surgeries on minors, protecting Colorado's children from decisions with lifelong consequences and treating them with dignity.
 recommendation_verb: Vote Yes on Initiative 110
-recommendation_rationale: ''
+recommendation_rationale: _Full editorial analysis in progress. Check back soon._
 faq:
   - question: What would Initiative 110 change about current Colorado law?
     answer: |-
