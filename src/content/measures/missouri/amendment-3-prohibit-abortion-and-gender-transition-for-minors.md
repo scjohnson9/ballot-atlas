@@ -6,7 +6,7 @@ date_on_ballot: 2026-11-03
 excerpt: A proposed constitutional amendment that would prohibit abortion in Missouri with limited exceptions and prohibit gender-transition surgeries and hormone treatments for minors. This act would repeal a 2024 amendment that enshrined the right to abortion in the state constitution.
 stance: Life • The Unborn • Sex & Gender
 recommendation_type: Support
-article_ready: false
+article_ready: true
 bottom_line: CCTE supports Missouri Amendment 3. The measure would repeal Missouri's 2024 abortion-rights amendment, restrict abortion to cases of medical emergency, fetal anomaly, rape, or incest, and prohibit gender-transition surgeries, cross-sex hormones, and puberty blockers for minors.
 recommendation_verb: Vote Yes on Amendment 3
 recommendation_rationale: _Full editorial analysis in progress. Check back soon._
