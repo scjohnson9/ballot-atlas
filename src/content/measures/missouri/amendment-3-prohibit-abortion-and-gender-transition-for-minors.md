@@ -9,7 +9,7 @@ recommendation_type: Support
 article_ready: false
 bottom_line: CCTE supports Missouri Amendment 3. The measure would repeal Missouri's 2024 abortion-rights amendment, restrict abortion to cases of medical emergency, fetal anomaly, rape, or incest, and prohibit gender-transition surgeries, cross-sex hormones, and puberty blockers for minors.
 recommendation_verb: Vote Yes on Amendment 3
-recommendation_rationale: ''
+recommendation_rationale: _Full editorial analysis in progress. Check back soon._
 faq:
   - question: What would Missouri Amendment 3 change about current Missouri law?
     answer: |-
@@ -51,5 +51,5 @@ faq:
   - question: What about children with disorders of sex development?
     answer: The prohibitions of surgeries, hormones, and blockers in this amendment do not apply to children ["born with a medically verifiable disorder of sex development or to treat any infection, injury, disease, or disorder unrelated to the purpose of a gender transition."](https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/2454H.05T.pdf)
 author: CCTE Editorial Team
-last_reviewed: 2026-08-06
+last_reviewed: 2026-08-07
 ---
