@@ -7,7 +7,7 @@ excerpt: A referendum that defines sex as biological status recorded at birth, r
 stance: Sex & Gender • Education • LGBTQ
 recommendation_type: Support
 article_ready: true
-bottom_line: CCTE supports Arizona Proposition 318. The measure would preserve the integrity of girls' sports and the privacy of athletic facilities by requiring interscholastic and intramural sports teams — along with their restrooms, locker rooms, and shower rooms — to be designated by biological sex.
+bottom_line: CCTE supports Arizona Proposition 318. The measure would preserve the integrity of girls' sports and the privacy of athletic facilities by requiring interscholastic and intramural sports teams—along with their restrooms, locker rooms, and shower rooms—to be designated by biological sex.
 recommendation_verb: Vote Yes on Proposition 318
 recommendation_rationale: _Full editorial analysis in progress. Check back soon._
 faq:
