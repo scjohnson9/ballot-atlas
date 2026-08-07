@@ -23,28 +23,29 @@ faq:
       Specifically in cases of rape or incest, the measure stipulates that an abortion must be "performed or induced no later than twelve weeks gestational age of the unborn child."
   - question: Would abortions for minors require parental consent?
     answer: |-
-      Yes, for a minor to receive an abortion, this measure requires ["the written consent of the minor and a parent of legal guardian."](https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/2454H.05T.pdf) 
+      Yes, for a minor to receive an abortion, this measure requires ["the written consent of the minor and a parent or legal guardian."](https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/2454H.05T.pdf) 
 
-      There are two exceptions to this rule:
+      There are three exceptions to this rule:
 
       1. If a minor is emancipated, written consent of a parent or legal guardian is not required. 
       2. In cases of medical emergency, advance written consent of a parent or legal guardian is not required.
+      3. If the general assembly enacts a law allowing a minor to obtain a court order for an abortion, then written consent of a parent or legal guardian may not be required.
   - question: Does the amendment address public funding for abortions?
     answer: Yes, this measure would ban public funding for abortions, ["except in cases of medical emergency, rape, or incest."](https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/2454H.05T.pdf)
   - question: Would the amendment restrict care for miscarriages or ectopic pregnancies?
     answer: |-
       No, it would not restrict care. 
 
-      [The measure](https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/2454H.05T.pdf) explicitly states that "A woman's ability to access health care in cases of miscarriages, ectopic pregnancies, and other medical emergencies shall not be infringed by the state.
+      [The measure](https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/2454H.05T.pdf) explicitly states that "A woman's ability to access health care in cases of miscarriages, ectopic pregnancies, and other medical emergencies shall not be infringed by the state."
   - question: What about abortions based on prenatal disability diagnoses?
     answer: |-
-      Missouri Amendment 3 offers protection to unborn children with prenatal disability diagnosis. 
+      Missouri Amendment 3 offers protection to unborn children with prenatal disability diagnoses. 
 
-      Except when a child has a fetal anomaly that ["would make life outside the womb impossible,"](https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/2454H.05T.pdf) no abortion may be permitted based on any prenatal disability diagnoses.
+      Except when a child has a fetal anomaly that ["would make life outside the womb impossible,"](https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/2454H.05T.pdf) no abortion may be permitted based on any prenatal disability diagnosis.
   - question: Does the amendment address fetal organ harvesting?
-    answer: Yes, fetal organ harvesting ["for the purpose of selling or collecting for scientific purposes"](https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/2454H.05T.pdf) would not be permitted under this law.
-  - question: What does the measure prohibit regarding gender transition for minor?
-    answer: '[Missouri Amendment 3](https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/2454H.05T.pdf) seeks to prohibit the prescription and administration of "gender transition surgeries," "cross-sex hormones," and "puberty blocking drugs" on children under the age of 18.'
+    answer: Yes, fetal organ harvesting ["for the purpose of selling or collecting for scientific purposes"](https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/2454H.05T.pdf) would not be "permitted under any circumstances."
+  - question: What does the measure prohibit regarding gender transition for minors?
+    answer: '[Missouri Amendment 3](https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/2454H.05T.pdf) seeks to prohibit "gender transition surgeries," "cross-sex hormones," and "puberty blocking drugs" on children under the age of 18.'
   - question: Does the amendment cover hormones and puberty blockers, or only surgery?
     answer: '[This amendment](https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/2454H.05T.pdf) is a comprehensive ban of gender-transition treatment for minors—including hormones, puberty blockers, and surgeries.'
   - question: What about children with disorders of sex development?
