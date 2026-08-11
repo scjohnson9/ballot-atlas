@@ -28,19 +28,19 @@ author: CCTE Editorial Team
 last_reviewed: 2024-10-15
 ---
 
-*Draft. Replace with CCTE's full editorial analysis.*
+_Draft. Replace with CCTE's full editorial analysis._
 
 ## The Legal Question
 
-Amendment 4 would add a new section to Article I of the Florida Constitution, the state's bill of rights. The proposed language reads, in relevant part: *"No law shall prohibit, penalize, delay, or restrict abortion before viability or when necessary to protect the patient's health, as determined by the patient's healthcare provider."*
+Amendment 4 would add a new section to Article I of the Florida Constitution, the state's bill of rights. The proposed language reads, in relevant part: _"No law shall prohibit, penalize, delay, or restrict abortion before viability or when necessary to protect the patient's health, as determined by the patient's healthcare provider."_
 
 Three features of the text warrant attention. First, the amendment is silent on what "viability" means as a medical or legal threshold; it leaves that determination to "the patient's healthcare provider." Second, the health exception is phrased without qualification — the provider's judgment that abortion is "necessary to protect the patient's health" is sufficient to override any law restricting it. Third, the amendment overrides existing parental-notification statutes only by implication, but the breadth of its language ("no law shall prohibit, penalize, delay, or restrict") suggests courts would read it to do so.
 
-Florida's current law — passed in 2023 and effective May 2024 — protects most unborn children after six weeks of gestation. Amendment 4 would, on its plain language, render that law unconstitutional, along with most other protections enacted by the legislature since the *Dobbs* decision returned this question to the states.
+Florida's current law — passed in 2023 and effective May 2024 — protects most unborn children after six weeks of gestation. Amendment 4 would, on its plain language, render that law unconstitutional, along with most other protections enacted by the legislature since the _Dobbs_ decision returned this question to the states.
 
 ## The Moral Question
 
-The historic Christian tradition — Catholic, Orthodox, and Protestant alike — has affirmed from the earliest centuries that the unborn child is owed protection. The *Didache*, a first-century Christian text, prohibits abortion explicitly. Tertullian, Basil of Caesarea, Augustine, Aquinas — across communions and centuries, the tradition's voice on this question has been notably consistent: the developing human life in the womb is not a matter of private medical decision but a person whose life the community is bound to respect.
+The historic Christian tradition — Catholic, Orthodox, and Protestant alike — has affirmed from the earliest centuries that the unborn child is owed protection. The _Didache_, a first-century Christian text, prohibits abortion explicitly. Tertullian, Basil of Caesarea, Augustine, Aquinas — across communions and centuries, the tradition's voice on this question has been notably consistent: the developing human life in the womb is not a matter of private medical decision but a person whose life the community is bound to respect.
 
 This consensus has not always been politically realizable. Christians may legitimately differ on which specific laws best protect unborn life, how to weigh the interests of mothers in difficult circumstances, and what forms of legal restraint are wise in a pluralistic democracy. These are real questions of prudence.
 
