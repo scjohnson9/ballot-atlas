@@ -38,7 +38,7 @@ faq:
     answer: |-
       Nevada Question 6 does not define who qualifies as a ["health care practitioner."](https://www.nvsos.gov/sos/home/showpublisheddocument/12633/638375592027970000)
 
-      Current Nevada law stipulates that an abortion should be performed by ["a physician licensed to practice" (NRS 442.250)](https://www.leg.state.nv.us/nrs/nrs-442.html#NRS442Sec250) in the state. But the language of this amendment is much broader, opening the possibility that non-licensed physicians  could perform abortions, provided those individuals are deemed "qualified."
+      Current Nevada law stipulates that an abortion should be performed by ["a physician licensed to practice" (NRS 442.250)](https://www.leg.state.nv.us/nrs/nrs-442.html#NRS442Sec250) in the state. But the language of this amendment is much broader, opening the possibility that practitioners other than physicians (see [NRS 629.031](https://www.leg.state.nv.us/nrs/nrs-629.html)) could perform abortions, provided those individuals are deemed "qualified."
   - question: Are there exceptions in this measure that would allow late-term abortions to occur?
     answer: |-
       Yes. The amendment text states an abortion is permitted after the point of fetal viability if it is ["needed to protect the life or health of the pregnant patient."](https://www.nvsos.gov/sos/home/showpublisheddocument/12633/638375592027970000) 
