@@ -6,7 +6,7 @@ date_on_ballot: 2026-11-03
 excerpt: A proposed constitutional amendment that would codify abortion as a right in the state through "fetal viability." Nevada requires initiated amendments to pass in two consecutive general elections, and this is voters' second decision on the measure following its 2024 approval.
 stance: Life • The Unborn
 recommendation_type: Oppose
-article_ready: false
+article_ready: true
 bottom_line: CCTE opposes Nevada Question 6. The measure would enshrine abortion as a constitutional right in Nevada up to fetal viability with a broadly-defined post-viability health exception, and would constitutionally exclude any state interest in protecting unborn life from being a valid basis for regulation.
 recommendation_verb: Vote No on Question 6
 recommendation_rationale: _Full editorial analysis in progress. Check back soon._
