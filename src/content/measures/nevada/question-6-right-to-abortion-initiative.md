@@ -33,24 +33,12 @@ faq:
 
       This is a deeply unsettling and subjective definition. Not only does it allow for the abortion of babies who may be able to survive if given proper medical treatment, but it lacks objective criteria for determination. According to the text, whether a baby is determined to be viable is left up to "the professional judgment of the patient's treating health care practitioner." 
 
-      Grounding the viability to an unborn child in the health care practitioner's opinion has grave consequences. If he wants the child to be non-viable, then he can rule that way. If he wants the child to be viable, he can rule that way.
+      Grounding the viability of an unborn child in the health care practitioner's opinion has grave consequences. If he wants the child to be non-viable, then he can rule that way. If he wants the child to be viable, he can rule that way.
   - question: Who qualifies as a "health care practitioner"?
     answer: |-
       Nevada Question 6 does not define who qualifies as a ["health care practitioner."](https://www.nvsos.gov/sos/home/showpublisheddocument/12633/638375592027970000)
 
-      But existing laws do outline ["providers of health care" in Nevada (NRS 629.031)](https://www.leg.state.nv.us/nrs/nrs-629.html). If Question 6 passes, it would treat the following providers as having the "professional judgement" required to determine fetal viability: 
-
-      - A dentist, a dental therapist, or a dental hygienist;
-      - An optometrist;
-      - A speech-language pathologist;
-      - An audiologist;
-      - A licensed psychologist;
-      - A licensed marriage and family therapist;
-      - A licensed clinical professional counselor
-      - A music therapist;
-      - A licensed dietitian;
-
-      Claiming that any of the above have the "professional judgement" required to determine fetal viability is absurd.
+      Current Nevada law stipulates that an abortion should be performed by ["a physician licensed to practice" (NRS 442.250)](https://www.leg.state.nv.us/nrs/nrs-442.html#NRS442Sec250) in the state. But the language of this amendment is much broader, opening the possibility that non-licensed physicians  could perform abortions, provided those individuals are deemed "qualified."
   - question: Are there exceptions in this measure that would allow late-term abortions to occur?
     answer: |-
       Yes. The amendment text states an abortion is permitted after the point of fetal viability if it is ["needed to protect the life or health of the pregnant patient."](https://www.nvsos.gov/sos/home/showpublisheddocument/12633/638375592027970000) 
@@ -63,14 +51,14 @@ faq:
       By limiting any attempt to restrict an abortion to a narrowly defined term like compelling state interests, this amendment ensures that virtually any attempt to restrict abortions would fail.
   - question: What does "compelling state interest" mean under this measure?
     answer: |-
-      What exactly qualifies as as a compelling state interest is unclear, except that it is ["limited exclusively to the state’s interest in protecting, maintaining, or improving the health of an _individual who is seeking abortion care._"](https://www.nvsos.gov/sos/home/showpublisheddocument/12633/638375592027970000) 
+      What exactly qualifies as a compelling state interest is unclear, except that it is ["limited exclusively to the state’s interest in protecting, maintaining, or improving the health of an _individual who is seeking abortion care._"](https://www.nvsos.gov/sos/home/showpublisheddocument/12633/638375592027970000) 
 
       Notice that this definition is narrowly defined to include only the interests of the one seeking the abortion. It would restrict the pro-life movement from citing the health of the unborn child as a compelling state interest to curb abortions.
   - question: Would the measure require parental consent for minors?
     answer: |-
       This amendment is silent on minors seeking abortions. They are treated just like any other individual seeking an abortion. Unlike other states which require the written consent of a parent for a child seeking an abortion, [Nevada Question 6](https://www.nvsos.gov/sos/home/showpublisheddocument/12633/638375592027970000) would allow a child to receive an abortion without ever speaking with a parent or guardian. 
 
-      Sadly, this measure makes children more vulnerable to sexual and abuse and human trafficking. Consider that an abuser could impregnate a child, drive the child to an abortion clinic, and force that child to get an abortion—without the child's parents ever knowing.
+      Sadly, this measure makes children more vulnerable to sexual abuse and human trafficking. Consider that an abuser could impregnate a child, drive the child to an abortion clinic, and force that child to get an abortion—without the child's parents ever knowing.
   - question: Would the measure affect public funding of abortions?
     answer: Existing Nevada law allows Medicaid to cover abortions. And since this measure is silent on public funding for abortion, that practice will continue.
 author: CCTE Editorial Team
