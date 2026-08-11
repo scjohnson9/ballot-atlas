@@ -74,5 +74,5 @@ faq:
   - question: Would the measure affect public funding of abortions?
     answer: Existing Nevada law allows Medicaid to cover abortions. And since this measure is silent on public funding for abortion, that practice will continue.
 author: CCTE Editorial Team
-last_reviewed: 2026-08-06
+last_reviewed: 2026-08-11
 ---
