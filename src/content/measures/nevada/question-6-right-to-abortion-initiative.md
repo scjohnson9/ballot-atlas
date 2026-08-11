@@ -9,7 +9,7 @@ recommendation_type: Oppose
 article_ready: false
 bottom_line: CCTE opposes Nevada Question 6. The measure would enshrine abortion as a constitutional right in Nevada up to fetal viability with a broadly-defined post-viability health exception, and would constitutionally exclude any state interest in protecting unborn life from being a valid basis for regulation.
 recommendation_verb: Vote No on Question 6
-recommendation_rationale: ''
+recommendation_rationale: _Full editorial analysis in progress. Check back soon._
 faq:
   - question: What would Question 6 change about current Nevada law?
     answer: |-
