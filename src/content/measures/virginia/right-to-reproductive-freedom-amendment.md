@@ -6,10 +6,10 @@ date_on_ballot: 2026-11-03
 excerpt: A proposed constitutional amendment that would codify abortion as a right in the state, and restrict the state legislature from adding any protections for the unborn in the first two trimesters. If passed, this would erase protections owed to unborn children.
 stance: Life • The Unborn
 recommendation_type: Oppose
-article_ready: false
+article_ready: true
 bottom_line: CCTE opposes Virginia HJR 1. The measure would enshrine abortion as a constitutional right in Virginia through the end of the second trimester, permit third-trimester abortions under a broad physician-judgment health exception, and constitutionally exclude any state interest in protecting unborn life from ever being a valid basis for regulation.
 recommendation_verb: Vote No on HJR 1
-recommendation_rationale: ''
+recommendation_rationale: _Full editorial analysis in progress. Check back soon._
 faq:
   - question: What would HJR 1 change about current Virginia law?
     answer: |-
