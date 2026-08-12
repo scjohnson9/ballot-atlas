@@ -64,13 +64,13 @@ faq:
     answer: |-
       [HJR 1](https://lis.blob.core.windows.net/files/1081212.PDF) is a legislatively-referred constitutional amendment. Under [Article XII, Section 1 of the Virginia Constitution](https://law.lis.virginia.gov/constitution/article12/section1/), a proposed amendment must:
 
-      1. Be approved by a majority of both houses of the General Assembly;
-      2. Be approved again, in identical form, by the next General Assembly session held after a House of Delegates election; and
-      3. Be ratified by a majority of Virginia voters at a general election.
+      1. Be agreed to "by a majority of the members elected to each of the two houses" of the General Assembly;
+      2. Be "referred to the General Assembly at its first regular session held after the next general election of members of the House of Delegates," where it must again receive the approval of a majority of members elected to each house; and
+      3. Be submitted to the voters "not sooner than ninety days after final passage," where it takes effect if "a majority of those voting vote in favor of any amendment."
 
-      HJR 1 received its first General Assembly approval during the 2025 session. Following the November 2025 House of Delegates election, the measure was reintroduced during the 2026 session for a second approval. If it receives second General Assembly approval and voter ratification on November 3, 2026, the amendment becomes part of the Virginia Constitution.
+      HJR 1 received its first General Assembly approval during the 2025 session. Following the November 2025 House of Delegates election, the measure was approved again by the 2026 General Assembly. It will now be submitted to Virginia voters on November 3, 2026.
 
-      The necessary threshold for voter approval is 50%.
+      The threshold for voter approval is a simple majority of those voting on the amendment.
 author: CCTE Editorial Team
 last_reviewed: 2026-08-11
 ---
