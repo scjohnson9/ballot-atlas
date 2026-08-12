@@ -35,7 +35,7 @@ faq:
     answer: |-
       [HJR 1](https://lis.blob.core.windows.net/files/1081212.PDF) does not define "viability." The word appears only once in the amendment text, in the third-trimester exception: ["when in the professional judgment of a physician the fetus is not viable."](https://lis.blob.core.windows.net/files/1081212.PDF)
 
-      By failing to provide any objective criteria to determine _viability_—no age or medical benchmarks—this amendment treats it as purely subjective. Whether an unborn child is deemed viable is left entirely to "the professional judgment of a physician"—however he or she defines it.  
+      By failing to provide any objective criteria to determine viability—no age or medical benchmarks—this amendment treats it as purely subjective. Whether an unborn child is deemed viable is left entirely to "the professional judgment of a physician"—however he defines it.  
 
       Grounding the viability of an unborn child in an individual physician's opinion has grave consequences. If he wants the child to be non-viable, then he can rule that way. If he wants the child to be viable, he can rule that way.
   - question: Would the amendment allow late-term abortions?
@@ -76,7 +76,7 @@ faq:
     answer: |-
       According to [Article XII, Section 1 of the Virginia Constitution](https://law.lis.virginia.gov/constitution/article12/section1/), a proposed amendment takes effect if "a majority of those voting vote in favor of any amendment."
 
-      That means that if greater than 50% of voters approve this amendment, Virginia will have some of the most broad abortion access of any state in the country. 
+      That means that if greater than 50% of voters approve this amendment, Virginia will have some of the broadest abortion access of any state in the country. 
 
       While it is possible to repeal an amendment, it is a very difficult process. It would require the General Assembly to pass a new amendment in two consecutive sessions with an intervening House of Delegates election, followed by voter ratification.
 author: CCTE Editorial Team
