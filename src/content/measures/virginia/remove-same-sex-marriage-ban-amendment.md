@@ -1,7 +1,7 @@
 ---
 state: virginia
 title: Remove Same-Sex Marriage Ban Amendment
-ref: HJR 9
+ref: Question 2
 date_on_ballot: 2026-11-03
 excerpt: A proposed constitutional amendment that would repeal Virginia's current constitutional definition of marriage as between a man and a woman and replace it with language requiring the state to recognize marriages without regard to sex or gender.
 stance: Marriage & Family
