@@ -12,21 +12,39 @@ recommendation_verb: Vote Yes on Amendment 3
 recommendation_rationale: ''
 faq:
   - question: What would Amendment 3 change about current Alabama law?
-    answer: ''
+    answer: |-
+      [Alabama Amendment 3](https://alison.legislature.state.al.us/files/pdf/SearchableInstruments/2026RS/HB511-enr.pdf) would enshrine two provisions into the Alabama state constitution that are already permitted by Alabama state law. 
+
+      [AL Code §16-43-5](https://alison.legislature.state.al.us/code-of-alabama?section=16-43-5) requires the pledge of allegiance to be ["conducted at the beginning of each school day"](https://alison.legislature.state.al.us/code-of-alabama?section=16-43-5) in all K-12 schools, and [AL Code §16-1-20.5](https://alison.legislature.state.al.us/code-of-alabama?section=16-1-20.5) permits student-led voluntary prayer in public schools. 
+
+      If these provisions are added into the state constitution, then they are more difficult for future lawmakers to repeal.
   - question: What does the measure require regarding the Pledge of Allegiance?
-    answer: ''
+    answer: |-
+      The provision would require all public K-12 schools to ["to conduct The Pledge of Allegiance to the United States flag."](https://alison.legislature.state.al.us/files/pdf/SearchableInstruments/2026RS/HB511-enr.pdf) 
+
+      This does not mean that all students would be required to recite the pledge, as the provision protects the students' "right to opt out of participation in the Pledge of Allegiance... based on their own beliefs."
   - question: What does the measure allow regarding student-led prayer?
-    answer: ''
+    answer: |-
+      [Alabama Amendment 3](https://alison.legislature.state.al.us/files/pdf/SearchableInstruments/2026RS/HB511-enr.pdf) would require all public K-12 schools to "allow a prayer to be conducted" as long as it meets two key criteria: 
+
+      [(1) The prayer must be initiated by and led by a student; and](https://alison.legislature.state.al.us/files/pdf/SearchableInstruments/2026RS/HB511-enr.pdf)
+
+      [(2) No student may be required to participate in a prayer.](https://alison.legislature.state.al.us/files/pdf/SearchableInstruments/2026RS/HB511-enr.pdf)
   - question: Who leads the prayer—teachers or students?
-    answer: ''
+    answer: '["The prayer must be initiated by and led by a student."](https://alison.legislature.state.al.us/files/pdf/SearchableInstruments/2026RS/HB511-enr.pdf)'
   - question: Is student participation voluntary?
-    answer: ''
+    answer: Yes, student participation for both the pledge of allegiance to the United States and prayer is voluntary. Students will be able to ["opt out... based on their own beliefs."](https://alison.legislature.state.al.us/files/pdf/SearchableInstruments/2026RS/HB511-enr.pdf)
   - question: What happens if a local school board does not adopt a prayer policy?
-    answer: ''
+    answer: The final text of the amendment states any violation of this amendment should be reported to the ["local superintendent of education"](https://alison.legislature.state.al.us/files/pdf/SearchableInstruments/2026RS/HB511-enr.pdf) for his or her review. It does not mandate any particular punishment for violations.
   - question: Is this consistent with the First Amendment?
-    answer: ''
+    answer: Yes, [Alabama Amendment 3](https://alison.legislature.state.al.us/files/pdf/SearchableInstruments/2026RS/HB511-enr.pdf) is consistent with the [First Amendment of the United States of America](https://constitution.congress.gov/constitution/amendment-1/), which respects the right of citizens to freely exercise their religion.
   - question: Why does Alabama need this amendment if students may already pray at school?
-    answer: ''
+    answer: |-
+      While state law already permits student-led, voluntary prayer in Alabama public schools, it is wise and fitting for the voters to enshrine it the state's constitution. 
+
+      A state's constitution—like the United State's national constitution—outlines the rights of its citizens. We believe that religious freedom is a fundamental right of all people, and therefore, it would be fitting for it to be reflected in the Alabama state constitution. 
+
+      Additionally, it would be wise for Alabama voters to enshrine this right in the state's constitution, because it would make a future repeal more difficult.
 author: CCTE Editorial Team
 last_reviewed: 2026-09-08
 ---
