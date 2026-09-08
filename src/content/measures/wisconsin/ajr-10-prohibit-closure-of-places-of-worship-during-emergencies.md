@@ -12,11 +12,17 @@ recommendation_verb: Vote Yes on AJR 10
 recommendation_rationale: ''
 faq:
   - question: What would AJR 10 change about current Wisconsin law?
-    answer: ''
+    answer: |-
+      While [Article 1, Section 18 of the Wisconsin state constitution](https://docs.legis.wisconsin.gov/constitution/wi_unannotated) is already devoted to "Freedom of worship; liberty of conscience; state religion; public funds," it does not protect religious places of worship from forced governmental closures during state emergencies. 
+
+      If AJR 10 passes, then citizens would be able to continue gathering in churches and other places of worship during ["a state of emergency at the national, state, or local level, including an emergency related to public health."](https://docs.legis.wisconsin.gov/2025/related/proposals/ajr10)
   - question: What does the amendment prohibit specifically?
-    answer: ''
+    answer: '[AJR 10](https://docs.legis.wisconsin.gov/2025/related/proposals/ajr10) prohibits "the state or a political subdivision of the state" from "[ordering] the closure of or [forbidding] gatherings in places of worship in response to a state of emergency at the national, state, or local level, including an emergency related to public health."'
   - question: What prompted this amendment?
-    answer: ''
+    answer: |-
+      During the Covid-19 pandemic, Gov. Tony Evers signed the ["Safer at Home Order,"](https://evers.wi.gov/documents/covid19/emo12-saferathome.pdf) which forbid churches and other places of worship from gathering with groups of more than 10 individuals in a single room. 
+
+      This order essentially forced the closure of every church from meeting.
   - question: Does the amendment apply only to public health emergencies?
     answer: ''
   - question: Would places of worship be exempt from all public health regulations?
