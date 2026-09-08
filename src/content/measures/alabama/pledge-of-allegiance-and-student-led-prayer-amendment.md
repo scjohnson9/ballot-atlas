@@ -7,14 +7,26 @@ excerpt: A proposed constitutional amendment that would require K–12 public sc
 stance: Religious Liberty • Education
 recommendation_type: Support
 article_ready: false
-bottom_line: Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.
-recommendation_verb: Vote Yes
-recommendation_rationale: Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+bottom_line: CCTE supports Alabama Amendment 3. The measure would amend the Alabama Constitution to require public K–12 schools to conduct the Pledge of Allegiance daily and permit local school boards to adopt policies allowing student-initiated, student-led prayer at the start of the school day, with participation voluntary for both.
+recommendation_verb: Vote Yes on Amendment 3
+recommendation_rationale: ''
 faq:
-  - question: Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.
-    answer: Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+  - question: What would Amendment 3 change about current Alabama law?
+    answer: ''
+  - question: What does the measure require regarding the Pledge of Allegiance?
+    answer: ''
+  - question: What does the measure allow regarding student-led prayer?
+    answer: ''
+  - question: Who leads the prayer—teachers or students?
+    answer: ''
+  - question: Is student participation voluntary?
+    answer: ''
+  - question: What happens if a local school board does not adopt a prayer policy?
+    answer: ''
+  - question: Is this consistent with the First Amendment?
+    answer: ''
+  - question: Why does Alabama need this amendment if students may already pray at school?
+    answer: ''
 author: CCTE Editorial Team
-last_reviewed: 2026-07-01
+last_reviewed: 2026-09-08
 ---
-
-Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas.
