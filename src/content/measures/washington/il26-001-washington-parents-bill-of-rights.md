@@ -38,11 +38,11 @@ faq:
       - Written notice and the option to opt their child out of instruction on topics related to sexual activity.
   - question: Why is this initiative needed if the Parents' Bill of Rights already passed in 2024?
     answer: |-
-      The Parents' Bill of Rights was originally passed as [Initiative 2081 (I-2081)](https://lawfilesext.leg.wa.gov/biennium/2023-24/Pdf/Initiatives/Initiatives/INITIATIVE%202081.pdf) in 2024, with strong bipartisan support—it passed the Washington State House 82-15 and the Washington State Senate unanimously, 49-0. 
+      The Parents' Bill of Rights was originally passed as [I-2081 (2024)](https://lawfilesext.leg.wa.gov/biennium/2023-24/Pdf/Initiatives/Initiatives/INITIATIVE%202081.pdf), with strong bipartisan support. 
 
-      In 2025, however, the Washington state legislature passed [HB 1296](https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/House/1296-S.SL.pdf), which significantly weakened those original protections. HB 1296 passed the House 56-37 and the Senate 30-19—along party lines, without the bipartisan support that had accompanied the original initiative.
+      In 2025, however, the Washington state legislature passed [HB 1296](https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/House/1296-S.SL.pdf) along party lines. HB 1296 significantly weakened the original protections in I-2081. 
 
-      Notable changes from HB 1296 include:
+      Some of the notably weaker changes in HB 1296 include:
 
       - Allowing students age 13 and older to consent to certain school-based medical treatments without parental permission;
       - Removing the requirement that parents be notified when their child receives medical treatment at school; and
