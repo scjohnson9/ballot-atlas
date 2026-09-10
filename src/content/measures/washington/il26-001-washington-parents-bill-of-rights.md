@@ -23,9 +23,32 @@ faq:
 
       Additionally, if voters approve IL26-001, certain modifications from HB 1296 would be reversed—including those which made it more difficult for parents to view their child's student records or have advance notice of medical services.
   - question: What specific rights would IL26-001 restore to parents?
-    answer: ''
+    answer: |-
+      Under [IL26-001](https://www2.sos.wa.gov/_assets/elections/initiatives/finaltext_3264.pdf), parents and legal guardians of public-school children under 18 would be guaranteed the right to:
+
+      - Examine "the textbooks, curriculum, and supplemental material used in their child's classroom;"
+      - Inspect their child's school records and receive a copy "within 10 business days" of submitting a written request;
+      - Receive prior notification when medical services are being offered to their child, except in cases of emergency;
+      - Receive notification when the school has arranged for medical treatment that requires follow-up care beyond normal school hours;
+      - Receive immediate notification if a criminal action is committed against or by their child;
+      - Receive immediate notification if law enforcement questions their child, except in cases where a parent is accused of abuse;
+      - Receive immediate notification if their child is removed from the school campus without parental permission;
+      - Assurance that their child will not face discrimination based on "the sincerely held religious beliefs of the child's family;"
+      - Written notice and the option to opt their child out of surveys or activities that ask about the child's sexual experiences, family religious beliefs, or mental health; and
+      - Written notice and the option to opt their child out of instruction on topics related to sexual activity.
   - question: Why is this initiative needed if the Parents' Bill of Rights already passed in 2024?
-    answer: ''
+    answer: |-
+      The Parents' Bill of Rights was originally passed as [Initiative 2081 (I-2081)](https://lawfilesext.leg.wa.gov/biennium/2023-24/Pdf/Initiatives/Initiatives/INITIATIVE%202081.pdf) in 2024, with strong bipartisan support—it passed the Washington State House 82-15 and the Washington State Senate unanimously, 49-0. 
+
+      In 2025, however, the Washington state legislature passed [HB 1296](https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/House/1296-S.SL.pdf), which significantly weakened those original protections. HB 1296 passed the House 56-37 and the Senate 30-19—along party lines, without the bipartisan support that had accompanied the original initiative.
+
+      Notable changes from HB 1296 include:
+
+      - Allowing students age 13 and older to consent to certain school-based medical treatments without parental permission;
+      - Removing the requirement that parents be notified when their child receives medical treatment at school; and
+      - Extending the deadline for schools to respond to records requests from 10 days to 45 days.
+
+      [IL26-001](https://www2.sos.wa.gov/_assets/elections/initiatives/finaltext_3264.pdf) would restore the original protections that voters approved in 2024.
   - question: What did HB 1296 change about parents' rights?
     answer: ''
   - question: Does the initiative address parental consent for school-based medical and mental health services?
