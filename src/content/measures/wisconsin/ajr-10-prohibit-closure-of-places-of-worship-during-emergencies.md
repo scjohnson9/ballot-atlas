@@ -22,7 +22,7 @@ faq:
     answer: |-
       During the Covid-19 pandemic, Gov. Tony Evers signed the ["Safer at Home Order,"](https://evers.wi.gov/documents/covid19/emo12-saferathome.pdf) which forbid churches and other places of worship from gathering with groups of more than 10 individuals in a single room. 
 
-      Due to the severe restraints on meeting sizes, this order forced the closure of vast majority of churches in the state.
+      Due to the severe restraints on meeting sizes, this order forced the closure of the vast majority of churches in the state.
   - question: Does the amendment apply only to public health emergencies?
     answer: No, this amendment protects churches from being forced to close in response to any ["state of emergency at the national, state, or local level, including an emergency related to public health."](https://docs.legis.wisconsin.gov/2025/related/proposals/ajr10)
   - question: Would places of worship be exempt from all public health regulations?
