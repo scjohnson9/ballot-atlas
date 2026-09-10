@@ -38,5 +38,5 @@ faq:
 
       [Wisconsin AJR 10](https://docs.legis.wisconsin.gov/2025/related/proposals/ajr10) would go one step further by altogether preventing the closure of churches in response to a public health emergency.
 author: CCTE Editorial Team
-last_reviewed: 2026-09-08
+last_reviewed: 2026-09-10
 ---
