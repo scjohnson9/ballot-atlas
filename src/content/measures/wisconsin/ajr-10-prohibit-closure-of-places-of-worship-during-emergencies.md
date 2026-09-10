@@ -36,7 +36,7 @@ faq:
     answer: |-
       During the COVID pandemic, the U.S. Supreme Court issued several rulings related to church closures and gathering size. In one of the most applicable cases, [_Roman Catholic Diocese of Brooklyn v. Cuomo_ (2020)](https://www.supremecourt.gov/opinions/20pdf/20a87_4g15.pdf), the court ruled that occupancy regulations which "single out houses of worship for especially harsh treatment" are unconstitutional. If a state wants to limit gathering sizes for churches, then that state must treat all comparable secular activities similarly. 
 
-      Wisconsin AJR 10 would go one step further by altogether preventing the closure of churches in response to a public health emergency.
+      [Wisconsin AJR 10](https://docs.legis.wisconsin.gov/2025/related/proposals/ajr10) would go one step further by altogether preventing the closure of churches in response to a public health emergency.
 author: CCTE Editorial Team
 last_reviewed: 2026-09-08
 ---
