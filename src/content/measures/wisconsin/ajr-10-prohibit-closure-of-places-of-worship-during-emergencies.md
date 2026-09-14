@@ -9,7 +9,16 @@ recommendation_type: Support
 article_ready: true
 bottom_line: CCTE supports Wisconsin AJR 10. The measure would amend Article I, Section 18 of the Wisconsin Constitution to prohibit the state or any political subdivision from ordering the closure of, or forbidding gatherings in, places of worship in response to a state of emergency—including a public health emergency—preserving the freedom of religious assembly against future government overreach.
 recommendation_verb: Vote Yes on AJR 10
-recommendation_rationale: _Full editorial analysis in progress. Check back soon._
+recommendation_rationale: |-
+  The Center for Christian Thought and Ethics supports Wisconsin’s constitutional amendment to protect churches from government closure. Assembly Joint Resolution 10 (AJR 10), also called the "Prohibit Government Closure of Places of Worship During Emergencies Amendment," protects houses of worship in three ways. We support the constitutional amendment for three theological grounds: 
+
+  First, God has ordained the state to rule over matters of external order, not the inner life of individuals. AJR 10 clarifies God’s established boundaries on State power. (Rom 13:1-7, Matt 21:15-22).
+
+  Second, God empowers qualified and recognized leaders to shepherd his church. Elders are best situated to know the spiritual makeup of their flock; therefore, elders are most fit to determine how, when, and where their flocks gather —not distant bureaucrats. (1 Pet 5:1-4).
+
+  Three, God establishes the ordinances or sacraments as essential to Christian worship. Wisconsin’s constitutional amendment ensures that Christians have access to the ordinary means of grace, which are essential to spiritual health. Baptism, Communion, Corporate Prayer, and fellowship are most important during times of emergency. Denying Christians access to the ordinary means of grace harms the whole person (Heb 10:25).
+
+  Wisconsin’s Constitutional amendment prohibiting government closures of places of worship during emergencies keeps the state in its lane and not in our pews.
 faq:
   - question: What would AJR 10 change about current Wisconsin law?
     answer: |-
