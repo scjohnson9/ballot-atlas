@@ -1,18 +1,18 @@
 ---
 state: wisconsin
 title: Prohibit Closure of Places of Worship During States of Emergency Amendment
-ref: AJR 10
+ref: Question 2
 date_on_ballot: 2026-11-03
 excerpt: A proposed amendment to the Wisconsin state constitution that would prohibit state and local governments from ordering the closure of places of worship during a declared state of emergency, including an emergency related to public health.
 stance: Religious Liberty
 recommendation_type: Support
 article_ready: true
-bottom_line: CCTE supports Wisconsin AJR 10. The measure would amend Article I, Section 18 of the Wisconsin Constitution to prohibit the state or any political subdivision from ordering the closure of, or forbidding gatherings in, places of worship in response to a state of emergency—including a public health emergency—preserving the freedom of religious assembly against future government overreach.
-recommendation_verb: Vote Yes on AJR 10
+bottom_line: CCTE supports Wisconsin Question 2. The measure would amend Article I, Section 18 of the Wisconsin Constitution to prohibit the state or any political subdivision from ordering the closure of, or forbidding gatherings in, places of worship in response to a state of emergency—including a public health emergency—preserving the freedom of religious assembly against future government overreach.
+recommendation_verb: Vote Yes on Question 2
 recommendation_rationale: |-
-  The Center for Christian Thought and Ethics supports Wisconsin’s constitutional amendment to protect churches from government closure. [Assembly Joint Resolution 10 (AJR 10)](https://docs.legis.wisconsin.gov/2025/related/proposals/ajr10), also called the "Prohibit Government Closure of Places of Worship During Emergencies Amendment," protects houses of worship from government-ordered closure during emergencies. CCTE supports the amendment on three theological grounds: 
+  The Center for Christian Thought and Ethics supports Wisconsin’s constitutional amendment to protect churches from government closure. [Assembly Joint Resolution 10 (Question 2)](https://docs.legis.wisconsin.gov/2025/related/proposals/ajr10), also called the "Prohibit Government Closure of Places of Worship During Emergencies Amendment," protects houses of worship from government-ordered closure during emergencies. CCTE supports the amendment on three theological grounds: 
 
-  First, God has ordained the state to rule over matters of external order, not the inner life of individuals. AJR 10 clarifies God’s established boundaries on state power (Rom 13:1-7; Matt 22:15-22).
+  First, God has ordained the state to rule over matters of external order, not the inner life of individuals. Question 2 clarifies God’s established boundaries on state power (Rom 13:1-7; Matt 22:15-22).
 
   Second, God empowers qualified and recognized leaders to shepherd his church. Elders are best situated to know the spiritual makeup of their flock; therefore, elders are most fit to determine how, when, and where their flocks gather—not distant bureaucrats (1 Pet 5:1-4).
 
@@ -20,13 +20,13 @@ recommendation_rationale: |-
 
   Wisconsin’s constitutional amendment prohibiting government closures of places of worship during emergencies keeps the state in its lane and not in our pews.
 faq:
-  - question: What would AJR 10 change about current Wisconsin law?
+  - question: What would Question 2 change about current Wisconsin law?
     answer: |-
       While [Article I, Section 18 of the Wisconsin state constitution](https://docs.legis.wisconsin.gov/constitution/wi_unannotated) is already devoted to "Freedom of worship; liberty of conscience; state religion; public funds," it does not protect religious places of worship from forced governmental closures during state emergencies. 
 
-      If AJR 10 passes, then citizens would be able to continue gathering in churches and other places of worship during ["a state of emergency at the national, state, or local level, including an emergency related to public health."](https://docs.legis.wisconsin.gov/2025/related/proposals/ajr10)
+      If Question 2 passes, then citizens would be able to continue gathering in churches and other places of worship during ["a state of emergency at the national, state, or local level, including an emergency related to public health."](https://docs.legis.wisconsin.gov/2025/related/proposals/ajr10)
   - question: What does the amendment prohibit specifically?
-    answer: '[AJR 10](https://docs.legis.wisconsin.gov/2025/related/proposals/ajr10) prohibits "the state or a political subdivision of the state" from "[ordering] the closure of or [forbidding] gatherings in places of worship in response to a state of emergency at the national, state, or local level, including an emergency related to public health."'
+    answer: '[Question 2](https://docs.legis.wisconsin.gov/2025/related/proposals/ajr10) prohibits "the state or a political subdivision of the state" from "[ordering] the closure of or [forbidding] gatherings in places of worship in response to a state of emergency at the national, state, or local level, including an emergency related to public health."'
   - question: What prompted this amendment?
     answer: |-
       During the Covid-19 pandemic, Gov. Tony Evers signed the ["Safer at Home Order,"](https://evers.wi.gov/documents/covid19/emo12-saferathome.pdf) which forbade churches and other places of worship from gathering with groups of more than 10 individuals in a single room. 
@@ -45,7 +45,7 @@ faq:
     answer: |-
       During the COVID pandemic, the U.S. Supreme Court issued several rulings related to church closures and gathering size. In one of the most applicable cases, [_Roman Catholic Diocese of Brooklyn v. Cuomo_ (2020)](https://www.supremecourt.gov/opinions/20pdf/20a87_4g15.pdf), the Court ruled that occupancy regulations which "single out houses of worship for especially harsh treatment" are unconstitutional. If a state wants to limit gathering sizes for churches, that state must treat all comparable secular activities similarly. 
 
-      [Wisconsin AJR 10](https://docs.legis.wisconsin.gov/2025/related/proposals/ajr10) would go one step further by altogether preventing the closure of churches in response to a public health emergency.
+      [Wisconsin Question 2](https://docs.legis.wisconsin.gov/2025/related/proposals/ajr10) would go one step further by altogether preventing the closure of churches in response to a public health emergency.
 author: CCTE Editorial Team
-last_reviewed: 2026-09-10
+last_reviewed: 2026-09-15
 ---
