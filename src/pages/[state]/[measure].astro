@@ -34,6 +34,28 @@ import {
 } from 'astro:content';
 import { marked } from 'marked';
 
+// Configure marked once at module load: external links (anything not
+// on thinkchristian.com) open in a new tab with rel="noopener
+// noreferrer". Internal links stay in the same tab. This preserves
+// readers' place in the FAQ / rationale when they click through to
+// Bible references, legal citations, or source PDFs.
+marked.use({
+  renderer: {
+    link({ href, title, tokens }) {
+      const text = this.parser.parseInline(tokens);
+      const isExternal =
+        /^https?:\/\//i.test(href) && !/thinkchristian\.com/i.test(href);
+      const parts = [`href="${href}"`];
+      if (title) parts.push(`title="${title}"`);
+      if (isExternal) {
+        parts.push('target="_blank"');
+        parts.push('rel="noopener noreferrer"');
+      }
+      return `<a ${parts.join(' ')}>${text}</a>`;
+    },
+  },
+});
+
 export async function getStaticPaths() {
   const measures = await getCollection('measures');
   // Only generate standalone pages for measures whose article is ready.
