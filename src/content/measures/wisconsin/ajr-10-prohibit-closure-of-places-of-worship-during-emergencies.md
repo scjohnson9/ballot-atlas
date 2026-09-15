@@ -12,11 +12,11 @@ recommendation_verb: Vote Yes on AJR 10
 recommendation_rationale: |-
   The Center for Christian Thought and Ethics supports Wisconsin’s constitutional amendment to protect churches from government closure. [Assembly Joint Resolution 10 (AJR 10)](https://docs.legis.wisconsin.gov/2025/related/proposals/ajr10), also called the "Prohibit Government Closure of Places of Worship During Emergencies Amendment," protects houses of worship from government-ordered closure during emergencies. CCTE supports the amendment on three theological grounds: 
 
-  First, God has ordained the state to rule over matters of external order, not the inner life of individuals. AJR 10 clarifies God’s established boundaries on state power ([Rom 13:1-7](https://www.biblegateway.com/passage/?search=Romans+13%3A1-7&version=ESV); [Matt 22:15-22](https://www.biblegateway.com/passage/?search=Matthew+22%3A15-22&version=ESV)).
+  First, God has ordained the state to rule over matters of external order, not the inner life of individuals. AJR 10 clarifies God’s established boundaries on state power (Rom 13:1-7; Matt 22:15-22).
 
-  Second, God empowers qualified and recognized leaders to shepherd his church. Elders are best situated to know the spiritual makeup of their flock; therefore, elders are most fit to determine how, when, and where their flocks gather—not distant bureaucrats ([1 Pet 5:1-4](https://www.biblegateway.com/passage/?search=1+Peter+5%3A1-4&version=ESV)).
+  Second, God empowers qualified and recognized leaders to shepherd his church. Elders are best situated to know the spiritual makeup of their flock; therefore, elders are most fit to determine how, when, and where their flocks gather—not distant bureaucrats (1 Pet 5:1-4).
 
-  Third, God establishes the ordinances or sacraments as essential to Christian worship. Wisconsin’s constitutional amendment ensures that Christians have access to the ordinary means of grace, which are essential to spiritual health. Baptism, communion, corporate prayer, and fellowship are most important during times of emergency. Denying Christians access to the ordinary means of grace harms the whole person ([Heb 10:25](https://www.biblegateway.com/passage/?search=Hebrews+10%3A25&version=ESV)).
+  Third, God establishes the ordinances or sacraments as essential to Christian worship. Wisconsin’s constitutional amendment ensures that Christians have access to the ordinary means of grace, which are essential to spiritual health. Baptism, communion, corporate prayer, and fellowship are most important during times of emergency. Denying Christians access to the ordinary means of grace harms the whole person (Heb 10:25).
 
   Wisconsin’s constitutional amendment prohibiting government closures of places of worship during emergencies keeps the state in its lane and not in our pews.
 faq:
