@@ -1,17 +1,17 @@
 ---
 state: colorado
 title: Protect Children From Irreversible Sex Change Surgery Act
-ref: Initiative 110
+ref: Proposition 135
 date_on_ballot: 2026-11-03
 excerpt: A proposed law that would prohibit healthcare professionals from prescribing or performing any sex-change surgeries on minors. It is the most consequential issue to appear on the ballot in 2026, as it deals with both the nature of human embodiment and protections for children.
 stance: Sex & Gender • LGBTQ • Healthcare
 recommendation_type: Support
 article_ready: true
-bottom_line: CCTE supports Colorado Initiative 110. The measure would prohibit healthcare professionals from prescribing or performing irreversible sex-change surgeries on minors, protecting Colorado's children from decisions with lifelong consequences and treating them with dignity.
-recommendation_verb: Vote Yes on Initiative 110
+bottom_line: CCTE supports Colorado Proposition 135. The measure would prohibit healthcare professionals from prescribing or performing irreversible sex-change surgeries on minors, protecting Colorado's children from decisions with lifelong consequences and treating them with dignity.
+recommendation_verb: Vote Yes on Proposition 135
 recommendation_rationale: _Full editorial analysis in progress. Check back soon._
 faq:
-  - question: What would Initiative 110 change about current Colorado law?
+  - question: What would Proposition 135 change about current Colorado law?
     answer: |-
       There is no law in Colorado banning the practice of sex-change surgeries for minors. 
 
@@ -24,9 +24,9 @@ faq:
       - Breast or chest augmentation, reduction, or construction; and
       - Genital and congenital surgical procedures.
 
-      By contrast, [Initiative 110](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/110Final.pdf) would prohibit healthcare professionals from performing any surgery on a minor for the purpose of altering biological sex characteristics, and would prohibit state or federal funds, Medicaid reimbursements, and insurance coverage from being used to pay for such surgeries.
+      By contrast, [Proposition 135](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/110Final.pdf) would prohibit healthcare professionals from performing any surgery on a minor for the purpose of altering biological sex characteristics, and would prohibit state or federal funds, Medicaid reimbursements, and insurance coverage from being used to pay for such surgeries.
   - question: What is meant by "altering biological sex characteristics" in this initiative?
-    answer: According to the final text of Colorado Initiative 110, this phrase ["means treatment in response to a minor's perception of sex or gender."](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/110Final.pdf) This excludes male circumcision and treatment for "a medically verifiable disorder of sex development or... acquired physical or chemical abnormalities."
+    answer: According to the final text of Colorado Proposition 135, this phrase ["means treatment in response to a minor's perception of sex or gender."](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/110Final.pdf) This excludes male circumcision and treatment for "a medically verifiable disorder of sex development or... acquired physical or chemical abnormalities."
   - question: Does the initiative cover hormone treatments and puberty blockers, or only surgery?
     answer: If approved, this initiative would explicitly prohibit ["any surgery to a minor for the purpose of altering biological sex characteristics,"](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/110Final.pdf) but does not address hormone treatments and puberty blockers.
   - question: What types of "health-care professionals" does this apply to?
@@ -41,5 +41,5 @@ faq:
   - question: Does this initiative affect insurance companies or other funding sources for sex-change surgeries?
     answer: Yes, if this initiative is approved, it would prohibit the use of any ["state or federal funds, Medicaid reimbursements, or insurance coverage"](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/110Final.pdf) to pay for sex-change surgeries on minors.
 author: CCTE Editorial Team
-last_reviewed: 2026-08-06
+last_reviewed: 2026-09-18
 ---
