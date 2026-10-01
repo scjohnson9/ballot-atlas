@@ -6,7 +6,7 @@ date_on_ballot: 2026-11-03
 excerpt: A proposed constitutional amendment that would repeal Virginia's current constitutional definition of marriage as between a man and a woman and replace it with language requiring the state to recognize marriages without regard to sex or gender.
 stance: Marriage & Family
 recommendation_type: Oppose
-article_ready: false
+article_ready: true
 bottom_line: CCTE opposes Virginia Question 2. The measure would repeal Virginia's constitutional definition of marriage as between one man and one woman—approved by 57% of voters in 2006—and replace it with a constitutional right to marry regardless of sex or gender, embedding the Obergefell framework into Virginia's Bill of Rights and foreclosing any future restoration of the biblical view in state law.
 recommendation_verb: Vote No on Question 2
 recommendation_rationale: _Full editorial analysis in progress. Check back soon._
