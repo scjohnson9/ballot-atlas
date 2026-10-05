@@ -9,7 +9,34 @@ recommendation_type: Oppose
 article_ready: true
 bottom_line: CCTE opposes Virginia Question 2. The measure would repeal Virginia's constitutional definition of marriage as between one man and one woman—approved by 57% of voters in 2006—and replace it with a constitutional right to marry regardless of sex or gender, embedding the Obergefell framework into Virginia's Bill of Rights and foreclosing any future restoration of the biblical view in state law.
 recommendation_verb: Vote No on Question 2
-recommendation_rationale: _Full editorial analysis in progress. Check back soon._
+recommendation_rationale: |-
+  The Center for Christian Thought and Ethics urges Virginians to vote no on the [proposed marriage amendment](https://lis.blob.core.windows.net/files/1081220.PDF) to Article I, Section 15-A of the Constitution of Virginia, which appears on the November 3, 2026 ballot.
+
+  The amendment removes Virginia's current definition of marriage as "only a union between one man and one woman." The new wording declares marriage as a right of "two adult persons" regardless of "sex, gender, or race," and it commands the Commonwealth to treat every such marriage "equally under the law." The amendment makes no provision for churches, ministries, and people of conscience who uphold traditional marriage.
+
+  This amendment to Virginia's Bill of Rights codifies a redefinition of marriage into state law. The Center for Christian Thought and Ethics opposes the amendment on three theological grounds.
+
+  First, God defined marriage, not the state. God created humanity "male and female," and together they bear his image (Gen 1:27). He then joined the man and the woman as "one flesh" (Gen 2:24). When Jesus was asked about marriage, he referred back to the original design. He said: "He who created them from the beginning made them male and female" (Matt 19:4–6).
+
+  Male and female are not categories invented by culture. Marriage points beyond itself to Christ and his Church (Eph 5:31–32). An amendment that recognizes marriage "regardless of sex" ignores the ontological reality of marriage itself.
+
+  Second, God ordained marriage for the good of children, not merely adults' happiness. The first command God gave the first family was "be fruitful and multiply" (Gen 1:28). Children are "a heritage from the Lord" (Ps 127:3), and God joins husband and wife because he seeks "godly offspring" (Mal 2:15). The family is the first community, and it is older than any state.
+
+  The amendment calls marriage "one of the vital personal rights essential to the orderly pursuit of happiness." That frame centers marriage on the desires of adults. Scripture centers it on a covenant that binds a mother and a father to each other and to the children they bring into the world.
+
+  God gave civil government a real but limited mandate: to restrain evil, promote justice, and keep public order (Rom 13:1–4). The state cares about marriage because marriage forms the next generation.
+
+  Third, God alone is Lord of the conscience, and this amendment offers it no protections. Every person bears God's image, which means every person has a conscience (Gen 1:26–27; Rom 2:14–15). Caesar may claim what is Caesar's, but not what is God's (Mark 12:17). When the two conflict, "we must obey God rather than men" (Acts 5:29).
+
+  Virginia's amendment writes a mandate of equal treatment into the Bill of Rights and includes no religious liberty protection at all. Christian schools, adoption ministries, and congregations deserve to know where they stand. This amendment does not make this clear.
+
+  ## Why it matters
+
+  Some will say the vote changes nothing because Obergefell already governs marriage licenses. But constitutions do more than govern. They teach. This amendment asks Virginians to declare, in their own Bill of Rights, that sex is irrelevant to marriage. That is a statement about reality, and Christians cannot affirm it.
+
+  Our gay and lesbian neighbors are made in God's image and deserve our love, our kindness, and our friendship. Loving our neighbor and telling the truth about marriage are not rivals. Both are acts of faithfulness.
+
+  Virginia's Constitution should recognize what God created, not redefine what it did not make. Vote no on the marriage amendment.
 faq:
   - question: What would Question 2 change about Virginia's current constitution?
     answer: |-
@@ -25,7 +52,7 @@ faq:
     answer: |-
       Yes, same-sex marriages are currently performed and recognized in Virginia.
 
-      Since the U.S. Supreme Court's 2015 ruling in [_Obergefell v. Hodges_](https://www.supremecourt.gov/opinions/14pdf/14-556_3204.pdf) held that same-sex couples have a federal constitutional right to marry, [Article I, Section 15-A](https://law.lis.virginia.gov/constitution/article1/section15-A/) of the Virginia state constitution is currently unenforceable.
+      Since the U.S. Supreme Court's 2015 ruling in [_Obergefell v. Hodges_](https://www.justice.gov/sites/default/files/crt/legacy/2015/06/26/obergefellhodgesopinion.pdf) held that same-sex couples have a federal constitutional right to marry, [Article I, Section 15-A](https://law.lis.virginia.gov/constitution/article1/section15-A/) of the Virginia state constitution is currently unenforceable.
 
       But if the Supreme Court were to overturn or narrow Obergefell, Virginia's constitutional ban would immediately become enforceable again—even though Virginia lawmakers repealed state statutes prohibiting same-sex marriage ([Va. Code §§ 20-45.2 and 20-45.3](https://law.lis.virginia.gov/vacode/20-45.2/)) in 2020. 
 
