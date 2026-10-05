@@ -9,7 +9,16 @@ recommendation_type: Oppose
 article_ready: true
 bottom_line: CCTE opposes Virginia Question 1. The measure would enshrine abortion as a constitutional right in Virginia through the end of the second trimester, permit third-trimester abortions under a broad physician-judgment health exception, and constitutionally exclude any state interest in protecting unborn life from ever being a valid basis for regulation.
 recommendation_verb: Vote No on Question 1
-recommendation_rationale: _Full editorial analysis in progress. Check back soon._
+recommendation_rationale: |-
+  The Center for Christian Thought and Ethics opposes Virginia's constitutional amendment establishing abortion as a "fundamental right." [Proposed Constitutional Amendment Question 1](https://lis.blob.core.windows.net/files/1081212.PDF), also called the "Virginia Right to Reproductive Freedom Amendment," codifies abortion into Virginia's Bill of Rights. Under its terms, the only "interest" the Commonwealth may cite to limit abortion is the "health" of the person seeking it, never the life of the child. CCTE urges Virginians to vote no on three theological grounds:
+
+  First, God creates every human being in his image from the moment of conception. The child in the womb is not a "reproductive decision" but a living person, known and formed by God (Gen 1:27; Ps 139:13-16; Jer 1:5; Luke 1:41-44). Question 1 does not even acknowledge the child's existence.
+
+  Second, God has ordained the state to protect innocent life and restrain evil. The state bears the sword to defend the innocent, not to abandon them (Rom 13:1-7; Gen 9:6; Prov 6:16-17). Question 1 forbids the Commonwealth from counting the unborn child's life as a reason to act. It also bars the state from penalizing anyone who performs or assists in an abortion. Even in the third trimester, the state could not prohibit an abortion that a physician deems necessary for the mother's physical or mental health.
+
+  Third, God entrusts parents with caring for and instructing their children. Parents are best situated to know their children, and they are most fit to guide them through life's decisions, not distant clinics or bureaucrats (Deut 6:6-7; Eph 6:4). Question 1 grants its "fundamental right" to "every individual," setting no age limit and making no provision for parents.
+
+  Virginia's constitutional amendment on abortion does not respect life or parental rights. A no vote keeps the state in its lane: protecting the innocent, not abandoning them.
 faq:
   - question: What would Question 1 change about current Virginia law?
     answer: |-
