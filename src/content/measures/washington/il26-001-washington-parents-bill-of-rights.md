@@ -59,6 +59,11 @@ faq:
     answer: ''
   - question: What legal protections would prevent this from being reversed again?
     answer: ''
+result:
+  outcome: failed
+  yes_percent: 47.3
+  as_of: 2026-11-06
+  official: false
 author: CCTE Editorial Team
 last_reviewed: 2026-09-08
 ---
