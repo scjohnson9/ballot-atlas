@@ -222,7 +222,7 @@ body {
 }
 .scoreboard-link {
   display: grid;
-  grid-template-columns: 140px 120px 1fr auto;
+  grid-template-columns: 140px 110px 1fr 150px auto;
   align-items: baseline;
   gap: 20px;
   padding: 14px 28px;
@@ -230,6 +230,23 @@ body {
   color: var(--body);
   transition: background 0.15s ease;
 }
+.scoreboard-position {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  justify-self: end;
+  white-space: nowrap;
+}
+.scoreboard-position .rec-mark {
+  font-size: 8px;
+  margin-right: 8px;
+  vertical-align: 2px;
+}
+.scoreboard-position--caution { color: var(--gold-deep); }
+.scoreboard-position--discernment { color: var(--quiet); }
 .scoreboard-link:hover {
   background: var(--gold-ghost);
 }
@@ -265,15 +282,17 @@ body {
   .scoreboard-link {
     grid-template-columns: 1fr auto;
     grid-template-areas:
-      "state  chip"
-      "ref    ref"
-      "title  title";
+      "state     chip"
+      "ref       ref"
+      "title     title"
+      "position  position";
     gap: 6px 16px;
     padding: 14px 18px;
   }
   .scoreboard-state { grid-area: state; }
   .scoreboard-ref { grid-area: ref; }
   .scoreboard-title { grid-area: title; font-size: 15px; }
+  .scoreboard-position { grid-area: position; justify-self: start; }
   .scoreboard-chip { grid-area: chip; justify-self: end; }
 }
 
@@ -544,6 +563,11 @@ path.has-content-marker {
   font-size: 9px;
   margin-right: 12px;
   vertical-align: 2px;
+}
+.issue-rec .rec-sep {
+  color: var(--quieter);
+  margin: 0 12px;
+  letter-spacing: 0;
 }
 .issue-rec--oppose,
 .issue-rec--support {

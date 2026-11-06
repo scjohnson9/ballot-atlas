@@ -43,7 +43,10 @@ function formatDate(d: Date): string {
 const pctDisplay = yesPercent.toFixed(1).replace(/\.0$/, '');
 ---
 
-<span class={`result-chip result-chip--${size}`}>
+<span
+  class={`result-chip result-chip--${size}`}
+  title={!official ? `Unofficial — as of ${formatDate(asOf)}` : undefined}
+>
   <span class="result-chip__glyph" aria-hidden="true">{glyph}</span>
   <span class="result-chip__label">{label}</span>
   {size === 'large' && (
@@ -52,56 +55,55 @@ const pctDisplay = yesPercent.toFixed(1).replace(/\.0$/, '');
       <span class="result-chip__pct">{pctDisplay}% yes</span>
     </>
   )}
-  {!official && (
-    <span class="result-chip__tag" title={`Unofficial — as of ${formatDate(asOf)}`}>
-      Unofficial
-    </span>
-  )}
 </span>
 
 <style>
   .result-chip {
     display: inline-flex;
     align-items: baseline;
-    gap: 0.4em;
-    border: 1px solid var(--rule-strong);
+    gap: 0.35em;
+    border: 1px solid var(--rule);
     border-radius: 999px;
-    background: var(--gold-ghost);
-    color: var(--display);
-    font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+    background: transparent;
+    color: var(--quiet);
+    font-family: 'EB Garamond', Georgia, serif;
     white-space: nowrap;
     vertical-align: baseline;
   }
 
   .result-chip--small {
-    padding: 0.18em 0.75em 0.22em;
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
+    padding: 0.08em 0.6em 0.14em;
+    font-size: 10px;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
+    font-weight: 600;
   }
 
   .result-chip--large {
-    padding: 0.5em 1.25em 0.55em;
-    font-size: 1rem;
-    letter-spacing: 0.1em;
+    padding: 0.28em 0.95em 0.38em;
+    font-size: 12px;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
+    font-weight: 600;
   }
 
   .result-chip__glyph {
     color: var(--gold);
     font-weight: 600;
-    font-size: 1.1em;
+    font-size: 1em;
     line-height: 1;
+    letter-spacing: 0;
   }
 
   .result-chip__label {
-    color: var(--display);
-    font-weight: 500;
+    color: var(--quiet);
+    font-weight: 600;
   }
 
   .result-chip__sep {
     color: var(--quieter);
-    padding: 0 0.15em;
+    padding: 0 0.1em;
+    letter-spacing: 0;
   }
 
   .result-chip__pct {
@@ -109,18 +111,6 @@ const pctDisplay = yesPercent.toFixed(1).replace(/\.0$/, '');
     font-variant-numeric: tabular-nums;
     text-transform: none;
     letter-spacing: 0.02em;
-  }
-
-  .result-chip__tag {
-    margin-left: 0.5em;
-    padding: 0.08em 0.5em 0.1em;
-    border: 1px solid var(--rule);
-    border-radius: 999px;
-    background: transparent;
-    color: var(--quieter);
-    font-size: 0.78em;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 500;
   }
 </style>

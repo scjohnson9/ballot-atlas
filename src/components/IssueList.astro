@@ -65,19 +65,22 @@ function formatDate(date: Date): string {
         <div class="issue-body">
           <div class="issue-meta">
             {m.data.ref && <span class="ref">{m.data.ref}</span>}
-            {m.data.result && (
-              <ResultChip
-                outcome={m.data.result.outcome}
-                yesPercent={m.data.result.yes_percent}
-                asOf={m.data.result.as_of}
-                official={m.data.result.official}
-                size="small"
-              />
-            )}
             {formatDate(m.data.date_on_ballot)}
           </div>
           <p class={recClass}>
             <span class="rec-mark">◆</span>{m.data.recommendation_type}
+            {m.data.result && (
+              <>
+                <span class="rec-sep" aria-hidden="true">·</span>
+                <ResultChip
+                  outcome={m.data.result.outcome}
+                  yesPercent={m.data.result.yes_percent}
+                  asOf={m.data.result.as_of}
+                  official={m.data.result.official}
+                  size="small"
+                />
+              </>
+            )}
           </p>
           <h3 class="issue-title">{m.data.title}</h3>
           {!isReady && (

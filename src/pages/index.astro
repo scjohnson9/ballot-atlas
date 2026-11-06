@@ -203,6 +203,9 @@ const siteJsonLd = {
                     <span class="scoreboard-state">{stateName}</span>
                     <span class="scoreboard-ref">{m.data.ref}</span>
                     <span class="scoreboard-title">{m.data.title}</span>
+                    <span class={`scoreboard-position scoreboard-position--${m.data.recommendation_type.toLowerCase()}`}>
+                      <span class="rec-mark" aria-hidden="true">◆</span>CCTE {m.data.recommendation_type}
+                    </span>
                     <span class="scoreboard-chip">
                       <ResultChip
                         outcome={m.data.result!.outcome}
