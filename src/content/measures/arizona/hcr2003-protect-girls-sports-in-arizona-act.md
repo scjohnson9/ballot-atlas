@@ -36,4 +36,9 @@ faq:
       Any civil action must be brought within two years of the violation.
 author: CCTE Editorial Team
 last_reviewed: 2026-08-06
+result:
+  outcome: passed
+  yes_percent: 58.9
+  as_of: 2026-11-06
+  official: false
 ---

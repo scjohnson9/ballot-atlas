@@ -82,4 +82,9 @@ faq:
     answer: The push to repeal and replace the current constitutional amendment has intensified since the U.S. Supreme Court's 2022 ruling in [_Dobbs v. Jackson Women's Health Organization_](https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf), which overturned _Roe v. Wade_ and returned the question of abortion back to the states.
 author: CCTE Editorial Team
 last_reviewed: 2026-10-01
+result:
+  outcome: passed
+  yes_percent: 57.5
+  as_of: 2026-11-06
+  official: false
 ---

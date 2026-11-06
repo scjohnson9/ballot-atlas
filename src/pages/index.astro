@@ -25,6 +25,7 @@ import IssueList from '../components/IssueList.astro';
 import Masthead from '../components/Masthead.astro';
 import CtaBlock from '../components/CtaBlock.astro';
 import Colophon from '../components/Colophon.astro';
+import ResultChip from '../components/ResultChip.astro';
 import { getCollection } from 'astro:content';
 
 const allStates = await getCollection('states');
@@ -93,6 +94,20 @@ for (const b of allBundles) {
 
 const totalIssues = contentBundles.reduce((sum, b) => sum + b.measures.length, 0);
 const totalStates = contentBundles.length;
+
+// Election-results scoreboard. Pulls from rawMeasures (not the
+// current-cycle filter) so completed measures still appear in the
+// scoreboard after their election date rolls past. Sorted by state
+// name, then date, for stable presentation.
+const stateNameBySlug = new Map(allStates.map((s) => [s.id, s.data.name]));
+const scoreboardMeasures = rawMeasures
+  .filter((m) => m.data.result)
+  .sort((a, b) => {
+    const stateA = stateNameBySlug.get(a.id.split('/')[0]) ?? '';
+    const stateB = stateNameBySlug.get(b.id.split('/')[0]) ?? '';
+    if (stateA !== stateB) return stateA.localeCompare(stateB);
+    return a.data.date_on_ballot.getTime() - b.data.date_on_ballot.getTime();
+  });
 
 // Site-level JSON-LD. The WebSite type identifies the Atlas as a
 // discrete site within CCTE's domain; the Organization establishes
@@ -176,6 +191,40 @@ const siteJsonLd = {
           <span class="hint">Move your cursor across the map to begin</span>
         </div>
       </div>
+
+      {scoreboardMeasures.length > 0 && (
+        <details class="scoreboard">
+          <summary class="scoreboard-summary">
+            <span class="scoreboard-label">2026 Election Results</span>
+            <span class="scoreboard-count">{scoreboardMeasures.length} measures</span>
+            <span class="scoreboard-toggle" aria-hidden="true"></span>
+          </summary>
+          <ul class="scoreboard-list">
+            {scoreboardMeasures.map((m) => {
+              const stateSlug = m.id.split('/')[0];
+              const stateName = stateNameBySlug.get(stateSlug) ?? stateSlug;
+              return (
+                <li class="scoreboard-row">
+                  <a href={`/ballot-atlas/${m.id}`} class="scoreboard-link">
+                    <span class="scoreboard-state">{stateName}</span>
+                    <span class="scoreboard-ref">{m.data.ref}</span>
+                    <span class="scoreboard-title">{m.data.title}</span>
+                    <span class="scoreboard-chip">
+                      <ResultChip
+                        outcome={m.data.result!.outcome}
+                        yesPercent={m.data.result!.yes_percent}
+                        asOf={m.data.result!.as_of}
+                        official={m.data.result!.official}
+                        size="small"
+                      />
+                    </span>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </details>
+      )}
 
       <section id="article-panel" class="panel">
         <header class="panel-header">

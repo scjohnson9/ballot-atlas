@@ -22,6 +22,7 @@
 // been written yet.
 
 import type { CollectionEntry } from 'astro:content';
+import ResultChip from './ResultChip.astro';
 
 interface Props {
   measures: CollectionEntry<'measures'>[];
@@ -64,6 +65,15 @@ function formatDate(date: Date): string {
         <div class="issue-body">
           <div class="issue-meta">
             {m.data.ref && <span class="ref">{m.data.ref}</span>}
+            {m.data.result && (
+              <ResultChip
+                outcome={m.data.result.outcome}
+                yesPercent={m.data.result.yes_percent}
+                asOf={m.data.result.as_of}
+                official={m.data.result.official}
+                size="small"
+              />
+            )}
             {formatDate(m.data.date_on_ballot)}
           </div>
           <p class={recClass}>

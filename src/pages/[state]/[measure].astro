@@ -26,6 +26,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Masthead from '../../components/Masthead.astro';
 import CtaBlock from '../../components/CtaBlock.astro';
 import Colophon from '../../components/Colophon.astro';
+import ResultChip from '../../components/ResultChip.astro';
 import {
   getCollection,
   getEntry,
@@ -246,6 +247,19 @@ const jsonLd = {
       <h1 class="headline">{data.title}</h1>
       <div class="gold-rule"></div>
       <p class="bottom-line">{data.bottom_line}</p>
+
+      {data.result && (
+        <section class="results" aria-label="Election Result">
+          <p class="results-eyebrow">2026 Result</p>
+          <ResultChip
+            outcome={data.result.outcome}
+            yesPercent={data.result.yes_percent}
+            asOf={data.result.as_of}
+            official={data.result.official}
+            size="large"
+          />
+        </section>
+      )}
 
       <aside class="recommendation" aria-label="CCTE Recommendation">
         <p class="recommendation-eyebrow">

@@ -48,4 +48,9 @@ faq:
       [Wisconsin Question 2](https://docs.legis.wisconsin.gov/2025/related/proposals/ajr10) would go one step further by altogether preventing the closure of churches in response to a public health emergency.
 author: CCTE Editorial Team
 last_reviewed: 2026-09-15
+result:
+  outcome: failed
+  yes_percent: 48.1
+  as_of: 2026-11-06
+  official: false
 ---

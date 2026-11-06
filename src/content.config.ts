@@ -88,6 +88,21 @@ const measures = defineCollection({
     faq: z.array(faqEntry).default([]),
     author: z.string().default('CCTE Editorial Team'),
     last_reviewed: z.coerce.date(),
+
+    // Election result — optional. When present, powers the result chip
+    // in the IssueList, the Results section on the measure page, and
+    // the collapsible scoreboard on the homepage. Omitted for pre-election
+    // measures and stubs; populated post-election via the CMS form.
+    //
+    // official defaults to false so unofficial election-night numbers can
+    // ship immediately and be flipped to true after state certification
+    // (typically 2-4 weeks later) without needing any template changes.
+    result: z.object({
+      outcome: z.enum(['passed', 'failed']),
+      yes_percent: z.number().min(0).max(100),
+      as_of: z.coerce.date(),
+      official: z.boolean().default(false),
+    }).optional(),
   }).refine(
     // Conditional editorial quality gate. Stubs are fine with the
     // standalone fields empty or short; once article_ready flips on,

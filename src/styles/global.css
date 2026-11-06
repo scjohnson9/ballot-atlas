@@ -169,6 +169,114 @@ body {
   transform: rotate(45deg);
 }
 
+/* ── SCOREBOARD (homepage election results) ─────────────────── */
+.scoreboard {
+  margin: 24px 0 0;
+  background: var(--bg-deep);
+  border: 1px solid var(--border-soft);
+}
+.scoreboard-summary {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 18px 28px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+.scoreboard-summary::-webkit-details-marker { display: none; }
+.scoreboard-label {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.scoreboard-count {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--quieter);
+  flex: 1;
+}
+.scoreboard-toggle {
+  width: 10px; height: 10px;
+  border-right: 1.5px solid var(--gold);
+  border-bottom: 1.5px solid var(--gold);
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+  margin-right: 4px;
+}
+.scoreboard[open] .scoreboard-toggle {
+  transform: rotate(-135deg);
+}
+.scoreboard-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+.scoreboard-row + .scoreboard-row {
+  border-top: 1px solid var(--gold-ghost);
+}
+.scoreboard-link {
+  display: grid;
+  grid-template-columns: 140px 120px 1fr auto;
+  align-items: baseline;
+  gap: 20px;
+  padding: 14px 28px;
+  text-decoration: none;
+  color: var(--body);
+  transition: background 0.15s ease;
+}
+.scoreboard-link:hover {
+  background: var(--gold-ghost);
+}
+.scoreboard-state {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--quiet);
+}
+.scoreboard-ref {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.scoreboard-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--display);
+  line-height: 1.35;
+}
+.scoreboard-chip {
+  justify-self: end;
+}
+
+@media (max-width: 700px) {
+  .scoreboard-summary { padding: 14px 18px; }
+  .scoreboard-link {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "state  chip"
+      "ref    ref"
+      "title  title";
+    gap: 6px 16px;
+    padding: 14px 18px;
+  }
+  .scoreboard-state { grid-area: state; }
+  .scoreboard-ref { grid-area: ref; }
+  .scoreboard-title { grid-area: title; font-size: 15px; }
+  .scoreboard-chip { grid-area: chip; justify-self: end; }
+}
+
 /* ── MAP STAGE ───────────────────────────────────────────────── */
 .map-stage {
   position: relative;
@@ -818,6 +926,19 @@ path.has-content-marker {
   color: var(--display-2);
   margin: 0 0 56px;
   max-width: 58ch;
+}
+
+.results {
+  margin: 0 0 56px;
+}
+.results-eyebrow {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 14px;
 }
 
 .recommendation {

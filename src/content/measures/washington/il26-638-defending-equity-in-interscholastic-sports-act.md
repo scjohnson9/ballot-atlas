@@ -46,4 +46,9 @@ faq:
     answer: This measure is limited specifically to teams.
 author: CCTE Editorial Team
 last_reviewed: 2026-07-29
+result:
+  outcome: passed
+  yes_percent: 56.8
+  as_of: 2026-11-06
+  official: false
 ---

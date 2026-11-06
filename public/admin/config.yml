@@ -344,3 +344,51 @@ collections:
           Use section headings (##) to break it up — typical structure
           is 'The Legal Question', 'The Moral Question', 'What the Vote
           Means'. Supports rich text, links, bold, italic, blockquotes.
+
+      # ──── ELECTION RESULT (optional, populated post-election) ────
+
+      - label: "━━━  Election Result — leave blank until after the vote  ━━━"
+        name: result
+        widget: object
+        required: false
+        collapsed: true
+        hint: >
+          Populate after Election Day with the outcome and the yes-vote
+          percentage. Drives the result chip in the issue list, the
+          Results section on the measure's page, and the scoreboard on
+          the Atlas homepage. Leave blank before the election. Flip
+          "Official" to true once the state's canvass is certified
+          (typically 2–4 weeks after Election Day).
+        fields:
+          - label: Outcome
+            name: outcome
+            widget: select
+            required: true
+            hint: "Did the measure pass or fail?"
+            options:
+              - { value: passed, label: Passed }
+              - { value: failed, label: Failed }
+          - label: Yes Percent
+            name: yes_percent
+            widget: number
+            required: true
+            value_type: float
+            min: 0
+            max: 100
+            step: 0.1
+            hint: "Share of the vote that voted Yes, as a percent (e.g. 62.6)."
+          - label: As Of
+            name: as_of
+            widget: datetime
+            date_format: 'YYYY-MM-DD'
+            time_format: false
+            picker_utc: true
+            hint: "Date of the result snapshot. Format: YYYY-MM-DD."
+          - label: Official
+            name: official
+            widget: boolean
+            default: false
+            hint: >
+              OFF (default) — unofficial / election-night figures.
+              A small "Unofficial" tag appears next to the result.
+              ON — state canvass has certified the result. Tag disappears.

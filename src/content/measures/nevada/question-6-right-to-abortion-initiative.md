@@ -63,4 +63,9 @@ faq:
     answer: Existing Nevada law allows Medicaid to cover abortions. And since this measure is silent on public funding for abortion, that practice will continue.
 author: CCTE Editorial Team
 last_reviewed: 2026-08-11
+result:
+  outcome: passed
+  yes_percent: 63.4
+  as_of: 2026-11-06
+  official: false
 ---

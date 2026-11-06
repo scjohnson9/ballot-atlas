@@ -42,4 +42,9 @@ faq:
     answer: Yes, if this initiative is approved, it would prohibit the use of any ["state or federal funds, Medicaid reimbursements, or insurance coverage"](https://www.sos.state.co.us/pubs/elections/Initiatives/titleBoard/filings/2025-2026/110Final.pdf) to pay for sex-change surgeries on minors.
 author: CCTE Editorial Team
 last_reviewed: 2026-09-18
+result:
+  outcome: passed
+  yes_percent: 52.0
+  as_of: 2026-11-06
+  official: false
 ---

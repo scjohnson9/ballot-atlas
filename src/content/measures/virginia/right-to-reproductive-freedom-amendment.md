@@ -90,4 +90,9 @@ faq:
       While it is possible to repeal an amendment, it is a very difficult process. It would require the General Assembly to pass a new amendment in two consecutive sessions with an intervening House of Delegates election, followed by voter ratification.
 author: CCTE Editorial Team
 last_reviewed: 2026-08-13
+result:
+  outcome: passed
+  yes_percent: 62.5
+  as_of: 2026-11-06
+  official: false
 ---

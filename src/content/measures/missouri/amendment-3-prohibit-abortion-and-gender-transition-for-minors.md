@@ -52,4 +52,9 @@ faq:
     answer: The prohibitions of surgeries, hormones, and blockers in this amendment do not apply to children ["born with a medically verifiable disorder of sex development or to treat any infection, injury, disease, or disorder unrelated to the purpose of a gender transition."](https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/2454H.05T.pdf)
 author: CCTE Editorial Team
 last_reviewed: 2026-08-07
+result:
+  outcome: failed
+  yes_percent: 44.5
+  as_of: 2026-11-06
+  official: false
 ---

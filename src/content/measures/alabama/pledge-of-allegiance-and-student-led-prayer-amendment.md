@@ -46,4 +46,9 @@ faq:
       Additionally, it would be wise for Alabama voters to enshrine this right in the state's constitution, because it would make a future repeal more difficult.
 author: CCTE Editorial Team
 last_reviewed: 2026-09-08
+result:
+  outcome: passed
+  yes_percent: 62.6
+  as_of: 2026-11-06
+  official: false
 ---

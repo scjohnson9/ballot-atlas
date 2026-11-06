@@ -45,4 +45,9 @@ faq:
     answer: This initiative is limited specifically to teams.
 author: CCTE Editorial Team
 last_reviewed: 2026-09-18
+result:
+  outcome: passed
+  yes_percent: 52.3
+  as_of: 2026-11-06
+  official: false
 ---
