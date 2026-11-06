@@ -31,11 +31,14 @@ import { getCollection } from 'astro:content';
 const allStates = await getCollection('states');
 const rawMeasures = await getCollection('measures');
 
-// No date-based filtering: measures remain on the map after their
-// election day, now showing their results via the chip in the state
-// panel. The whole page gets archived and rebuilt fresh each cycle,
-// so there's no need to hide past measures automatically.
-const allMeasures = rawMeasures;
+// Current-cycle filter. Older measures (prior election cycles) remain
+// in the content collection so their URLs keep resolving, but they're
+// excluded from the map, state panels, and scoreboard. When this page
+// is archived and rebuilt for 2028, bump CYCLE_START accordingly.
+const CYCLE_START = new Date('2026-01-01');
+const allMeasures = rawMeasures.filter(
+  (m) => m.data.date_on_ballot >= CYCLE_START
+);
 
 // Group measures by state slug (the first path segment of m.id).
 // Sort each group by date_on_ballot (earliest first) for stable
@@ -94,7 +97,7 @@ const totalStates = contentBundles.length;
 // scoreboard after their election date rolls past. Sorted by state
 // name, then date, for stable presentation.
 const stateNameBySlug = new Map(allStates.map((s) => [s.id, s.data.name]));
-const scoreboardMeasures = rawMeasures
+const scoreboardMeasures = allMeasures
   .filter((m) => m.data.result)
   .sort((a, b) => {
     const stateA = stateNameBySlug.get(a.id.split('/')[0]) ?? '';
