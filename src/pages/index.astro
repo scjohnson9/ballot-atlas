@@ -31,17 +31,11 @@ import { getCollection } from 'astro:content';
 const allStates = await getCollection('states');
 const rawMeasures = await getCollection('measures');
 
-// Date-based "current cycle" filter. Measures with an election date
-// in the past are dropped from the map (gold-state marking, info-bar
-// counts, panel listings) but still generate their own pages — their
-// URLs continue to resolve as cold-load measure articles. The cutoff
-// is start-of-today so a measure remains visible all the way through
-// its election day, then disappears from discovery the next morning.
-const todayStart = new Date();
-todayStart.setHours(0, 0, 0, 0);
-const allMeasures = rawMeasures.filter(
-  (m) => m.data.date_on_ballot >= todayStart
-);
+// No date-based filtering: measures remain on the map after their
+// election day, now showing their results via the chip in the state
+// panel. The whole page gets archived and rebuilt fresh each cycle,
+// so there's no need to hide past measures automatically.
+const allMeasures = rawMeasures;
 
 // Group measures by state slug (the first path segment of m.id).
 // Sort each group by date_on_ballot (earliest first) for stable
